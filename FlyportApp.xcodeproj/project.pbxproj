@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A67A73B025C87D3C00F6B7EA /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A73AF25C87D3C00F6B7EA /* MainScreenViewController.swift */; };
+		A67A73B625C87F9C00F6B7EA /* ServiceKeywords.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A73B225C87F9B00F6B7EA /* ServiceKeywords.swift */; };
+		A67A73B725C87F9C00F6B7EA /* RequestURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A73B325C87F9C00F6B7EA /* RequestURL.swift */; };
+		A67A73B825C87F9C00F6B7EA /* ServersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A73B425C87F9C00F6B7EA /* ServersService.swift */; };
+		A67A73B925C87F9C00F6B7EA /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A73B525C87F9C00F6B7EA /* Requests.swift */; };
 		A6D139A923BC19F600B79903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D139A823BC19F600B79903 /* AppDelegate.swift */; };
 		A6D139AB23BC19F600B79903 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D139AA23BC19F600B79903 /* SceneDelegate.swift */; };
 		A6D139AD23BC19F600B79903 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D139AC23BC19F600B79903 /* ViewController.swift */; };
@@ -14,6 +19,8 @@
 		A6D139B223BC19F800B79903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6D139B123BC19F800B79903 /* Assets.xcassets */; };
 		A6D139B523BC19F800B79903 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6D139B323BC19F800B79903 /* LaunchScreen.storyboard */; };
 		A6D139C023BC19F800B79903 /* FlyportAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D139BF23BC19F800B79903 /* FlyportAppTests.swift */; };
+		A6D139CE25C86D7200B79903 /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D139CD25C86D7200B79903 /* SplashScreenViewModel.swift */; };
+		A6D139D125C86FD500B79903 /* seguisym.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6D139D025C86FD500B79903 /* seguisym.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +34,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A67A73AF25C87D3C00F6B7EA /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		A67A73B225C87F9B00F6B7EA /* ServiceKeywords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceKeywords.swift; path = ../../../Servers/Services/ServiceKeywords.swift; sourceTree = "<group>"; };
+		A67A73B325C87F9C00F6B7EA /* RequestURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestURL.swift; path = ../../../Servers/Services/RequestURL.swift; sourceTree = "<group>"; };
+		A67A73B425C87F9C00F6B7EA /* ServersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServersService.swift; path = ../../../Servers/Services/ServersService.swift; sourceTree = "<group>"; };
+		A67A73B525C87F9C00F6B7EA /* Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Requests.swift; path = ../../../Servers/Services/Requests.swift; sourceTree = "<group>"; };
 		A6D139A523BC19F600B79903 /* FlyportApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyportApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D139A823BC19F600B79903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6D139AA23BC19F600B79903 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +50,8 @@
 		A6D139BB23BC19F800B79903 /* FlyportAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlyportAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D139BF23BC19F800B79903 /* FlyportAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyportAppTests.swift; sourceTree = "<group>"; };
 		A6D139C123BC19F800B79903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6D139CD25C86D7200B79903 /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
+		A6D139D025C86FD500B79903 /* seguisym.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = seguisym.ttf; path = ../../../../Downloads/segoeuisymbol/seguisym.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A67A73B125C87F7C00F6B7EA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A67A73B525C87F9C00F6B7EA /* Requests.swift */,
+				A67A73B325C87F9C00F6B7EA /* RequestURL.swift */,
+				A67A73B425C87F9C00F6B7EA /* ServersService.swift */,
+				A67A73B225C87F9B00F6B7EA /* ServiceKeywords.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		A6D1399C23BC19F600B79903 = {
 			isa = PBXGroup;
 			children = (
@@ -79,9 +104,13 @@
 		A6D139A723BC19F600B79903 /* FlyportApp */ = {
 			isa = PBXGroup;
 			children = (
+				A67A73B125C87F7C00F6B7EA /* Services */,
+				A6D139CF25C86FB100B79903 /* Fonts */,
+				A6D139CC25C86D4700B79903 /* Models */,
+				A6D139CB25C86D3F00B79903 /* ViewModels */,
+				A6D139CA25C86D2E00B79903 /* ViewControllers */,
 				A6D139A823BC19F600B79903 /* AppDelegate.swift */,
 				A6D139AA23BC19F600B79903 /* SceneDelegate.swift */,
-				A6D139AC23BC19F600B79903 /* ViewController.swift */,
 				A6D139AE23BC19F600B79903 /* Main.storyboard */,
 				A6D139B123BC19F800B79903 /* Assets.xcassets */,
 				A6D139B323BC19F800B79903 /* LaunchScreen.storyboard */,
@@ -97,6 +126,38 @@
 				A6D139C123BC19F800B79903 /* Info.plist */,
 			);
 			path = FlyportAppTests;
+			sourceTree = "<group>";
+		};
+		A6D139CA25C86D2E00B79903 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6D139AC23BC19F600B79903 /* ViewController.swift */,
+				A67A73AF25C87D3C00F6B7EA /* MainScreenViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A6D139CB25C86D3F00B79903 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A6D139CD25C86D7200B79903 /* SplashScreenViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A6D139CC25C86D4700B79903 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A6D139CF25C86FB100B79903 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A6D139D025C86FD500B79903 /* seguisym.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +243,7 @@
 			files = (
 				A6D139B523BC19F800B79903 /* LaunchScreen.storyboard in Resources */,
 				A6D139B223BC19F800B79903 /* Assets.xcassets in Resources */,
+				A6D139D125C86FD500B79903 /* seguisym.ttf in Resources */,
 				A6D139B023BC19F600B79903 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,7 +262,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A67A73B025C87D3C00F6B7EA /* MainScreenViewController.swift in Sources */,
 				A6D139AD23BC19F600B79903 /* ViewController.swift in Sources */,
+				A67A73B825C87F9C00F6B7EA /* ServersService.swift in Sources */,
+				A67A73B925C87F9C00F6B7EA /* Requests.swift in Sources */,
+				A67A73B625C87F9C00F6B7EA /* ServiceKeywords.swift in Sources */,
+				A6D139CE25C86D7200B79903 /* SplashScreenViewModel.swift in Sources */,
+				A67A73B725C87F9C00F6B7EA /* RequestURL.swift in Sources */,
 				A6D139A923BC19F600B79903 /* AppDelegate.swift in Sources */,
 				A6D139AB23BC19F600B79903 /* SceneDelegate.swift in Sources */,
 			);
