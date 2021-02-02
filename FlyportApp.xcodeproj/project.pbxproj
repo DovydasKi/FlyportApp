@@ -23,6 +23,8 @@
 		A6D139D125C86FD500B79903 /* seguisym.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6D139D025C86FD500B79903 /* seguisym.ttf */; };
 		A6DA1DC425C9B05100D1FFDE /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA1DC325C9B05100D1FFDE /* MainScreenViewModel.swift */; };
 		A6DA1DC825C9BBE700D1FFDE /* Margin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA1DC725C9BBE700D1FFDE /* Margin.swift */; };
+		A6DA1DCA25C9C3D200D1FFDE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA1DC925C9C3D200D1FFDE /* LoginViewController.swift */; };
+		A6DA1DCC25C9C40600D1FFDE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA1DCB25C9C40600D1FFDE /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		A6D139D025C86FD500B79903 /* seguisym.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = seguisym.ttf; path = ../../../../Downloads/segoeuisymbol/seguisym.ttf; sourceTree = "<group>"; };
 		A6DA1DC325C9B05100D1FFDE /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		A6DA1DC725C9BBE700D1FFDE /* Margin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Margin.swift; sourceTree = "<group>"; };
+		A6DA1DC925C9C3D200D1FFDE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A6DA1DCB25C9C40600D1FFDE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 			children = (
 				A6D139AC23BC19F600B79903 /* ViewController.swift */,
 				A67A73AF25C87D3C00F6B7EA /* MainScreenViewController.swift */,
+				A6DA1DC925C9C3D200D1FFDE /* LoginViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 			children = (
 				A6D139CD25C86D7200B79903 /* SplashScreenViewModel.swift */,
 				A6DA1DC325C9B05100D1FFDE /* MainScreenViewModel.swift */,
+				A6DA1DCB25C9C40600D1FFDE /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -276,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6DA1DCA25C9C3D200D1FFDE /* LoginViewController.swift in Sources */,
 				A67A73B025C87D3C00F6B7EA /* MainScreenViewController.swift in Sources */,
 				A6DA1DC425C9B05100D1FFDE /* MainScreenViewModel.swift in Sources */,
 				A6D139AD23BC19F600B79903 /* ViewController.swift in Sources */,
@@ -283,6 +290,7 @@
 				A67A73B925C87F9C00F6B7EA /* Requests.swift in Sources */,
 				A67A73B625C87F9C00F6B7EA /* ServiceKeywords.swift in Sources */,
 				A6D139CE25C86D7200B79903 /* SplashScreenViewModel.swift in Sources */,
+				A6DA1DCC25C9C40600D1FFDE /* LoginViewModel.swift in Sources */,
 				A67A73B725C87F9C00F6B7EA /* RequestURL.swift in Sources */,
 				A6D139A923BC19F600B79903 /* AppDelegate.swift in Sources */,
 				A6D139AB23BC19F600B79903 /* SceneDelegate.swift in Sources */,

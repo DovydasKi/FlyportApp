@@ -28,6 +28,7 @@ class MainScreenViewController: UIViewController {
 		self.view.addSubview(icon)
 		self.activateIconConstraints()
 		self.view.addSubview(loginButton)
+		loginButton.addTarget(self, action: #selector(self.loadLoginScreen), for: .touchUpInside)
 		self.activateLoginButtonConstraints()
 		self.view.addSubview(registerButton)
 		self.activateRegisterButtonConstraints()
@@ -107,5 +108,12 @@ extension MainScreenViewController {
 			self.registerButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [14, 16, 18])),
 			self.registerButton.heightAnchor.constraint(equalToConstant: UIView.margin(of: [31,41,51]))
 		])
+	}
+}
+
+extension MainScreenViewController {
+	@objc private func loadLoginScreen() {
+		let newVC = LoginViewController()
+		self.navigationController?.setViewControllers([newVC], animated: true)
 	}
 }
