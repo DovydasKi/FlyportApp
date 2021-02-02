@@ -21,6 +21,8 @@
 		A6D139C023BC19F800B79903 /* FlyportAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D139BF23BC19F800B79903 /* FlyportAppTests.swift */; };
 		A6D139CE25C86D7200B79903 /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D139CD25C86D7200B79903 /* SplashScreenViewModel.swift */; };
 		A6D139D125C86FD500B79903 /* seguisym.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6D139D025C86FD500B79903 /* seguisym.ttf */; };
+		A6DA1DC425C9B05100D1FFDE /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA1DC325C9B05100D1FFDE /* MainScreenViewModel.swift */; };
+		A6DA1DC825C9BBE700D1FFDE /* Margin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA1DC725C9BBE700D1FFDE /* Margin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		A6D139C123BC19F800B79903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6D139CD25C86D7200B79903 /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
 		A6D139D025C86FD500B79903 /* seguisym.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = seguisym.ttf; path = ../../../../Downloads/segoeuisymbol/seguisym.ttf; sourceTree = "<group>"; };
+		A6DA1DC325C9B05100D1FFDE /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
+		A6DA1DC725C9BBE700D1FFDE /* Margin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Margin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 		A6D139A723BC19F600B79903 /* FlyportApp */ = {
 			isa = PBXGroup;
 			children = (
+				A6DA1DC525C9BBC200D1FFDE /* Extensions */,
 				A67A73B125C87F7C00F6B7EA /* Services */,
 				A6D139CF25C86FB100B79903 /* Fonts */,
 				A6D139CC25C86D4700B79903 /* Models */,
@@ -141,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				A6D139CD25C86D7200B79903 /* SplashScreenViewModel.swift */,
+				A6DA1DC325C9B05100D1FFDE /* MainScreenViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -158,6 +164,14 @@
 				A6D139D025C86FD500B79903 /* seguisym.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A6DA1DC525C9BBC200D1FFDE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A6DA1DC725C9BBE700D1FFDE /* Margin.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A67A73B025C87D3C00F6B7EA /* MainScreenViewController.swift in Sources */,
+				A6DA1DC425C9B05100D1FFDE /* MainScreenViewModel.swift in Sources */,
 				A6D139AD23BC19F600B79903 /* ViewController.swift in Sources */,
 				A67A73B825C87F9C00F6B7EA /* ServersService.swift in Sources */,
 				A67A73B925C87F9C00F6B7EA /* Requests.swift in Sources */,
@@ -271,6 +286,7 @@
 				A67A73B725C87F9C00F6B7EA /* RequestURL.swift in Sources */,
 				A6D139A923BC19F600B79903 /* AppDelegate.swift in Sources */,
 				A6D139AB23BC19F600B79903 /* SceneDelegate.swift in Sources */,
+				A6DA1DC825C9BBE700D1FFDE /* Margin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

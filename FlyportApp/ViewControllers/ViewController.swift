@@ -40,8 +40,8 @@ extension ViewController {
 	private func initFlyportLabel() -> UILabel {
 		let label = UILabel()
 		label.text = self.splashScreenViewModel.flyportLabelTitle
-		label.font = UIFont(name: "seguisym", size: 100)
-		label.font = label.font.withSize(100.0)
+		label.font = UIFont(name: "seguisym", size: UIView.margin(of: [75.0, 100.0, 125.0]))
+		label.font = label.font.withSize(UIView.margin(of: [75.0, 100.0, 125.0]))
 		label.textColor = UIColor(named: "titleColor")
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.textAlignment = .center
@@ -60,8 +60,8 @@ extension ViewController {
 	private func initFlyportSubtitleLabel() -> UILabel {
 		let label = UILabel()
 		label.text = self.splashScreenViewModel.flyportSubtitleText
-		label.font = UIFont(name: "seguisym", size: 20)
-		label.font = label.font.withSize(20.0)
+		label.font = UIFont(name: "seguisym", size: UIView.margin(of: [15.0, 20.0, 25.0]))
+		label.font = label.font.withSize(UIView.margin(of: [15.0, 20.0, 25.0]))
 		label.textColor = UIColor(named: "titleColor")
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.textAlignment = .center
@@ -73,27 +73,27 @@ extension ViewController {
 extension ViewController {
 	private func activateFlyportLabelConstraints() {
 		NSLayoutConstraint.activate([
-			self.flyportLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150),
-			self.flyportLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
-			self.flyportLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
-			self.flyportLabel.heightAnchor.constraint(equalToConstant: 110.0)
+			self.flyportLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: UIView.margin(of: [112.5, 150.0, 187.5])),
+			self.flyportLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [14, 16, 18])),
+			self.flyportLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [14, 16, 18])),
+			self.flyportLabel.heightAnchor.constraint(equalToConstant: UIView.margin(of: [82.5, 110, 137.5]))
 		])
 	}
 	
 	private func activateFlyportSubtitleLabelConstraints() {
 		NSLayoutConstraint.activate([
-			self.flyportSubtitleLabel.topAnchor.constraint(equalTo: self.flyportLabel.bottomAnchor, constant: 32.0),
-			self.flyportSubtitleLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
-			self.flyportSubtitleLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
-			self.flyportSubtitleLabel.heightAnchor.constraint(equalToConstant: 24.0)
+			self.flyportSubtitleLabel.topAnchor.constraint(equalTo: self.flyportLabel.bottomAnchor, constant: UIView.margin(of: [24, 32, 40])),
+			self.flyportSubtitleLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [14, 16, 18])),
+			self.flyportSubtitleLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [14, 16, 18])),
+			self.flyportSubtitleLabel.heightAnchor.constraint(equalToConstant: UIView.margin(of: [18, 24, 30]))
 		])
 	}
 	
 	private func activateFlyportLogoConstraints() {
 		NSLayoutConstraint.activate([
-			self.flyportLogo.topAnchor.constraint(equalTo: self.flyportSubtitleLabel.bottomAnchor, constant: 125.0),
-			self.flyportLogo.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 104.5),
-			self.flyportLogo.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -104.5)
+			self.flyportLogo.topAnchor.constraint(equalTo: self.flyportSubtitleLabel.bottomAnchor, constant: UIView.margin(of: [94.0, 125.0, 156.0])),
+			self.flyportLogo.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [78.0, 104.5, 131.0])),
+			self.flyportLogo.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [78.0, 104.5, 131.0]))
 		])
 	}
 }
