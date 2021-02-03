@@ -41,19 +41,24 @@ class LoginViewController: UIViewController {
 		
 		let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 		tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
+		view.addGestureRecognizer(tap)
 	}
 	
 	@objc func keyboardWillShow(sender: NSNotification) {
-		 self.view.frame.origin.y = -300
+		self.view.frame.origin.y = -300
 	}
-
+	
 	@objc func keyboardWillHide(sender: NSNotification) {
-		 self.view.frame.origin.y = 0
+		self.view.frame.origin.y = 0
 	}
 	
 	@objc func dismissKeyboard() {
 		view.endEditing(true)
+	}
+	
+	@objc private func loadRegisterScreen() {
+		let newVC = RegistrationViewController()
+		self.navigationController?.setViewControllers([newVC], animated: true)
 	}
 }
 
@@ -82,16 +87,18 @@ extension LoginViewController {
 		let textField = UITextField()
 		textField.placeholder = self.viewModel.email
 		textField.translatesAutoresizingMaskIntoConstraints = false
-		let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 55, height: 65))
+		let imageView = UIImageView(frame: CGRect(x: 5, y: 5, width: 55, height: 55))
 		imageView.image = #imageLiteral(resourceName: "email")
-		//imageView.frame = CGRect(x: 20, y: 0, width: 5, height: 20)
 		let view: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 65, height: 65))
 		view.addSubview(imageView)
 		textField.leftView = view
 		textField.leftViewMode = .always
 		textField.textColor = UIColor(named: "ButtonColor")
+		textField.borderStyle = .roundedRect
 		textField.layer.borderColor = UIColor(named: "ButtonColor")?.cgColor
-        textField.font = UIFont.init(name: "seguisym", size: UIView.margin(of: [18, 24, 28]))
+		textField.font = UIFont.init(name: "seguisym", size: UIView.margin(of: [21, 28, 35]))
+		textField.layer.cornerRadius = 8
+		textField.layer.borderWidth = 2
 		return textField
 	}
 	
@@ -99,12 +106,19 @@ extension LoginViewController {
 		let textField = UITextField()
 		textField.placeholder = self.viewModel.password
 		textField.translatesAutoresizingMaskIntoConstraints = false
-		let imageView = UIImageView()
+		let imageView = UIImageView(frame: CGRect(x: 5, y: 5, width: 55, height: 55))
 		imageView.image = #imageLiteral(resourceName: "password")
-		textField.leftView = imageView
+		let view: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 65, height: 65))
+		view.addSubview(imageView)
+		textField.leftView = view
+		textField.leftViewMode = .always
 		textField.textColor = UIColor(named: "ButtonColor")
+		textField.borderStyle = .roundedRect
 		textField.layer.borderColor = UIColor(named: "ButtonColor")?.cgColor
+		textField.font = UIFont.init(name: "seguisym", size: UIView.margin(of: [21, 28, 35]))
 		textField.layer.cornerRadius = 8.0
+		textField.layer.borderWidth = 2
+        textField.isSecureTextEntry = true
 		return textField
 	}
 	
@@ -114,7 +128,7 @@ extension LoginViewController {
 		let image = #imageLiteral(resourceName: "arrow").withRenderingMode(.alwaysTemplate)
 		button.setImage(image, for: .normal)
 		button.backgroundColor = UIColor(named: "ButtonColor")
-		button.layer.cornerRadius = 30.0
+		button.layer.cornerRadius = 30
 		button.tintColor = .white
 		return button
 	}
@@ -127,6 +141,8 @@ extension LoginViewController {
 		label.textColor = UIColor(named: "titleColor")
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.textAlignment = .center
+		label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.loadRegisterScreen)))
+		label.isUserInteractionEnabled = true
 		return label
 	}
 }
@@ -171,7 +187,8 @@ extension LoginViewController {
 		NSLayoutConstraint.activate([
 			self.loginButton.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor, constant: UIView.margin(of: [27, 39.0, 48])),
 			self.loginButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [50, 67, 75])),
-			self.loginButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [50, 67, 75]))
+			self.loginButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [50, 67, 75])),
+			self.loginButton.heightAnchor.constraint(equalToConstant: UIView.margin(of:[7.5, 50, 62.5]))
 		])
 	}
 	

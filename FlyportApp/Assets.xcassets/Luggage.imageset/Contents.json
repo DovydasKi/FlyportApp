@@ -3,12 +3,6 @@
     {
       "filename" : "suitcase@2x.png",
       "idiom" : "universal"
-    },
-    {
-      "filename" : "suitcase@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x",
-      "unassigned" : true
     }
   ],
   "info" : {
