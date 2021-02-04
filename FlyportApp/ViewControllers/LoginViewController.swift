@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
 	private lazy var passwordTextField: UITextField = self.initPasswordTextField()
 	private lazy var loginButton: UIButton = self.initLoginButton()
 	private lazy var registerTitle: UILabel = self.initRegisterTitle()
+	private lazy var loginAlert: UIAlertController = self.initAlert()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -56,9 +57,27 @@ class LoginViewController: UIViewController {
 		view.endEditing(true)
 	}
 	
+	@objc private func loadProfileScreen() {
+		
+		if self.viewModel.checkForAllValidFields(emailField: self.emailTextField, passwordField: self.passwordTextField) == true {
+			self.viewModel.loginToService(emailText: self.emailTextField.text, passwordText: self.passwordTextField.text, completion: {
+					result in
+					if result {
+						let vc  = RegistrationViewController()
+						vc.modalPresentationStyle = .fullScreen
+						self.present(vc, animated: true, completion: nil)
+					} else {
+						self.present(self.loginAlert, animated: true, completion: nil)
+					}
+				})
+			let defaults = UserDefaults.standard.getUserId()
+			let smth = ""
+        }
+	}
+	
 	@objc private func loadRegisterScreen() {
-		let newVC = RegistrationViewController()
-		self.navigationController?.setViewControllers([newVC], animated: true)
+            let newVC = RegistrationViewController()
+			self.navigationController?.setViewControllers([newVC], animated: true)
 	}
 }
 
@@ -118,7 +137,7 @@ extension LoginViewController {
 		textField.font = UIFont.init(name: "seguisym", size: UIView.margin(of: [21, 28, 35]))
 		textField.layer.cornerRadius = 8.0
 		textField.layer.borderWidth = 2
-        textField.isSecureTextEntry = true
+        //textField.isSecureTextEntry = true
 		return textField
 	}
 	
@@ -130,6 +149,7 @@ extension LoginViewController {
 		button.backgroundColor = UIColor(named: "ButtonColor")
 		button.layer.cornerRadius = 30
 		button.tintColor = .white
+		button.addTarget(self, action: #selector(self.loadProfileScreen), for: .touchUpInside)
 		return button
 	}
 	
@@ -144,6 +164,13 @@ extension LoginViewController {
 		label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.loadRegisterScreen)))
 		label.isUserInteractionEnabled = true
 		return label
+	}
+	
+	private func initAlert() -> UIAlertController {
+		let alert = UIAlertController(title: self.viewModel.unsuccessfulLogin, message: self.viewModel.unsuccessfulLoginMessage, preferredStyle: .alert)
+		let action = UIAlertAction(title: self.viewModel.tryAgain, style: .default, handler: nil)
+		alert.addAction(action)
+		return alert
 	}
 }
 

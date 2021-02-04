@@ -33,8 +33,10 @@ public class LoginService {
 							result = try JSONDecoder().decode(LoginResponse.self, from: data)
 							completion(result)
 						}
-						catch let error { print(error.localizedDescription) }
-					}
+						catch let error { print(error.localizedDescription)
+							completion(nil)
+						}
+					} 
 				}
 			}
 			task.resume()

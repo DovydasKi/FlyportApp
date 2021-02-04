@@ -9,5 +9,5 @@
 import Foundation
 
 public struct LoginResponse: Decodable {
-	public let id: Int
+	public let userId: Int
 }

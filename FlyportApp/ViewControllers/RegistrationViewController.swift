@@ -66,6 +66,13 @@ class RegistrationViewController: UIViewController {
 		let newVC = LoginViewController()
 		self.navigationController?.setViewControllers([newVC], animated: true)
 	}
+	
+    @objc private func loadLoginScreenAfterValidation() {
+		if self.viewModel.checkForAllValidFields(userNameField: self.usernameTextField, emailField: self.emailTextField, passwordField: self.passwordTextField, repeatPasswordField: self.repeatPasswordTextField) == true {
+            let newVC = LoginViewController()
+            self.navigationController?.pushViewController(newVC, animated: true)
+        }
+    }
 }
 
 extension RegistrationViewController {
@@ -117,6 +124,7 @@ extension RegistrationViewController {
 		button.backgroundColor = UIColor(named: "ButtonColor")
 		button.layer.cornerRadius = 30
 		button.tintColor = .white
+		button.addTarget(self, action: #selector(self.loadLoginScreenAfterValidation), for: .touchUpInside)
 		return button
 	}
 	
