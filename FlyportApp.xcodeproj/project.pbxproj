@@ -15,6 +15,7 @@
 		A68FE04225CC55B4003767DB /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68FE04125CC55B4003767DB /* StringExtension.swift */; };
 		A68FE04425CC5EBC003767DB /* defaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68FE04325CC5EBC003767DB /* defaultsKeys.swift */; };
 		A68FE04625CC5F12003767DB /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68FE04525CC5F12003767DB /* UserDefaults.swift */; };
+		A68FE04825CC70FB003767DB /* RegistrationRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68FE04725CC70FB003767DB /* RegistrationRequestModel.swift */; };
 		A6D139A923BC19F600B79903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D139A823BC19F600B79903 /* AppDelegate.swift */; };
 		A6D139AB23BC19F600B79903 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D139AA23BC19F600B79903 /* SceneDelegate.swift */; };
 		A6D139AD23BC19F600B79903 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D139AC23BC19F600B79903 /* ViewController.swift */; };
@@ -54,6 +55,7 @@
 		A68FE04125CC55B4003767DB /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A68FE04325CC5EBC003767DB /* defaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defaultsKeys.swift; sourceTree = "<group>"; };
 		A68FE04525CC5F12003767DB /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		A68FE04725CC70FB003767DB /* RegistrationRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRequestModel.swift; sourceTree = "<group>"; };
 		A6D139A523BC19F600B79903 /* FlyportApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyportApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D139A823BC19F600B79903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6D139AA23BC19F600B79903 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			children = (
 				A6DBD0D325CB1A3D0076CC96 /* LoginResponse.swift */,
 				A6DBD0D525CB1A8C0076CC96 /* LoginRequest.swift */,
+				A68FE04725CC70FB003767DB /* RegistrationRequestModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				A6D139AD23BC19F600B79903 /* ViewController.swift in Sources */,
 				A6DBD0D425CB1A3D0076CC96 /* LoginResponse.swift in Sources */,
 				A67A73B925C87F9C00F6B7EA /* Requests.swift in Sources */,
+				A68FE04825CC70FB003767DB /* RegistrationRequestModel.swift in Sources */,
 				A67A73B625C87F9C00F6B7EA /* ServiceKeywords.swift in Sources */,
 				A6D139CE25C86D7200B79903 /* SplashScreenViewModel.swift in Sources */,
 				A68FE04425CC5EBC003767DB /* defaultsKeys.swift in Sources */,

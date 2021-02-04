@@ -43,6 +43,32 @@ public class LoginService {
 			return
 		}
 	
+		public func register(data: Data, completion: @escaping (Bool) -> Void) {
+			let url = self.requestURL.registerURL()
+	
+			let requestHeader = Requests(type: .post, header: .contentType, headerValue: .applicationJson, url: url)
+			var request = requestHeader.registerRequest
+			request.httpBody = data
+	
+			let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+				DispatchQueue.main.async {
+					if let error = error {
+						print("Error took place \(error)")
+						completion(false)
+					}
+					if let responseBody = response as? HTTPURLResponse{
+						if responseBody.statusCode == 200 {
+							completion(true)
+						} else {
+							completion(false)
+						}
+					} else {completion(false)}
+				}
+			}
+			task.resume()
+			return
+		}
+	
 //		public func getServers(token: String, completion: @escaping ([Server]?) -> Void) {
 //			var result: [Server]?
 //			let url = self.requestURL.getServersList()
