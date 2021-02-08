@@ -13,7 +13,6 @@ class RegistrationViewController: UIViewController {
 	private let viewModel: RegistrationViewModel = RegistrationViewModel()
 	private lazy var titleLabel: UILabel = self.initTitle()
 	private lazy var logo: UIImageView = self.initLogo()
-	private lazy var usernameTextField: UITextField = self.initTextField(image: UIImage(named: "user")!, placeholder: self.viewModel.username, isInputSecured: false)
 	private lazy var emailTextField: UITextField = self.initTextField(image: UIImage(named: "email")!, placeholder: self.viewModel.email, isInputSecured: false)
 	private lazy var passwordTextField: UITextField = self.initTextField(image: UIImage(named: "password")!, placeholder: self.viewModel.password, isInputSecured: true)
 	private lazy var repeatPasswordTextField: UITextField = self.initTextField(image: UIImage(named: "password")!, placeholder: self.viewModel.repeatPassword, isInputSecured: true)
@@ -29,8 +28,6 @@ class RegistrationViewController: UIViewController {
 		self.activateTitleConstraints()
 		self.view.addSubview(self.logo)
 		self.activateIconConstraints()
-		self.view.addSubview(self.usernameTextField)
-		self.activateUsernameFieldConstraints()
 		self.view.addSubview(self.emailTextField)
 		self.activateEmailFieldConstraints()
 		self.view.addSubview(self.passwordTextField)
@@ -67,9 +64,9 @@ class RegistrationViewController: UIViewController {
 		self.navigationController?.setViewControllers([newVC], animated: true)
 	}
 	
-    @objc private func loadLoginScreenAfterValidation() {
-		if self.viewModel.checkForAllValidFields(userNameField: self.usernameTextField, emailField: self.emailTextField, passwordField: self.passwordTextField, repeatPasswordField: self.repeatPasswordTextField) == true {
-            let newVC = LoginViewController()
+    @objc private func loadOtherRegistrationScreenAfterValidation() {
+		if self.viewModel.checkForAllValidFields(emailField: self.emailTextField, passwordField: self.passwordTextField, repeatPasswordField: self.repeatPasswordTextField) == true {
+			let newVC = RegistrationPersonalDataViewController(viewModel: self.viewModel, email: self.emailTextField.text, password: self.passwordTextField.text)
             self.navigationController?.pushViewController(newVC, animated: true)
         }
     }
@@ -124,7 +121,7 @@ extension RegistrationViewController {
 		button.backgroundColor = UIColor(named: "ButtonColor")
 		button.layer.cornerRadius = 30
 		button.tintColor = .white
-		button.addTarget(self, action: #selector(self.loadLoginScreenAfterValidation), for: .touchUpInside)
+		button.addTarget(self, action: #selector(self.loadOtherRegistrationScreenAfterValidation), for: .touchUpInside)
 		return button
 	}
 	
@@ -162,18 +159,9 @@ extension RegistrationViewController {
 		])
 	}
 	
-	private func activateUsernameFieldConstraints() {
-		NSLayoutConstraint.activate([
-			self.usernameTextField.topAnchor.constraint(equalTo: self.logo.bottomAnchor, constant: UIView.margin(of: [13.5, 18.0, 22.5])),
-			self.usernameTextField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [16, 20, 24])),
-			self.usernameTextField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [16, 20, 24])),
-			self.usernameTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [37.5,50,62.5]))
-		])
-	}
-	
 	private func activateEmailFieldConstraints() {
 		NSLayoutConstraint.activate([
-			self.emailTextField.topAnchor.constraint(equalTo: self.usernameTextField.bottomAnchor, constant: UIView.margin(of: [5.5, 6.5, 7.5])),
+			self.emailTextField.topAnchor.constraint(equalTo: self.logo.bottomAnchor, constant: UIView.margin(of: [13.5, 18.0, 22.5])),
 			self.emailTextField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [16, 20, 24])),
 			self.emailTextField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [16, 20, 24])),
 			self.emailTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [37.5,50,62.5]))

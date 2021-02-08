@@ -70,8 +70,6 @@ class LoginViewController: UIViewController {
 						self.present(self.loginAlert, animated: true, completion: nil)
 					}
 				})
-			let defaults = UserDefaults.standard.getUserId()
-			let smth = ""
         }
 	}
 	
