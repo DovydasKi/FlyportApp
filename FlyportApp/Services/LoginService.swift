@@ -69,6 +69,34 @@ public class LoginService {
 			return
 		}
 	
+		public func getProfileData(completion: @escaping (UserProfileModel?) -> Void) {
+			var result: UserProfileModel?
+			let url = self.requestURL.profileInfoURL()
+	
+			let requestHeader = Requests(type: .get, header: .contentType, headerValue: .applicationJson, url: url)
+			let request = requestHeader.profileInfoRequest
+	
+			let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+				DispatchQueue.main.async {
+					if let error = error {
+						print("Error took place \(error)")
+						completion(nil)
+					}
+					if let data = data {
+						do {
+							result = try JSONDecoder().decode(UserProfileModel.self, from: data)
+							completion(result)
+						}
+						catch let error { print(error.localizedDescription)
+							completion(nil)
+						}
+					}
+				}
+			}
+			task.resume()
+			return
+		}
+	
 //		public func getServers(token: String, completion: @escaping ([Server]?) -> Void) {
 //			var result: [Server]?
 //			let url = self.requestURL.getServersList()

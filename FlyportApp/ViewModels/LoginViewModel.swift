@@ -20,22 +20,22 @@ class LoginViewModel {
 	private var inputValidation = InputValidation()
 	private var loginService = LoginService()
 	
-    public func checkForAllValidFields(emailField: UITextField, passwordField: UITextField) -> Bool {
-        var emailIsValid = false
-        var passwordIsValid = false
-        if !self.inputValidation.checkForValidEmailRegularExpression(input: emailField) {
-            emailField.text = ""
-            self.inputValidation.shakeIfInvalid(textField: emailField)
-        } else { emailIsValid = true }
-        if !self.inputValidation.checkForValidStringLenght(input: passwordField, lenght: 4) {
-            passwordField.text = ""
-            self.inputValidation.shakeIfInvalid(textField: passwordField)
-        } else { passwordIsValid = true }
-        if emailIsValid && passwordIsValid {
-            return true
-        }
-        return false
-    }
+	public func checkForAllValidFields(emailField: UITextField, passwordField: UITextField) -> Bool {
+		var emailIsValid = false
+		var passwordIsValid = false
+		if !self.inputValidation.checkForValidEmailRegularExpression(input: emailField) {
+			emailField.text = ""
+			self.inputValidation.shakeIfInvalid(textField: emailField)
+		} else { emailIsValid = true }
+		if !self.inputValidation.checkForValidStringLenght(input: passwordField, lenght: 4) {
+			passwordField.text = ""
+			self.inputValidation.shakeIfInvalid(textField: passwordField)
+		} else { passwordIsValid = true }
+		if emailIsValid && passwordIsValid {
+			return true
+		}
+		return false
+	}
 	
 	public func loginToService(emailText: String?, passwordText: String?, completion: @escaping (Bool) -> ()) {
 		let domain = Bundle.main.bundleIdentifier!
@@ -56,6 +56,19 @@ class LoginViewModel {
 			}
 		} else {
 			completion(false)
+		}
+	}
+	
+	public func getUserProfileData(completion: @escaping (Bool) -> ()) {
+		self.loginService.getProfileData() {
+			result in
+			if let userProfile = result {
+				UserDefaults.standard.setLoginInfo(value: userProfile.userLoginInfoModel)
+				UserDefaults.standard.setPersonalInfo(value: userProfile.userPersonalInfoModel)
+				completion(true)
+			} else {
+				completion(false)
+			}
 		}
 	}
 }

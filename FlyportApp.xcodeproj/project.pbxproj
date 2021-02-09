@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7893A55A8877E851A224F58C /* Pods_FlyportAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06083E08E8B7323B45775094 /* Pods_FlyportAppTests.framework */; };
 		A61AAF8525D19A9B003A107B /* RegistrationPersonalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61AAF8425D19A9B003A107B /* RegistrationPersonalDataViewController.swift */; };
 		A61AAF8725D1B251003A107B /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61AAF8625D1B251003A107B /* TabBarViewModel.swift */; };
 		A61AAF8925D1B2BA003A107B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61AAF8825D1B2BA003A107B /* TabBarViewController.swift */; };
@@ -23,6 +24,9 @@
 		A68FE04425CC5EBC003767DB /* defaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68FE04325CC5EBC003767DB /* defaultsKeys.swift */; };
 		A68FE04625CC5F12003767DB /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68FE04525CC5F12003767DB /* UserDefaults.swift */; };
 		A68FE04825CC70FB003767DB /* RegistrationRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68FE04725CC70FB003767DB /* RegistrationRequestModel.swift */; };
+		A69F8C9E25D2EB6F008884CC /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69F8C9D25D2EB6F008884CC /* UserProfileModel.swift */; };
+		A69F8CA025D2EB8C008884CC /* UserLoginInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69F8C9F25D2EB8C008884CC /* UserLoginInfoModel.swift */; };
+		A69F8CA225D2EB9C008884CC /* UserPersonalInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69F8CA125D2EB9C008884CC /* UserPersonalInfoModel.swift */; };
 		A6D139A923BC19F600B79903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D139A823BC19F600B79903 /* AppDelegate.swift */; };
 		A6D139AB23BC19F600B79903 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D139AA23BC19F600B79903 /* SceneDelegate.swift */; };
 		A6D139AD23BC19F600B79903 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D139AC23BC19F600B79903 /* ViewController.swift */; };
@@ -41,6 +45,7 @@
 		A6DBD0D425CB1A3D0076CC96 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DBD0D325CB1A3D0076CC96 /* LoginResponse.swift */; };
 		A6DBD0D625CB1A8C0076CC96 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DBD0D525CB1A8C0076CC96 /* LoginRequest.swift */; };
 		A6DBD0D825CB1CA30076CC96 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DBD0D725CB1CA30076CC96 /* LoginService.swift */; };
+		C93BB5BE9EB8C817DB54DD7A /* Pods_FlyportApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63515D7DA5375FD2C2C2BE91 /* Pods_FlyportApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +59,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06083E08E8B7323B45775094 /* Pods_FlyportAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyportAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FB26FB0FD68FC67407BC551 /* Pods-FlyportApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyportApp.release.xcconfig"; path = "Target Support Files/Pods-FlyportApp/Pods-FlyportApp.release.xcconfig"; sourceTree = "<group>"; };
+		63515D7DA5375FD2C2C2BE91 /* Pods_FlyportApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyportApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EF89F0C8AB79A0A1C5B7176 /* Pods-FlyportApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyportApp.debug.xcconfig"; path = "Target Support Files/Pods-FlyportApp/Pods-FlyportApp.debug.xcconfig"; sourceTree = "<group>"; };
+		980EBCBA9738FBF285DCD88C /* Pods-FlyportAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyportAppTests.release.xcconfig"; path = "Target Support Files/Pods-FlyportAppTests/Pods-FlyportAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		A61AAF8425D19A9B003A107B /* RegistrationPersonalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPersonalDataViewController.swift; sourceTree = "<group>"; };
 		A61AAF8625D1B251003A107B /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		A61AAF8825D1B2BA003A107B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +80,9 @@
 		A68FE04325CC5EBC003767DB /* defaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defaultsKeys.swift; sourceTree = "<group>"; };
 		A68FE04525CC5F12003767DB /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		A68FE04725CC70FB003767DB /* RegistrationRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRequestModel.swift; sourceTree = "<group>"; };
+		A69F8C9D25D2EB6F008884CC /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
+		A69F8C9F25D2EB8C008884CC /* UserLoginInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginInfoModel.swift; sourceTree = "<group>"; };
+		A69F8CA125D2EB9C008884CC /* UserPersonalInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPersonalInfoModel.swift; sourceTree = "<group>"; };
 		A6D139A523BC19F600B79903 /* FlyportApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyportApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D139A823BC19F600B79903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6D139AA23BC19F600B79903 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +105,7 @@
 		A6DBD0D325CB1A3D0076CC96 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		A6DBD0D525CB1A8C0076CC96 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		A6DBD0D725CB1CA30076CC96 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		B33808837DF25450B0493444 /* Pods-FlyportAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyportAppTests.debug.xcconfig"; path = "Target Support Files/Pods-FlyportAppTests/Pods-FlyportAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C93BB5BE9EB8C817DB54DD7A /* Pods_FlyportApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,12 +121,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7893A55A8877E851A224F58C /* Pods_FlyportAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14CFAC7044C3765190A5EA23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63515D7DA5375FD2C2C2BE91 /* Pods_FlyportApp.framework */,
+				06083E08E8B7323B45775094 /* Pods_FlyportAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B3B658B40BF9576FF075F25 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6EF89F0C8AB79A0A1C5B7176 /* Pods-FlyportApp.debug.xcconfig */,
+				2FB26FB0FD68FC67407BC551 /* Pods-FlyportApp.release.xcconfig */,
+				B33808837DF25450B0493444 /* Pods-FlyportAppTests.debug.xcconfig */,
+				980EBCBA9738FBF285DCD88C /* Pods-FlyportAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A67A73B125C87F7C00F6B7EA /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +174,8 @@
 				A6D139A723BC19F600B79903 /* FlyportApp */,
 				A6D139BE23BC19F800B79903 /* FlyportAppTests */,
 				A6D139A623BC19F600B79903 /* Products */,
+				9B3B658B40BF9576FF075F25 /* Pods */,
+				14CFAC7044C3765190A5EA23 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -213,6 +252,9 @@
 				A6DBD0D325CB1A3D0076CC96 /* LoginResponse.swift */,
 				A6DBD0D525CB1A8C0076CC96 /* LoginRequest.swift */,
 				A68FE04725CC70FB003767DB /* RegistrationRequestModel.swift */,
+				A69F8C9D25D2EB6F008884CC /* UserProfileModel.swift */,
+				A69F8C9F25D2EB8C008884CC /* UserLoginInfoModel.swift */,
+				A69F8CA125D2EB9C008884CC /* UserPersonalInfoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -243,9 +285,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6D139C423BC19F800B79903 /* Build configuration list for PBXNativeTarget "FlyportApp" */;
 			buildPhases = (
+				5357FC8748AB15CB1FBF4B0F /* [CP] Check Pods Manifest.lock */,
 				A6D139A123BC19F600B79903 /* Sources */,
 				A6D139A223BC19F600B79903 /* Frameworks */,
 				A6D139A323BC19F600B79903 /* Resources */,
+				4DA07A27D6820DB3423AE950 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -260,6 +304,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6D139C723BC19F800B79903 /* Build configuration list for PBXNativeTarget "FlyportAppTests" */;
 			buildPhases = (
+				BF3E0A9B22B942CC1D90BB16 /* [CP] Check Pods Manifest.lock */,
 				A6D139B723BC19F800B79903 /* Sources */,
 				A6D139B823BC19F800B79903 /* Frameworks */,
 				A6D139B923BC19F800B79903 /* Resources */,
@@ -333,6 +378,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4DA07A27D6820DB3423AE950 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlyportApp/Pods-FlyportApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlyportApp/Pods-FlyportApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlyportApp/Pods-FlyportApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5357FC8748AB15CB1FBF4B0F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlyportApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF3E0A9B22B942CC1D90BB16 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlyportAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A6D139A123BC19F600B79903 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -342,11 +451,13 @@
 				A6DA1DCA25C9C3D200D1FFDE /* LoginViewController.swift in Sources */,
 				A6DBD0D625CB1A8C0076CC96 /* LoginRequest.swift in Sources */,
 				A67A73B025C87D3C00F6B7EA /* MainScreenViewController.swift in Sources */,
+				A69F8C9E25D2EB6F008884CC /* UserProfileModel.swift in Sources */,
 				A61AAF8D25D1B3E4003A107B /* MyFlightsViewController.swift in Sources */,
 				A6DA1DC425C9B05100D1FFDE /* MainScreenViewModel.swift in Sources */,
 				A68FE04625CC5F12003767DB /* UserDefaults.swift in Sources */,
 				A61AAF8525D19A9B003A107B /* RegistrationPersonalDataViewController.swift in Sources */,
 				A6DBD0D025CB09CE0076CC96 /* RegistrationViewModel.swift in Sources */,
+				A69F8CA025D2EB8C008884CC /* UserLoginInfoModel.swift in Sources */,
 				A6D139AD23BC19F600B79903 /* ViewController.swift in Sources */,
 				A6DBD0D425CB1A3D0076CC96 /* LoginResponse.swift in Sources */,
 				A61AAF8B25D1B319003A107B /* ProfileViewController.swift in Sources */,
@@ -358,6 +469,7 @@
 				A68FE04425CC5EBC003767DB /* defaultsKeys.swift in Sources */,
 				A6DBD0D225CB0AAA0076CC96 /* RegistrationViewController.swift in Sources */,
 				A61AAF9125D1BB7E003A107B /* HomeViewController.swift in Sources */,
+				A69F8CA225D2EB9C008884CC /* UserPersonalInfoModel.swift in Sources */,
 				A61AAF8725D1B251003A107B /* TabBarViewModel.swift in Sources */,
 				A6DA1DCC25C9C40600D1FFDE /* LoginViewModel.swift in Sources */,
 				A68FE04025CC557B003767DB /* InputValidation.swift in Sources */,
@@ -524,6 +636,7 @@
 		};
 		A6D139C523BC19F800B79903 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EF89F0C8AB79A0A1C5B7176 /* Pods-FlyportApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -541,6 +654,7 @@
 		};
 		A6D139C623BC19F800B79903 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FB26FB0FD68FC67407BC551 /* Pods-FlyportApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -558,6 +672,7 @@
 		};
 		A6D139C823BC19F800B79903 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B33808837DF25450B0493444 /* Pods-FlyportAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -579,6 +694,7 @@
 		};
 		A6D139C923BC19F800B79903 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 980EBCBA9738FBF285DCD88C /* Pods-FlyportAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

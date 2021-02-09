@@ -10,4 +10,10 @@ import Foundation
 
 enum UserDefaultKeys: String {
 	case userId
+	case email
+	case password
+	case name
+	case surname
+	case personalCode
+	case documentNumber
 }

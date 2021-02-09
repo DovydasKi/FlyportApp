@@ -61,21 +61,28 @@ class LoginViewController: UIViewController {
 		
 		if self.viewModel.checkForAllValidFields(emailField: self.emailTextField, passwordField: self.passwordTextField) == true {
 			self.viewModel.loginToService(emailText: self.emailTextField.text, passwordText: self.passwordTextField.text, completion: {
-					result in
-					if result {
-						let vc  = RegistrationViewController()
-						vc.modalPresentationStyle = .fullScreen
-						self.present(vc, animated: true, completion: nil)
-					} else {
-						self.present(self.loginAlert, animated: true, completion: nil)
-					}
-				})
-        }
+				result in
+				if result {
+					self.viewModel.getUserProfileData(completion: {
+						profileResult in
+						if profileResult {
+							let vc  = HomeScreenViewController()
+							vc.modalPresentationStyle = .fullScreen
+							self.present(vc, animated: true, completion: nil)
+						} else {
+							self.present(self.loginAlert, animated: true, completion: nil)
+						}
+					})
+				} else {
+					self.present(self.loginAlert, animated: true, completion: nil)
+				}
+			})
+		}
 	}
 	
 	@objc private func loadRegisterScreen() {
-            let newVC = RegistrationViewController()
-			self.navigationController?.setViewControllers([newVC], animated: true)
+		let newVC = RegistrationViewController()
+		self.navigationController?.setViewControllers([newVC], animated: true)
 	}
 }
 
@@ -135,7 +142,7 @@ extension LoginViewController {
 		textField.font = UIFont.init(name: "seguisym", size: UIView.margin(of: [21, 28, 35]))
 		textField.layer.cornerRadius = 8.0
 		textField.layer.borderWidth = 2
-        //textField.isSecureTextEntry = true
+		//textField.isSecureTextEntry = true
 		return textField
 	}
 	
