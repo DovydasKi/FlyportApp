@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Sora-Medium.ttf</string>
 		<string>seguisym.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
