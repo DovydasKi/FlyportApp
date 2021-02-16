@@ -15,25 +15,52 @@ class MyFlightsViewController: UIViewController {
 	private lazy var horizontalScrollView: UIScrollView = self.initScrollView()
 	private lazy var newFlightLabel: UILabel = self.initLabel(text: self.viewModel.newFlight)
 	private lazy var stackView: UIStackView = self.initStackView()
-	private lazy var card: UIView = self.initCardView()
-	private lazy var anothercard: UIView = self.initCardView()
 	private lazy var newFlightCard: StartNewFlightCardView = self.initNewFlightCard()
+	private lazy var noFlightsCard: NoFlightsCard = self.initNoFlightsCard()
 	
 	override func viewDidLoad() {
-		self.view.addSubview(self.myFlightsLabel)
-		self.activateMyFlightsTitleConstraints()
-		self.view.addSubview(self.horizontalScrollView)
-		self.activateScrollViewConstraints()
-		self.horizontalScrollView.addSubview(self.stackView)
-		self.activateStackViewConstraints()
-		self.stackView.addArrangedSubview(self.card)
-		self.stackView.addArrangedSubview(self.anothercard)
-		self.view.addSubview(self.newFlightLabel)
-		self.activateNewFlightTitleConstraints()
-		self.view.addSubview(self.newFlightCard)
-		self.activateNewFlightCardConstraints()
-//		self.view.addSubview(self.card)
-//		self.activateCardViewConstraints()
+		self.navigationController?.navigationController?.setNavigationBarHidden(true, animated: true)
+		self.addCards(completion: {
+			self.view.addSubview(self.myFlightsLabel)
+			self.activateMyFlightsTitleConstraints()
+			
+			if self.viewModel.isFlightsEmpty {
+				self.view.addSubview(self.noFlightsCard)
+				self.activateNoFlightsCardViewConstraints()
+				self.view.addSubview(self.newFlightLabel)
+				self.activateNewFlightTitleConstraintsWhenThereIsNoFlights()
+				self.view.addSubview(self.newFlightCard)
+				self.activateNewFlightCardConstraints()
+			} else {
+				self.view.addSubview(self.horizontalScrollView)
+				self.activateScrollViewConstraints()
+				self.horizontalScrollView.addSubview(self.stackView)
+				self.activateStackViewConstraints()
+				self.view.addSubview(self.newFlightLabel)
+				self.activateNewFlightTitleConstraints()
+				self.view.addSubview(self.newFlightCard)
+				self.activateNewFlightCardConstraints()
+			}
+		})
+	}
+	
+	private func addCards(completion: @escaping () -> ()) {
+		self.viewModel.getFlightsData(completion: {
+			flights in
+			if let userFlights = flights {
+				for flight in userFlights.flights {
+					let view = FlightCardView(id: flight.flightId, airlines: flight.airlines, flightNumber: flight.flightNumber, fromCity: flight.fromCity, toCity: flight.toCity, isCompleted: flight.completed)
+					view.translatesAutoresizingMaskIntoConstraints = false
+					view.layer.cornerRadius = 20.0
+					self.stackView.addArrangedSubview(view)
+				}
+				self.viewModel.isFlightsEmpty = false
+				completion()
+			} else {
+				self.viewModel.isFlightsEmpty = true
+				completion()
+			}
+		})
 	}
 }
 
@@ -73,22 +100,21 @@ extension MyFlightsViewController {
 		return stackView
 	}
 	
-	private func initCardView() -> UIView {
-		let view = FlightCardView(airlines: "GetJet airlines", flightNumber: "GW3352", fromCity: "Vilnius(VNO)", toCity: "Enfidha(NBE)", isCompleted: true)
-		view.translatesAutoresizingMaskIntoConstraints = false
-		view.layer.cornerRadius = 20.0
-		return view
-	}
-	
 	private func initNewFlightCard() -> StartNewFlightCardView {
 		let card = StartNewFlightCardView()
+		card.layer.cornerRadius = 20.0
+		return card
+	}
+	
+	private func initNoFlightsCard() -> NoFlightsCard {
+		let card = NoFlightsCard()
 		card.layer.cornerRadius = 20.0
 		return card
 	}
 }
 
 extension MyFlightsViewController {
-		private func activateMyFlightsTitleConstraints() {
+	private func activateMyFlightsTitleConstraints() {
 		NSLayoutConstraint.activate([
 			self.myFlightsLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: UIView.margin(of: [21, 28, 35])),
 			self.myFlightsLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [18, 24, 30])),
@@ -96,7 +122,7 @@ extension MyFlightsViewController {
 		])
 	}
 	
-		private func activateScrollViewConstraints() {
+	private func activateScrollViewConstraints() {
 		NSLayoutConstraint.activate([
 			self.horizontalScrollView.topAnchor.constraint(equalTo: self.myFlightsLabel.bottomAnchor, constant: UIView.margin(of: [21, 28, 35])),
 			self.horizontalScrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
@@ -105,16 +131,16 @@ extension MyFlightsViewController {
 		])
 	}
 	
-		private func activateCardViewConstraints() {
+	private func activateNoFlightsCardViewConstraints() {
 		NSLayoutConstraint.activate([
-			self.card.topAnchor.constraint(equalTo: self.horizontalScrollView.bottomAnchor, constant: UIView.margin(of: [21, 28, 35])),
-			self.card.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
-			self.card.heightAnchor.constraint(equalToConstant: UIView.margin(of: [101, 135, 168])),
-			self.card.widthAnchor.constraint(equalToConstant: UIView.margin(of: [228, 304, 380]))
+			self.noFlightsCard.topAnchor.constraint(equalTo: self.myFlightsLabel.bottomAnchor, constant: UIView.margin(of: [21, 28, 35])),
+			self.noFlightsCard.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [12, 16, 20])),
+			self.noFlightsCard.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [12, 16, 20])),
+			self.noFlightsCard.heightAnchor.constraint(equalToConstant: UIView.margin(of: [118, 158, 193]))
 		])
 	}
 	
-		private func activateStackViewConstraints() {
+	private func activateStackViewConstraints() {
 		NSLayoutConstraint.activate([
 			self.stackView.topAnchor.constraint(equalTo: self.horizontalScrollView.topAnchor),
 			self.stackView.leadingAnchor.constraint(equalTo: self.horizontalScrollView.leadingAnchor),
@@ -124,7 +150,7 @@ extension MyFlightsViewController {
 		])
 	}
 	
-		private func activateNewFlightTitleConstraints() {
+	private func activateNewFlightTitleConstraints() {
 		NSLayoutConstraint.activate([
 			self.newFlightLabel.topAnchor.constraint(equalTo: self.horizontalScrollView.bottomAnchor, constant: UIView.margin(of: [21, 28, 35])),
 			self.newFlightLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [18, 24, 30])),
@@ -132,7 +158,15 @@ extension MyFlightsViewController {
 		])
 	}
 	
-		private func activateNewFlightCardConstraints() {
+	private func activateNewFlightTitleConstraintsWhenThereIsNoFlights() {
+		NSLayoutConstraint.activate([
+			self.newFlightLabel.topAnchor.constraint(equalTo: self.noFlightsCard.bottomAnchor, constant: UIView.margin(of: [21, 28, 35])),
+			self.newFlightLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [18, 24, 30])),
+			self.newFlightLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [38, 51, 64]))
+		])
+	}
+	
+	private func activateNewFlightCardConstraints() {
 		NSLayoutConstraint.activate([
 			self.newFlightCard.topAnchor.constraint(equalTo: self.newFlightLabel.bottomAnchor, constant: UIView.margin(of: [21, 28, 35])),
 			self.newFlightCard.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [12, 16, 20])),

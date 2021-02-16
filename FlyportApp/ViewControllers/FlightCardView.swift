@@ -10,12 +10,14 @@ import Foundation
 import UIKit
 
 class FlightCardView: UIView {
+	private let flightId: Int
 	private let airlinesImage: UIImage
 	private let flightNumber: String
 	private let route: String
 	private let flightStatus: String
 	
-	public init(airlines: String, flightNumber: String, fromCity: String, toCity: String, isCompleted: Bool) {
+	public init(id: Int, airlines: String, flightNumber: String, fromCity: String, toCity: String, isCompleted: Bool) {
+		self.flightId = id
 		let airlinesType = Airlines(airlinesName: airlines)
 		self.airlinesImage = airlinesType.getAirlinesImage()
 		self.flightNumber = flightNumber
@@ -53,16 +55,17 @@ class FlightCardView: UIView {
 			photoView.heightAnchor.constraint(equalToConstant: UIView.margin(of: [30, 40, 50])),
 			photoView.widthAnchor.constraint(equalToConstant: UIView.margin(of: [63, 85, 106])),
 			titleLabel.leadingAnchor.constraint(equalTo: photoView.trailingAnchor, constant: UIView.margin(of: [10, 13, 16])),
-			titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: UIView.margin(of: [20, 27, 34])),
+			titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: UIView.margin(of: [15, 20, 25])),
 			titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -UIView.margin(of: [7, 10, 13])),
-			titleLabel.heightAnchor.constraint(equalToConstant: UIView.margin(of: [15, 20, 25]))
+			titleLabel.heightAnchor.constraint(equalToConstant: UIView.margin(of: [15, 20, 25])),
+			self.widthAnchor.constraint(equalToConstant: UIView.margin(of: [250, 334, 418]))
 		])
 		
 		NSLayoutConstraint.activate([
 			routeLabel.leadingAnchor.constraint(equalTo: photoView.trailingAnchor, constant: UIView.margin(of: [10, 13, 16])),
 			routeLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: UIView.margin(of: [7, 10, 13])),
 			routeLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -UIView.margin(of: [7, 10, 13])),
-			routeLabel.heightAnchor.constraint(equalToConstant: UIView.margin(of: [15, 20, 25]))
+			routeLabel.heightAnchor.constraint(equalToConstant: UIView.margin(of: [30, 40, 50]))
 		])
 		
 		NSLayoutConstraint.activate([
@@ -71,6 +74,10 @@ class FlightCardView: UIView {
 			completionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -UIView.margin(of: [7, 10, 13])),
 			completionLabel.heightAnchor.constraint(equalToConstant: UIView.margin(of: [24, 32, 40]))
 		])
+	}
+	
+	public func getFlightId() -> Int {
+		return self.flightId
 	}
 }
 
@@ -98,10 +105,11 @@ extension FlightCardView {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.text = route
-		label.font = UIFont(name: "Sora-Medium", size: 15.0)
-		label.font = label.font.withSize(15.0)
+		label.font = UIFont(name: "Sora-Medium", size: 14.0)
+		label.font = label.font.withSize(14.0)
 		label.textColor = .white
 		label.textAlignment = .center
+		label.setNeedsLayout()
 		label.numberOfLines = 0
 		return label
 	}

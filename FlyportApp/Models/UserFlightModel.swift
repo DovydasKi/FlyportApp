@@ -13,12 +13,12 @@ public struct UserFlightModel: Decodable {
 	public var completed: Bool
 	public var flightId: Int
 	public var flightNumber: String
-	public var flightDate: Date
+	public var flightDate: String
 	public var airlines: String
 	public var fromCity: String
 	public var toCity: String
 	
-	public init(userFlightId: Int, completed: Bool, flightId: Int, flightNumber: String, flightDate: Date, airlines: String, fromCity: String, toCity: String) {
+	public init(userFlightId: Int, completed: Bool, flightId: Int, flightNumber: String, flightDate: String, airlines: String, fromCity: String, toCity: String) {
 		self.userFlightId = userFlightId
 		self.completed = completed
 		self.flightId = flightId

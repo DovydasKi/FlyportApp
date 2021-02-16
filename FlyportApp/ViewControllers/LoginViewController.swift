@@ -58,7 +58,6 @@ class LoginViewController: UIViewController {
 	}
 	
 	@objc private func loadProfileScreen() {
-		
 		if self.viewModel.checkForAllValidFields(emailField: self.emailTextField, passwordField: self.passwordTextField) == true {
 			self.viewModel.loginToService(emailText: self.emailTextField.text, passwordText: self.passwordTextField.text, completion: {
 				result in
@@ -142,7 +141,7 @@ extension LoginViewController {
 		textField.font = UIFont.init(name: "seguisym", size: UIView.margin(of: [21, 28, 35]))
 		textField.layer.cornerRadius = 8.0
 		textField.layer.borderWidth = 2
-		//textField.isSecureTextEntry = true
+		textField.isSecureTextEntry = true
 		return textField
 	}
 	

@@ -70,6 +70,7 @@ class TabBarViewController: UITabBarController {
 		self.view.backgroundColor = .white
 		self.contentViewControllers = [self.profileViewController, self.myFlightsViewController, self.settingsViewController]
 		self.viewControllers = self.contentViewControllers
+		navigationController?.navigationBar.isHidden = true
 		self.selectedIndex = 1
 	}
 }

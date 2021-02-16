@@ -42,6 +42,7 @@
 		A6D5167525D443B900BDAC40 /* Sora-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6D5167425D443B900BDAC40 /* Sora-Medium.ttf */; };
 		A6D5167725D4478100BDAC40 /* FlightCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D5167625D4478100BDAC40 /* FlightCardView.swift */; };
 		A6D5167925D4480C00BDAC40 /* AirlinesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D5167825D4480C00BDAC40 /* AirlinesEnum.swift */; };
+		A6D7E74E25DC2744009355DC /* NoFlightsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D7E74D25DC2744009355DC /* NoFlightsCard.swift */; };
 		A6DA1DC425C9B05100D1FFDE /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA1DC325C9B05100D1FFDE /* MainScreenViewModel.swift */; };
 		A6DA1DC825C9BBE700D1FFDE /* Margin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA1DC725C9BBE700D1FFDE /* Margin.swift */; };
 		A6DA1DCA25C9C3D200D1FFDE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA1DC925C9C3D200D1FFDE /* LoginViewController.swift */; };
@@ -110,6 +111,7 @@
 		A6D5167425D443B900BDAC40 /* Sora-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sora-Medium.ttf"; sourceTree = SOURCE_ROOT; };
 		A6D5167625D4478100BDAC40 /* FlightCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCardView.swift; sourceTree = "<group>"; };
 		A6D5167825D4480C00BDAC40 /* AirlinesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesEnum.swift; sourceTree = "<group>"; };
+		A6D7E74D25DC2744009355DC /* NoFlightsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFlightsCard.swift; sourceTree = "<group>"; };
 		A6DA1DC325C9B05100D1FFDE /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		A6DA1DC725C9BBE700D1FFDE /* Margin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Margin.swift; sourceTree = "<group>"; };
 		A6DA1DC925C9C3D200D1FFDE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				A61AAF9025D1BB7E003A107B /* HomeViewController.swift */,
 				A6D5167625D4478100BDAC40 /* FlightCardView.swift */,
 				A6F517BE25DAE95A00D76AD4 /* StartNewFlightCardView.swift */,
+				A6D7E74D25DC2744009355DC /* NoFlightsCard.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				A69F8CA025D2EB8C008884CC /* UserLoginInfoModel.swift in Sources */,
 				A6D139AD23BC19F600B79903 /* ViewController.swift in Sources */,
 				A6D5167925D4480C00BDAC40 /* AirlinesEnum.swift in Sources */,
+				A6D7E74E25DC2744009355DC /* NoFlightsCard.swift in Sources */,
 				A6DBD0D425CB1A3D0076CC96 /* LoginResponse.swift in Sources */,
 				A6DB0E3725D43FD600601D66 /* MyFlightsViewModel.swift in Sources */,
 				A61AAF8B25D1B319003A107B /* ProfileViewController.swift in Sources */,

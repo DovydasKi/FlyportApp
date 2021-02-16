@@ -11,6 +11,19 @@ import Foundation
 class MyFlightsViewModel {
 	private static let myFlights = "My flights"
 	private static let newFlight = "New flight"
+	private let userFlightsService = UserFlightsService()
+	public var isFlightsEmpty: Bool = true
+	
+	public func getFlightsData(completion: @escaping (UserFlightsModel?) -> ()) {
+		self.userFlightsService.getUserFlightsData() {
+			result in
+			if let userFlights = result {
+				completion(userFlights)
+			} else {
+				completion(nil)
+			}
+		}
+	}
 }
 
 extension MyFlightsViewModel {
