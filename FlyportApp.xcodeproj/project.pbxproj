@@ -15,6 +15,11 @@
 		A61AAF8D25D1B3E4003A107B /* MyFlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61AAF8C25D1B3E4003A107B /* MyFlightsViewController.swift */; };
 		A61AAF8F25D1B478003A107B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61AAF8E25D1B478003A107B /* SettingsViewController.swift */; };
 		A61AAF9125D1BB7E003A107B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61AAF9025D1BB7E003A107B /* HomeViewController.swift */; };
+		A678C1AE25DD76F40079AC05 /* FlightAirportPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A678C1AD25DD76F40079AC05 /* FlightAirportPointModel.swift */; };
+		A678C1B025DD77600079AC05 /* FlightAirportPointsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A678C1AF25DD77600079AC05 /* FlightAirportPointsModel.swift */; };
+		A678C1B225DD79140079AC05 /* FlightAirportPointsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A678C1B125DD79140079AC05 /* FlightAirportPointsViewModel.swift */; };
+		A678C1B425DD7B140079AC05 /* FlightAirportPointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A678C1B325DD7B140079AC05 /* FlightAirportPointsViewController.swift */; };
+		A678C1B625DD7E4F0079AC05 /* AirportPointCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A678C1B525DD7E4F0079AC05 /* AirportPointCardView.swift */; };
 		A67A73B025C87D3C00F6B7EA /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A73AF25C87D3C00F6B7EA /* MainScreenViewController.swift */; };
 		A67A73B625C87F9C00F6B7EA /* ServiceKeywords.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A73B225C87F9B00F6B7EA /* ServiceKeywords.swift */; };
 		A67A73B725C87F9C00F6B7EA /* RequestURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A73B325C87F9C00F6B7EA /* RequestURL.swift */; };
@@ -80,6 +85,11 @@
 		A61AAF8C25D1B3E4003A107B /* MyFlightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFlightsViewController.swift; sourceTree = "<group>"; };
 		A61AAF8E25D1B478003A107B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A61AAF9025D1BB7E003A107B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A678C1AD25DD76F40079AC05 /* FlightAirportPointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightAirportPointModel.swift; sourceTree = "<group>"; };
+		A678C1AF25DD77600079AC05 /* FlightAirportPointsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightAirportPointsModel.swift; sourceTree = "<group>"; };
+		A678C1B125DD79140079AC05 /* FlightAirportPointsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightAirportPointsViewModel.swift; sourceTree = "<group>"; };
+		A678C1B325DD7B140079AC05 /* FlightAirportPointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightAirportPointsViewController.swift; sourceTree = "<group>"; };
+		A678C1B525DD7E4F0079AC05 /* AirportPointCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportPointCardView.swift; sourceTree = "<group>"; };
 		A67A73AF25C87D3C00F6B7EA /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		A67A73B225C87F9B00F6B7EA /* ServiceKeywords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceKeywords.swift; path = ../../../Servers/Services/ServiceKeywords.swift; sourceTree = "<group>"; };
 		A67A73B325C87F9C00F6B7EA /* RequestURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestURL.swift; path = ../../../Servers/Services/RequestURL.swift; sourceTree = "<group>"; };
@@ -251,6 +261,8 @@
 				A6D5167625D4478100BDAC40 /* FlightCardView.swift */,
 				A6F517BE25DAE95A00D76AD4 /* StartNewFlightCardView.swift */,
 				A6D7E74D25DC2744009355DC /* NoFlightsCard.swift */,
+				A678C1B325DD7B140079AC05 /* FlightAirportPointsViewController.swift */,
+				A678C1B525DD7E4F0079AC05 /* AirportPointCardView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -264,6 +276,7 @@
 				A6DA1DC325C9B05100D1FFDE /* MainScreenViewModel.swift */,
 				A6DA1DCB25C9C40600D1FFDE /* LoginViewModel.swift */,
 				A6DBD0CF25CB09CE0076CC96 /* RegistrationViewModel.swift */,
+				A678C1B125DD79140079AC05 /* FlightAirportPointsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -279,6 +292,8 @@
 				A69F8CA125D2EB9C008884CC /* UserPersonalInfoModel.swift */,
 				A69F8CA525D3018D008884CC /* UserFlightModel.swift */,
 				A69F8CA725D302AA008884CC /* UserFlightsModel.swift */,
+				A678C1AD25DD76F40079AC05 /* FlightAirportPointModel.swift */,
+				A678C1AF25DD77600079AC05 /* FlightAirportPointsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -492,15 +507,18 @@
 				A6DBD0D425CB1A3D0076CC96 /* LoginResponse.swift in Sources */,
 				A6DB0E3725D43FD600601D66 /* MyFlightsViewModel.swift in Sources */,
 				A61AAF8B25D1B319003A107B /* ProfileViewController.swift in Sources */,
+				A678C1B625DD7E4F0079AC05 /* AirportPointCardView.swift in Sources */,
 				A67A73B925C87F9C00F6B7EA /* Requests.swift in Sources */,
 				A68FE04825CC70FB003767DB /* RegistrationRequestModel.swift in Sources */,
 				A67A73B625C87F9C00F6B7EA /* ServiceKeywords.swift in Sources */,
 				A61AAF8925D1B2BA003A107B /* TabBarViewController.swift in Sources */,
 				A69F8CA825D302AA008884CC /* UserFlightsModel.swift in Sources */,
 				A6D139CE25C86D7200B79903 /* SplashScreenViewModel.swift in Sources */,
+				A678C1AE25DD76F40079AC05 /* FlightAirportPointModel.swift in Sources */,
 				A69F8CA625D3018D008884CC /* UserFlightModel.swift in Sources */,
 				A68FE04425CC5EBC003767DB /* defaultsKeys.swift in Sources */,
 				A6DBD0D225CB0AAA0076CC96 /* RegistrationViewController.swift in Sources */,
+				A678C1B025DD77600079AC05 /* FlightAirportPointsModel.swift in Sources */,
 				A61AAF9125D1BB7E003A107B /* HomeViewController.swift in Sources */,
 				A69F8CA225D2EB9C008884CC /* UserPersonalInfoModel.swift in Sources */,
 				A6D5167725D4478100BDAC40 /* FlightCardView.swift in Sources */,
@@ -509,10 +527,12 @@
 				A68FE04025CC557B003767DB /* InputValidation.swift in Sources */,
 				A67A73B725C87F9C00F6B7EA /* RequestURL.swift in Sources */,
 				A61AAF8F25D1B478003A107B /* SettingsViewController.swift in Sources */,
+				A678C1B425DD7B140079AC05 /* FlightAirportPointsViewController.swift in Sources */,
 				A6D139A923BC19F600B79903 /* AppDelegate.swift in Sources */,
 				A68FE04225CC55B4003767DB /* StringExtension.swift in Sources */,
 				A6D139AB23BC19F600B79903 /* SceneDelegate.swift in Sources */,
 				A6F517BF25DAE95A00D76AD4 /* StartNewFlightCardView.swift in Sources */,
+				A678C1B225DD79140079AC05 /* FlightAirportPointsViewModel.swift in Sources */,
 				A6DA1DC825C9BBE700D1FFDE /* Margin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -30,10 +30,22 @@ class FlightCardView: UIView {
 		}
 		super.init(frame: CGRect.zero)
 		self.configure()
+		let tap = UITapGestureRecognizer(target: self, action: #selector(openDetails))
+		self.addGestureRecognizer(tap)
+		self.isUserInteractionEnabled = true
 	}
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
+	}
+	
+	@objc private func openDetails() {
+		let viewModel = FlightAirportPointsViewModel(flightId: self.flightId, image: self.airlinesImage, route: self.route, flightNumber: self.flightNumber)
+		let viewController = FlightAirportPointsViewController(viewModel: viewModel)
+		var vc = UIApplication.shared.keyWindow?.rootViewController
+		while((vc?.presentedViewController) != nil) {
+			vc = vc?.presentedViewController
+		}
 	}
 	
 	private func configure() {
@@ -58,7 +70,6 @@ class FlightCardView: UIView {
 			titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: UIView.margin(of: [15, 20, 25])),
 			titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -UIView.margin(of: [7, 10, 13])),
 			titleLabel.heightAnchor.constraint(equalToConstant: UIView.margin(of: [15, 20, 25])),
-			self.widthAnchor.constraint(equalToConstant: UIView.margin(of: [250, 334, 418]))
 		])
 		
 		NSLayoutConstraint.activate([
