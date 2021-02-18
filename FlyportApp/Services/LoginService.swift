@@ -19,7 +19,7 @@ public class LoginService {
 			let url = self.requestURL.loginUrl()
 	
 			let requestHeader = Requests(type: .post, header: .contentType, headerValue: .applicationJson, url: url)
-			var request = requestHeader.loginRequest
+			var request = requestHeader.getRequestWithData
 			request.httpBody = data
 	
 			let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -47,7 +47,7 @@ public class LoginService {
 			let url = self.requestURL.registerURL()
 	
 			let requestHeader = Requests(type: .post, header: .contentType, headerValue: .applicationJson, url: url)
-			var request = requestHeader.registerRequest
+			var request = requestHeader.getRequestWithData
 			request.httpBody = data
 	
 			let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -74,7 +74,7 @@ public class LoginService {
 			let url = self.requestURL.profileInfoURL()
 	
 			let requestHeader = Requests(type: .get, header: .contentType, headerValue: .applicationJson, url: url)
-			let request = requestHeader.profileInfoRequest
+			let request = requestHeader.getRequest
 	
 			let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
 				DispatchQueue.main.async {
@@ -97,29 +97,29 @@ public class LoginService {
 			return
 		}
 	
-//		public func getServers(token: String, completion: @escaping ([Server]?) -> Void) {
-//			var result: [Server]?
-//			let url = self.requestURL.getServersList()
-//
-//			let requestHeader = Requests(type: .get, header: .contentType, headerValue: .applicationJson, url: url, bearerToken: token)
-//			let request = requestHeader.serversRequest
-//
-//			let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-//				DispatchQueue.main.async {
-//					if let error = error {
-//						print("Error took place \(error)")
-//						completion(nil)
-//					}
-//					if let data = data {
-//						do {
-//							result = try JSONDecoder().decode([Server].self, from: data)
-//							completion(result)
-//						}
-//						catch let error { print(error.localizedDescription) }
-//					}
-//				}
-//			}
-//			task.resume()
-//			return
-//		}
+		public func updateProfile(data: Data, completion: @escaping (Bool) -> Void) {
+			let url = self.requestURL.updateProfileURL()
+	
+			let requestHeader = Requests(type: .put, header: .contentType, headerValue: .applicationJson, url: url)
+			var request = requestHeader.getRequestWithData
+			request.httpBody = data
+	
+			let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+				DispatchQueue.main.async {
+					if let error = error {
+						print("Error took place \(error)")
+						completion(false)
+					}
+					if let responseBody = response as? HTTPURLResponse{
+						if responseBody.statusCode == 200 {
+							completion(true)
+						} else {
+							completion(false)
+						}
+					} else {completion(false)}
+				}
+			}
+			task.resume()
+			return
+		}
 }

@@ -42,4 +42,16 @@ extension UserDefaults {
 		set(value.personalCode, forKey: UserDefaultKeys.personalCode.rawValue)
 		set(value.documentNumber, forKey: UserDefaultKeys.documentNumber.rawValue)
 	}
+	
+	func setEmail(value: String) {
+		set(value, forKey: UserDefaultKeys.email.rawValue)
+	}
+	
+	func setPassword(value: String) {
+		set(value, forKey: UserDefaultKeys.password.rawValue)
+	}
+	
+	func setDocumentNumber(value: String) {
+		set(value, forKey: UserDefaultKeys.documentNumber.rawValue)
+	}
 }

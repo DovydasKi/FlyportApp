@@ -18,7 +18,7 @@ public class UserFlightsService {
 		let url = self.requestURL.userFlightsURL()
 		
 		let requestHeader = Requests(type: .get, header: .contentType, headerValue: .applicationJson, url: url)
-		let request = requestHeader.userFlightsRequest
+		let request = requestHeader.getRequest
 		
 		let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
 			DispatchQueue.main.async {
@@ -46,7 +46,7 @@ public class UserFlightsService {
 		let url = self.requestURL.flightPointsURL(flightId: flightId)
 		
 		let requestHeader = Requests(type: .get, header: .contentType, headerValue: .applicationJson, url: url)
-		let request = requestHeader.flightAirportPointsRequest
+		let request = requestHeader.getRequest
 		
 		let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
 			DispatchQueue.main.async {

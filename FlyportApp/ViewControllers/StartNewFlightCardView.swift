@@ -76,8 +76,8 @@ extension StartNewFlightCardView {
 		NSLayoutConstraint.activate([
 			self.icon.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: UIView.margin(of: [20, 27, 34])),
 			self.icon.topAnchor.constraint(equalTo: self.topAnchor, constant: UIView.margin(of: [36,49,62])),
-			self.icon.heightAnchor.constraint(equalToConstant: UIView.margin(of: [83,111,138])),
-			self.icon.widthAnchor.constraint(equalToConstant: UIView.margin(of: [83,111,138]))
+			self.icon.heightAnchor.constraint(equalToConstant: UIView.margin(of: [83,111,111])),
+			self.icon.widthAnchor.constraint(equalToConstant: UIView.margin(of: [83,111,111]))
 		])
 	}
 	
