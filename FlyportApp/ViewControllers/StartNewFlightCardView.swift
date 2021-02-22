@@ -12,7 +12,7 @@ import UIKit
 class StartNewFlightCardView: UIView {
 	private lazy var icon: UIImageView = self.initIconView()
 	private lazy var questionLabel: UILabel = self.initquestionLabel()
-	private lazy var button: UIButton = self.initButton()
+	public lazy var button: UIButton = self.initButton()
 	
 	public init() {
 		super.init(frame: CGRect.zero)
@@ -67,6 +67,7 @@ extension StartNewFlightCardView {
 		button.setTitleColor(UIColor(named: "CardYellow"), for: .normal)
 		button.backgroundColor = UIColor(named: "ButtonColor")
 		button.layer.cornerRadius = 30.0
+//		button.addTarget(self, action: #selector(self.openNextWindow()), for: .touchUpInside)
 		return button
 	}
 }

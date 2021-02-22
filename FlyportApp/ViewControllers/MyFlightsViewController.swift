@@ -62,6 +62,13 @@ class MyFlightsViewController: UIViewController {
 			}
 		})
 	}
+	
+	@objc private func openNextWindow() {
+		//self.hidesBottomBarWhenPushed = true
+		self.tabBarController?.tabBar.isHidden = true
+		self.navigationController?.pushViewController(FlightNumberViewController(), animated: true)
+		self.navigationController?.navigationBar.isHidden = true
+	}
 }
 
 extension MyFlightsViewController {
@@ -103,6 +110,7 @@ extension MyFlightsViewController {
 	private func initNewFlightCard() -> StartNewFlightCardView {
 		let card = StartNewFlightCardView()
 		card.layer.cornerRadius = 20.0
+		card.button.addTarget(self, action: #selector(self.openNextWindow), for: .touchUpInside)
 		return card
 	}
 	

@@ -17,6 +17,10 @@
 		A61AAF8D25D1B3E4003A107B /* MyFlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61AAF8C25D1B3E4003A107B /* MyFlightsViewController.swift */; };
 		A61AAF8F25D1B478003A107B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61AAF8E25D1B478003A107B /* SettingsViewController.swift */; };
 		A61AAF9125D1BB7E003A107B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61AAF9025D1BB7E003A107B /* HomeViewController.swift */; };
+		A634387525E4159300070784 /* FlightNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A634387425E4159300070784 /* FlightNumberViewController.swift */; };
+		A634387725E415B600070784 /* FlightNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A634387625E415B600070784 /* FlightNumberViewModel.swift */; };
+		A634387925E428AD00070784 /* FlightDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A634387825E428AD00070784 /* FlightDateViewModel.swift */; };
+		A634387B25E4299B00070784 /* FlightDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A634387A25E4299B00070784 /* FlightDateViewController.swift */; };
 		A678C1AE25DD76F40079AC05 /* FlightAirportPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A678C1AD25DD76F40079AC05 /* FlightAirportPointModel.swift */; };
 		A678C1B025DD77600079AC05 /* FlightAirportPointsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A678C1AF25DD77600079AC05 /* FlightAirportPointsModel.swift */; };
 		A678C1B225DD79140079AC05 /* FlightAirportPointsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A678C1B125DD79140079AC05 /* FlightAirportPointsViewModel.swift */; };
@@ -89,6 +93,10 @@
 		A61AAF8C25D1B3E4003A107B /* MyFlightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFlightsViewController.swift; sourceTree = "<group>"; };
 		A61AAF8E25D1B478003A107B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A61AAF9025D1BB7E003A107B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A634387425E4159300070784 /* FlightNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightNumberViewController.swift; sourceTree = "<group>"; };
+		A634387625E415B600070784 /* FlightNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightNumberViewModel.swift; sourceTree = "<group>"; };
+		A634387825E428AD00070784 /* FlightDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDateViewModel.swift; sourceTree = "<group>"; };
+		A634387A25E4299B00070784 /* FlightDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDateViewController.swift; sourceTree = "<group>"; };
 		A678C1AD25DD76F40079AC05 /* FlightAirportPointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightAirportPointModel.swift; sourceTree = "<group>"; };
 		A678C1AF25DD77600079AC05 /* FlightAirportPointsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightAirportPointsModel.swift; sourceTree = "<group>"; };
 		A678C1B125DD79140079AC05 /* FlightAirportPointsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightAirportPointsViewModel.swift; sourceTree = "<group>"; };
@@ -267,6 +275,8 @@
 				A6D7E74D25DC2744009355DC /* NoFlightsCard.swift */,
 				A678C1B325DD7B140079AC05 /* FlightAirportPointsViewController.swift */,
 				A678C1B525DD7E4F0079AC05 /* AirportPointCardView.swift */,
+				A634387425E4159300070784 /* FlightNumberViewController.swift */,
+				A634387A25E4299B00070784 /* FlightDateViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -282,6 +292,8 @@
 				A6DBD0CF25CB09CE0076CC96 /* RegistrationViewModel.swift */,
 				A678C1B125DD79140079AC05 /* FlightAirportPointsViewModel.swift */,
 				A615311425DECC3A005C8A04 /* ProfileViewModel.swift */,
+				A634387625E415B600070784 /* FlightNumberViewModel.swift */,
+				A634387825E428AD00070784 /* FlightDateViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -497,11 +509,13 @@
 			files = (
 				A69F8CA425D3010A008884CC /* UserFlightsService.swift in Sources */,
 				A6DBD0D825CB1CA30076CC96 /* LoginService.swift in Sources */,
+				A634387525E4159300070784 /* FlightNumberViewController.swift in Sources */,
 				A6DA1DCA25C9C3D200D1FFDE /* LoginViewController.swift in Sources */,
 				A6DBD0D625CB1A8C0076CC96 /* LoginRequest.swift in Sources */,
 				A67A73B025C87D3C00F6B7EA /* MainScreenViewController.swift in Sources */,
 				A69F8C9E25D2EB6F008884CC /* UserProfileModel.swift in Sources */,
 				A61AAF8D25D1B3E4003A107B /* MyFlightsViewController.swift in Sources */,
+				A634387B25E4299B00070784 /* FlightDateViewController.swift in Sources */,
 				A6DA1DC425C9B05100D1FFDE /* MainScreenViewModel.swift in Sources */,
 				A68FE04625CC5F12003767DB /* UserDefaults.swift in Sources */,
 				A61AAF8525D19A9B003A107B /* RegistrationPersonalDataViewController.swift in Sources */,
@@ -513,6 +527,7 @@
 				A6D7E74E25DC2744009355DC /* NoFlightsCard.swift in Sources */,
 				A6DBD0D425CB1A3D0076CC96 /* LoginResponse.swift in Sources */,
 				A6DB0E3725D43FD600601D66 /* MyFlightsViewModel.swift in Sources */,
+				A634387925E428AD00070784 /* FlightDateViewModel.swift in Sources */,
 				A61AAF8B25D1B319003A107B /* ProfileViewController.swift in Sources */,
 				A678C1B625DD7E4F0079AC05 /* AirportPointCardView.swift in Sources */,
 				A67A73B925C87F9C00F6B7EA /* Requests.swift in Sources */,
@@ -527,6 +542,7 @@
 				A6DBD0D225CB0AAA0076CC96 /* RegistrationViewController.swift in Sources */,
 				A678C1B025DD77600079AC05 /* FlightAirportPointsModel.swift in Sources */,
 				A61AAF9125D1BB7E003A107B /* HomeViewController.swift in Sources */,
+				A634387725E415B600070784 /* FlightNumberViewModel.swift in Sources */,
 				A69F8CA225D2EB9C008884CC /* UserPersonalInfoModel.swift in Sources */,
 				A6D5167725D4478100BDAC40 /* FlightCardView.swift in Sources */,
 				A61AAF8725D1B251003A107B /* TabBarViewModel.swift in Sources */,
