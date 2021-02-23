@@ -10,6 +10,19 @@
 		7893A55A8877E851A224F58C /* Pods_FlyportAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06083E08E8B7323B45775094 /* Pods_FlyportAppTests.framework */; };
 		A615311525DECC3A005C8A04 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615311425DECC3A005C8A04 /* ProfileViewModel.swift */; };
 		A615311725DEDF9F005C8A04 /* UpdateProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A615311625DEDF9F005C8A04 /* UpdateProfileModel.swift */; };
+		A619B61125E55F5700CA1ACA /* RegisteredLuggageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619B61025E55F5700CA1ACA /* RegisteredLuggageViewModel.swift */; };
+		A619B61325E55FCA00CA1ACA /* RegisteredLuggageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619B61225E55FCA00CA1ACA /* RegisteredLuggageViewController.swift */; };
+		A619B61525E5660500CA1ACA /* RegistrationTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619B61425E5660500CA1ACA /* RegistrationTableViewModel.swift */; };
+		A619B61725E5674800CA1ACA /* AviationSecurityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619B61625E5674800CA1ACA /* AviationSecurityViewModel.swift */; };
+		A619B61925E5679900CA1ACA /* PassportControlPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619B61825E5679900CA1ACA /* PassportControlPostViewModel.swift */; };
+		A619B61B25E567E800CA1ACA /* BoardingGatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619B61A25E567E800CA1ACA /* BoardingGatesViewModel.swift */; };
+		A619B61D25E5684500CA1ACA /* OnboardingCompletedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619B61C25E5684500CA1ACA /* OnboardingCompletedViewModel.swift */; };
+		A619B61F25E568BD00CA1ACA /* QRCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619B61E25E568BD00CA1ACA /* QRCodeViewModel.swift */; };
+		A619B62125E5694400CA1ACA /* RegistrationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619B62025E5694400CA1ACA /* RegistrationTableViewController.swift */; };
+		A619B62325E5737C00CA1ACA /* AviationSecurityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619B62225E5737C00CA1ACA /* AviationSecurityViewController.swift */; };
+		A619B62525E5752200CA1ACA /* PassportControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619B62425E5752200CA1ACA /* PassportControlViewController.swift */; };
+		A619B62725E575A300CA1ACA /* BoardingGatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619B62625E575A300CA1ACA /* BoardingGatesViewController.swift */; };
+		A619B62925E576F500CA1ACA /* OnboardingCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619B62825E576F500CA1ACA /* OnboardingCompletedViewController.swift */; };
 		A61AAF8525D19A9B003A107B /* RegistrationPersonalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61AAF8425D19A9B003A107B /* RegistrationPersonalDataViewController.swift */; };
 		A61AAF8725D1B251003A107B /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61AAF8625D1B251003A107B /* TabBarViewModel.swift */; };
 		A61AAF8925D1B2BA003A107B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61AAF8825D1B2BA003A107B /* TabBarViewController.swift */; };
@@ -86,6 +99,19 @@
 		980EBCBA9738FBF285DCD88C /* Pods-FlyportAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyportAppTests.release.xcconfig"; path = "Target Support Files/Pods-FlyportAppTests/Pods-FlyportAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		A615311425DECC3A005C8A04 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		A615311625DEDF9F005C8A04 /* UpdateProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileModel.swift; sourceTree = "<group>"; };
+		A619B61025E55F5700CA1ACA /* RegisteredLuggageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredLuggageViewModel.swift; sourceTree = "<group>"; };
+		A619B61225E55FCA00CA1ACA /* RegisteredLuggageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredLuggageViewController.swift; sourceTree = "<group>"; };
+		A619B61425E5660500CA1ACA /* RegistrationTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTableViewModel.swift; sourceTree = "<group>"; };
+		A619B61625E5674800CA1ACA /* AviationSecurityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AviationSecurityViewModel.swift; sourceTree = "<group>"; };
+		A619B61825E5679900CA1ACA /* PassportControlPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassportControlPostViewModel.swift; sourceTree = "<group>"; };
+		A619B61A25E567E800CA1ACA /* BoardingGatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingGatesViewModel.swift; sourceTree = "<group>"; };
+		A619B61C25E5684500CA1ACA /* OnboardingCompletedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCompletedViewModel.swift; sourceTree = "<group>"; };
+		A619B61E25E568BD00CA1ACA /* QRCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewModel.swift; sourceTree = "<group>"; };
+		A619B62025E5694400CA1ACA /* RegistrationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTableViewController.swift; sourceTree = "<group>"; };
+		A619B62225E5737C00CA1ACA /* AviationSecurityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AviationSecurityViewController.swift; sourceTree = "<group>"; };
+		A619B62425E5752200CA1ACA /* PassportControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassportControlViewController.swift; sourceTree = "<group>"; };
+		A619B62625E575A300CA1ACA /* BoardingGatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingGatesViewController.swift; sourceTree = "<group>"; };
+		A619B62825E576F500CA1ACA /* OnboardingCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCompletedViewController.swift; sourceTree = "<group>"; };
 		A61AAF8425D19A9B003A107B /* RegistrationPersonalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPersonalDataViewController.swift; sourceTree = "<group>"; };
 		A61AAF8625D1B251003A107B /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		A61AAF8825D1B2BA003A107B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -277,6 +303,12 @@
 				A678C1B525DD7E4F0079AC05 /* AirportPointCardView.swift */,
 				A634387425E4159300070784 /* FlightNumberViewController.swift */,
 				A634387A25E4299B00070784 /* FlightDateViewController.swift */,
+				A619B61225E55FCA00CA1ACA /* RegisteredLuggageViewController.swift */,
+				A619B62025E5694400CA1ACA /* RegistrationTableViewController.swift */,
+				A619B62225E5737C00CA1ACA /* AviationSecurityViewController.swift */,
+				A619B62425E5752200CA1ACA /* PassportControlViewController.swift */,
+				A619B62625E575A300CA1ACA /* BoardingGatesViewController.swift */,
+				A619B62825E576F500CA1ACA /* OnboardingCompletedViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -294,6 +326,13 @@
 				A615311425DECC3A005C8A04 /* ProfileViewModel.swift */,
 				A634387625E415B600070784 /* FlightNumberViewModel.swift */,
 				A634387825E428AD00070784 /* FlightDateViewModel.swift */,
+				A619B61025E55F5700CA1ACA /* RegisteredLuggageViewModel.swift */,
+				A619B61425E5660500CA1ACA /* RegistrationTableViewModel.swift */,
+				A619B61625E5674800CA1ACA /* AviationSecurityViewModel.swift */,
+				A619B61825E5679900CA1ACA /* PassportControlPostViewModel.swift */,
+				A619B61A25E567E800CA1ACA /* BoardingGatesViewModel.swift */,
+				A619B61C25E5684500CA1ACA /* OnboardingCompletedViewModel.swift */,
+				A619B61E25E568BD00CA1ACA /* QRCodeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -511,39 +550,51 @@
 				A6DBD0D825CB1CA30076CC96 /* LoginService.swift in Sources */,
 				A634387525E4159300070784 /* FlightNumberViewController.swift in Sources */,
 				A6DA1DCA25C9C3D200D1FFDE /* LoginViewController.swift in Sources */,
+				A619B61925E5679900CA1ACA /* PassportControlPostViewModel.swift in Sources */,
 				A6DBD0D625CB1A8C0076CC96 /* LoginRequest.swift in Sources */,
 				A67A73B025C87D3C00F6B7EA /* MainScreenViewController.swift in Sources */,
 				A69F8C9E25D2EB6F008884CC /* UserProfileModel.swift in Sources */,
 				A61AAF8D25D1B3E4003A107B /* MyFlightsViewController.swift in Sources */,
 				A634387B25E4299B00070784 /* FlightDateViewController.swift in Sources */,
+				A619B62325E5737C00CA1ACA /* AviationSecurityViewController.swift in Sources */,
 				A6DA1DC425C9B05100D1FFDE /* MainScreenViewModel.swift in Sources */,
 				A68FE04625CC5F12003767DB /* UserDefaults.swift in Sources */,
 				A61AAF8525D19A9B003A107B /* RegistrationPersonalDataViewController.swift in Sources */,
 				A615311725DEDF9F005C8A04 /* UpdateProfileModel.swift in Sources */,
 				A6DBD0D025CB09CE0076CC96 /* RegistrationViewModel.swift in Sources */,
+				A619B61725E5674800CA1ACA /* AviationSecurityViewModel.swift in Sources */,
 				A69F8CA025D2EB8C008884CC /* UserLoginInfoModel.swift in Sources */,
 				A6D139AD23BC19F600B79903 /* ViewController.swift in Sources */,
 				A6D5167925D4480C00BDAC40 /* AirlinesEnum.swift in Sources */,
 				A6D7E74E25DC2744009355DC /* NoFlightsCard.swift in Sources */,
 				A6DBD0D425CB1A3D0076CC96 /* LoginResponse.swift in Sources */,
+				A619B61325E55FCA00CA1ACA /* RegisteredLuggageViewController.swift in Sources */,
 				A6DB0E3725D43FD600601D66 /* MyFlightsViewModel.swift in Sources */,
 				A634387925E428AD00070784 /* FlightDateViewModel.swift in Sources */,
 				A61AAF8B25D1B319003A107B /* ProfileViewController.swift in Sources */,
 				A678C1B625DD7E4F0079AC05 /* AirportPointCardView.swift in Sources */,
 				A67A73B925C87F9C00F6B7EA /* Requests.swift in Sources */,
+				A619B61D25E5684500CA1ACA /* OnboardingCompletedViewModel.swift in Sources */,
 				A68FE04825CC70FB003767DB /* RegistrationRequestModel.swift in Sources */,
+				A619B61525E5660500CA1ACA /* RegistrationTableViewModel.swift in Sources */,
 				A67A73B625C87F9C00F6B7EA /* ServiceKeywords.swift in Sources */,
 				A61AAF8925D1B2BA003A107B /* TabBarViewController.swift in Sources */,
+				A619B62925E576F500CA1ACA /* OnboardingCompletedViewController.swift in Sources */,
+				A619B61B25E567E800CA1ACA /* BoardingGatesViewModel.swift in Sources */,
 				A69F8CA825D302AA008884CC /* UserFlightsModel.swift in Sources */,
 				A6D139CE25C86D7200B79903 /* SplashScreenViewModel.swift in Sources */,
 				A678C1AE25DD76F40079AC05 /* FlightAirportPointModel.swift in Sources */,
+				A619B61125E55F5700CA1ACA /* RegisteredLuggageViewModel.swift in Sources */,
 				A69F8CA625D3018D008884CC /* UserFlightModel.swift in Sources */,
 				A68FE04425CC5EBC003767DB /* defaultsKeys.swift in Sources */,
+				A619B61F25E568BD00CA1ACA /* QRCodeViewModel.swift in Sources */,
 				A6DBD0D225CB0AAA0076CC96 /* RegistrationViewController.swift in Sources */,
+				A619B62725E575A300CA1ACA /* BoardingGatesViewController.swift in Sources */,
 				A678C1B025DD77600079AC05 /* FlightAirportPointsModel.swift in Sources */,
 				A61AAF9125D1BB7E003A107B /* HomeViewController.swift in Sources */,
 				A634387725E415B600070784 /* FlightNumberViewModel.swift in Sources */,
 				A69F8CA225D2EB9C008884CC /* UserPersonalInfoModel.swift in Sources */,
+				A619B62525E5752200CA1ACA /* PassportControlViewController.swift in Sources */,
 				A6D5167725D4478100BDAC40 /* FlightCardView.swift in Sources */,
 				A61AAF8725D1B251003A107B /* TabBarViewModel.swift in Sources */,
 				A6DA1DCC25C9C40600D1FFDE /* LoginViewModel.swift in Sources */,
@@ -557,6 +608,7 @@
 				A6D139AB23BC19F600B79903 /* SceneDelegate.swift in Sources */,
 				A6F517BF25DAE95A00D76AD4 /* StartNewFlightCardView.swift in Sources */,
 				A678C1B225DD79140079AC05 /* FlightAirportPointsViewModel.swift in Sources */,
+				A619B62125E5694400CA1ACA /* RegistrationTableViewController.swift in Sources */,
 				A6DA1DC825C9BBE700D1FFDE /* Margin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

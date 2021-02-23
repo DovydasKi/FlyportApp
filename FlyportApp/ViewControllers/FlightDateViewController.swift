@@ -46,6 +46,11 @@ class FlightDateViewController: UIViewController {
 		self.navigationController?.popViewController(animated: true)
 	}
 	
+	@objc private func openNextScreen() {
+		let newVc = RegisteredLuggageViewController()
+		self.navigationController?.pushViewController(newVc, animated: true)
+	}
+	
 	@objc func datePickerValueChanged(_ sender: UIDatePicker) {
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -123,6 +128,7 @@ extension FlightDateViewController {
 		button.layer.cornerRadius = 30
 		button.backgroundColor = .white
 		button.tintColor = UIColor(named: "ButtonColor")
+		button.addTarget(self, action: #selector(self.openNextScreen), for: .touchUpInside)
 		return button
 	}
 	
