@@ -36,6 +36,27 @@ class InputValidation {
         }
         return true
     }
+	
+    public func checkForValidStringLenghtIsNotSmaller(input: UITextField, lenght: Int) -> Bool {
+        guard let text = input.text else { return false }
+        
+        if text.count >= lenght {
+            return true
+        }
+        return false
+    }
+	
+    public func checkForValidDate(input: UITextField) -> Bool {
+        guard let text = input.text else { return false }
+        let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "yyyy-MM-dd"
+		let date = dateFormatter.date(from: text)
+		
+		if date?.timeIntervalSinceNow.sign == .none || date?.timeIntervalSinceNow.sign == .minus {
+			return true
+		}
+        return false
+    }
 
     public func shakeIfInvalid(textField: UITextField) {
         let animation = CABasicAnimation(keyPath: "position")

@@ -47,8 +47,10 @@ class FlightDateViewController: UIViewController {
 	}
 	
 	@objc private func openNextScreen() {
-		let newVc = RegisteredLuggageViewController()
-		self.navigationController?.pushViewController(newVc, animated: true)
+		if self.viewModel.checkValidDate(dateTextField: self.flightDateInputField) {
+			let newVc = RegisteredLuggageViewController()
+			self.navigationController?.pushViewController(newVc, animated: true)
+		}
 	}
 	
 	@objc func datePickerValueChanged(_ sender: UIDatePicker) {

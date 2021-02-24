@@ -39,10 +39,12 @@ class FlightNumberViewController: UIViewController {
 	}
 	
 	@objc private func openDateScreen() {
-		if let text = self.flightNumberInputField.text {
-			let dateViewModel = FlightDateViewModel(flightNumber: text)
-			let newVC = FlightDateViewController(viewModel: dateViewModel)
-			self.navigationController?.pushViewController(newVC, animated: true)
+		if self.viewModel.checkValidNumber(flightNumber: self.flightNumberInputField) {
+			if let text = self.flightNumberInputField.text {
+				let dateViewModel = FlightDateViewModel(flightNumber: text.uppercased())
+				let newVC = FlightDateViewController(viewModel: dateViewModel)
+				self.navigationController?.pushViewController(newVC, animated: true)
+			}
 		}
 	}
 }

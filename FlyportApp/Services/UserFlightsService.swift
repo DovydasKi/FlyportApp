@@ -68,4 +68,85 @@ public class UserFlightsService {
 		task.resume()
 		return
 	}
+	
+	public func flightsSearch(data: Data, completion: @escaping (FlightInfoModel?) -> Void) {
+		var result: FlightInfoModel?
+		let url = self.requestURL.searchFlightURL()
+		
+		let requestHeader = Requests(type: .post, header: .contentType, headerValue: .applicationJson, url: url, data: data)
+		let request = requestHeader.getRequestWithData
+		
+		let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+			DispatchQueue.main.async {
+				if let error = error {
+					print("Error took place \(error)")
+					completion(nil)
+				}
+				if let data = data {
+					do {
+						result = try JSONDecoder().decode(FlightInfoModel.self, from: data)
+						completion(result)
+					}
+					catch let error { print(error.localizedDescription)
+						completion(nil)
+					}
+				}
+			}
+		}
+		task.resume()
+		return
+	}
+	
+	public func registerUserFlight(data: Data, completion: @escaping (UserFlightCreationResponseModel?) -> Void) {
+		var result: UserFlightCreationResponseModel?
+		let url = self.requestURL.registerUserFlightURL()
+		
+		let requestHeader = Requests(type: .post, header: .contentType, headerValue: .applicationJson, url: url, data: data)
+		let request = requestHeader.getRequestWithData
+		
+		let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+			DispatchQueue.main.async {
+				if let error = error {
+					print("Error took place \(error)")
+					completion(nil)
+				}
+				if let data = data {
+					do {
+						result = try JSONDecoder().decode(UserFlightCreationResponseModel.self, from: data)
+						completion(result)
+					}
+					catch let error { print(error.localizedDescription)
+						completion(nil)
+					}
+				}
+			}
+		}
+		task.resume()
+		return
+	}
+	
+	public func completeUserFlight(userFlightId: Int, completion: @escaping (Bool) -> Void) {
+		let url = self.requestURL.completeFlightURL(userFlightId: userFlightId)
+		
+		let requestHeader = Requests(type: .put, header: .contentType, headerValue: .applicationJson, url: url)
+		let request = requestHeader.getRequest
+		
+		let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+			DispatchQueue.main.async {
+				if let error = error {
+					print("Error took place \(error)")
+					completion(false)
+				}
+				if let responseBody = response as? HTTPURLResponse{
+					if responseBody.statusCode == 200 {
+						completion(true)
+					} else {
+						completion(false)
+					}
+				} else {completion(false)}
+			}
+		}
+		task.resume()
+		return
+	}
 }

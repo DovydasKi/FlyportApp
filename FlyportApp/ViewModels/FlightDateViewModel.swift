@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 public class FlightDateViewModel {
 	private var flightNumber: String
 	private static let enterDate: String = "Enter your flight date"
 	private static let flightDatePlaceholder: String = "Flight date"
 	private static let select: String = "Select"
+	private var inputValidation = InputValidation()
 	
 	public init(flightNumber: String) {
 		self.flightNumber = flightNumber
@@ -20,6 +22,13 @@ public class FlightDateViewModel {
 	
 	public func getFlightNumber() -> String {
 		return self.flightNumber
+	}
+	
+	public func checkValidDate(dateTextField: UITextField) -> Bool {
+		if !self.inputValidation.checkForValidDate(input: dateTextField) {
+			self.inputValidation.shakeIfInvalid(textField: dateTextField)
+			return false
+		} else { return true }
 	}
 }
 
