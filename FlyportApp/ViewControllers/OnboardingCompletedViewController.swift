@@ -15,6 +15,7 @@ public class OnboardingCompletedViewController: UIViewController {
 	private lazy var subtitleLabel: UILabel = self.initLabel(title: self.viewModel.congratsSubtitle)
 	private lazy var icon: UIImageView = self.initIcon()
 	private lazy var completeButton: UIImageView = self.initCompleteButton()
+	private lazy var alert: UIAlertController = self.initAlert()
 	
 	public override func viewDidLoad() {
 		super.viewDidLoad()
@@ -30,8 +31,15 @@ public class OnboardingCompletedViewController: UIViewController {
 	}
 	
 	@objc private func loadProfile() {
-		let newVC = TabBarViewController()
-		self.navigationController?.pushViewController(newVC, animated: true)
+		self.viewModel.completeFlight(completion: {
+			completed in
+			if completed {
+				let newVC = TabBarViewController()
+				self.navigationController?.pushViewController(newVC, animated: true)
+			} else {
+				self.present(self.alert, animated: true, completion: nil)
+			}
+		})
 	}
 }
 
@@ -68,6 +76,13 @@ extension OnboardingCompletedViewController {
 		imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.loadProfile)))
 		imageView.isUserInteractionEnabled = true
 		return imageView
+	}
+	
+	private func initAlert() -> UIAlertController {
+		let alert = UIAlertController(title: self.viewModel.errorTitle, message: self.viewModel.errorSubtitle, preferredStyle: .alert)
+		let action = UIAlertAction(title: self.viewModel.ok, style: .default, handler: nil)
+		alert.addAction(action)
+		return alert
 	}
 }
 

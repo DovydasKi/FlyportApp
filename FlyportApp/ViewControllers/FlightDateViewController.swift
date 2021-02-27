@@ -17,6 +17,7 @@ class FlightDateViewController: UIViewController {
 	private lazy var flightDateInputField = self.initFlightNumberInputField()
 	private lazy var completeButton: UIButton = self.initButton()
 	private lazy var datePicker: UIDatePicker = self.initDatePicker()
+	private lazy var errorAler: UIAlertController = self.initAlert()
 	
 	public init(viewModel: FlightDateViewModel) {
 		self.viewModel = viewModel
@@ -48,8 +49,24 @@ class FlightDateViewController: UIViewController {
 	
 	@objc private func openNextScreen() {
 		if self.viewModel.checkValidDate(dateTextField: self.flightDateInputField) {
-			let newVc = RegisteredLuggageViewController()
-			self.navigationController?.pushViewController(newVc, animated: true)
+			self.viewModel.searchFlight(date: self.flightDateInputField.text!, completion: {
+				flight in
+				if let foundFlight = flight {
+					let searchedFlightInfo = FlightInfoModel(
+						flightId: foundFlight.flightId,
+						flightNumber: foundFlight.flightNumber,
+						flightDate: foundFlight.flightDate,
+						airlines: foundFlight.airlines,
+						fromCity: foundFlight.fromCity,
+						toCity: foundFlight.toCity,
+						passportControl: foundFlight.passportControl)
+					let viewModel = SelectedFlightViewModel(flightInfo: searchedFlightInfo)
+					let newVC = SelectedFlightViewController(viewModel: viewModel)
+					self.navigationController?.pushViewController(newVC, animated: true)
+				} else {
+					self.present(self.errorAler, animated: true, completion: nil)
+				}
+			})
 		}
 	}
 	
@@ -139,8 +156,14 @@ extension FlightDateViewController {
 		pickerView.datePickerMode = UIDatePicker.Mode.date
 		pickerView.translatesAutoresizingMaskIntoConstraints = false
 		pickerView.addTarget(self, action: #selector(self.datePickerValueChanged(_:)), for: .valueChanged)
-		
 		return pickerView
+	}
+	
+	private func initAlert() -> UIAlertController {
+		let alert = UIAlertController(title: self.viewModel.errorTitle, message: self.viewModel.errorSubtitle, preferredStyle: .alert)
+		let action = UIAlertAction(title: self.viewModel.ok, style: .default, handler: nil)
+		alert.addAction(action)
+		return alert
 	}
 }
 

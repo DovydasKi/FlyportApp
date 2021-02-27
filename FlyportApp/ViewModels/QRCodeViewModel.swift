@@ -11,6 +11,23 @@ import Foundation
 public class QRCodeViewModel {
 	private static let yourCodeTitle: String = "Your QR code"
 	private static let hideCodeTitle: String = "Hide QR code"
+	private let flightNumber: String
+	private let routeFrom: String
+	private let routeTo: String
+	
+	public init(flightNumber: String, route: String) {
+		self.flightNumber = flightNumber
+		let routeFull = route.split(separator: "-")
+		self.routeFrom = String(routeFull[0])
+		self.routeTo = String(routeFull[1])
+	}
+	
+	public func getRegistrationTableQRDate() -> Data {
+		let personalData = UserDefaults.standard.getPersonalInfo()
+		let pointCodeData = RegistrationPointQRCodeData(name: personalData.name, surname: personalData.surname, passportNumber: personalData.documentNumber, personalCode: personalData.personalCode, flightNumber: self.flightNumber, flightfrom: self.routeFrom, flightTo: self.routeTo)
+		let data = try! JSONEncoder().encode(pointCodeData)
+		return data
+	}
 }
 
 extension QRCodeViewModel {

@@ -54,4 +54,12 @@ extension UserDefaults {
 	func setDocumentNumber(value: String) {
 		set(value, forKey: UserDefaultKeys.documentNumber.rawValue)
 	}
+	
+	func getUserFlightId() -> Int {
+		return integer(forKey: UserDefaultKeys.userFlightId.rawValue)
+	}
+	
+	func setUserFlightId(value: Int) {
+		set(value, forKey: UserDefaultKeys.userFlightId.rawValue)
+	}
 }

@@ -13,7 +13,8 @@ public class AirportPointService {
 	
 	public init() {}
 	
-	public func getBoardingGates(userFlightId: Int, completion: @escaping (Bool) -> Void) {
+	public func getBoardingGates(userFlightId: Int, completion: @escaping (AirportPointModel?) -> Void) {
+		var result: AirportPointModel?
 		let url = self.requestURL.boardingGatesURL(userFlightId: userFlightId)
 		
 		let requestHeader = Requests(type: .get, header: .contentType, headerValue: .applicationJson, url: url)
@@ -23,15 +24,17 @@ public class AirportPointService {
 			DispatchQueue.main.async {
 				if let error = error {
 					print("Error took place \(error)")
-					completion(false)
+					completion(nil)
 				}
-				if let responseBody = response as? HTTPURLResponse{
-					if responseBody.statusCode == 200 {
-						completion(true)
-					} else {
-						completion(false)
+				if let data = data {
+					do {
+						result = try JSONDecoder().decode(AirportPointModel.self, from: data)
+						completion(result)
 					}
-				} else {completion(false)}
+					catch let error { print(error.localizedDescription)
+						completion(nil)
+					}
+				}
 			}
 		}
 		task.resume()

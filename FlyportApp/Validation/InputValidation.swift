@@ -48,14 +48,31 @@ class InputValidation {
 	
     public func checkForValidDate(input: UITextField) -> Bool {
         guard let text = input.text else { return false }
+		let seperateDate = text.split(separator: "-")
+		let todaysDate = Date()
         let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "yyyy-MM-dd"
-		let date = dateFormatter.date(from: text)
+		let date = dateFormatter.string(from: todaysDate)
+		let todaysDateSeperate = date.split(separator: "-")
 		
-		if date?.timeIntervalSinceNow.sign == .none || date?.timeIntervalSinceNow.sign == .minus {
+		if Int(seperateDate[0])! > Int(todaysDateSeperate[0])! {
 			return true
+		} else if Int(seperateDate[0])! == Int(todaysDateSeperate[0])! {
+			if Int(seperateDate[1])! > Int(todaysDateSeperate[1])! {
+				return true
+			} else if Int(seperateDate[1])! == Int(todaysDateSeperate[1])! {
+				if Int(seperateDate[2])! >= Int(todaysDateSeperate[2])! {
+					return true
+				} else {
+					return false
+				}
+			} else {
+				return false
+			}
 		}
-        return false
+		else {
+			return false
+		}
     }
 
     public func shakeIfInvalid(textField: UITextField) {

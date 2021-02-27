@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 public class RegistrationTableViewController: UIViewController {
-	private let viewModel = RegistrationTableViewModel()
+	private let viewModel: RegistrationTableViewModel
 	private lazy var arrowBack: UIImageView = self.initArrowBack()
 	private lazy var routeLabel: UILabel = self.initSimpleLabel(title: self.viewModel.route)
 	private lazy var flightNumberLabel: UILabel = self.initSimpleLabel(title: self.viewModel.flightNumber)
@@ -20,6 +20,16 @@ public class RegistrationTableViewController: UIViewController {
 	private lazy var navigationButton: UIButton = self.initNavigateButton()
 	private lazy var showCodeButton: UIButton = self.initShowCodeButton()
 	private lazy var moveToNextButton: UIButton = self.initMoveToNextButton()
+	private lazy var alert: UIAlertController = self.initAlert()
+	
+	public init(viewModel: RegistrationTableViewModel) {
+		self.viewModel = viewModel
+		super.init(nibName: nil, bundle: nil)
+	}
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 	
 	public override func viewDidLoad() {
 		super.viewDidLoad()
@@ -45,12 +55,30 @@ public class RegistrationTableViewController: UIViewController {
 	}
 	
 	@objc private func returnToPreviousScreen() {
-		self.navigationController?.popViewController(animated: true)
+		self.viewModel.completeRegistrationTableVisit {
+			self.navigationController?.popViewController(animated: true)
+		}
 	}
 	
 	@objc private func moveToNextScreen() {
-		let newVC = AviationSecurityViewController()
-		self.navigationController?.pushViewController(newVC, animated: true)
+		self.viewModel.getSecurityPointInfo(completion: {
+			result in
+			if let point = result {
+				let airportPoint = AirportPointModel(airportPointId: point.airportPointId, type: point.type, pointNumber: point.pointNumber)
+				self.viewModel.completeRegistrationTableVisit(completion: {})
+				let vm = AviationSecurityViewModel(point: airportPoint, info: self.viewModel.flightInfo)
+				let newVC = AviationSecurityViewController(viewModel: vm)
+				self.navigationController?.pushViewController(newVC, animated: true)
+			} else {
+				self.present(self.alert, animated: true, completion: nil)
+			}
+		})
+	}
+	
+	@objc private func openQR() {
+		let vm = QRCodeViewModel(flightNumber: self.viewModel.flightInfo.flightNumber, route: self.viewModel.route)
+		let vc = QRCodeViewController(viewModel: vm)
+		self.navigationController?.pushViewController(vc, animated: true)
 	}
 }
 
@@ -119,6 +147,7 @@ extension RegistrationTableViewController {
 		button.titleLabel?.numberOfLines = 0
 		button.titleLabel?.adjustsFontSizeToFitWidth = true
 		button.setTitleColor(UIColor(named: "ButtonColor"), for: .normal)
+		button.addTarget(self, action: #selector(self.openQR), for: .touchUpInside)
 		return button
 	}
 	
@@ -133,6 +162,13 @@ extension RegistrationTableViewController {
 		button.setTitleColor(UIColor(named: "ButtonColor"), for: .normal)
 		button.addTarget(self, action: #selector(self.moveToNextScreen), for: .touchUpInside)
 		return button
+	}
+	
+	private func initAlert() -> UIAlertController {
+		let alert = UIAlertController(title: self.viewModel.errorTitle, message: self.viewModel.errorSubtitle, preferredStyle: .alert)
+		let action = UIAlertAction(title: self.viewModel.ok, style: .default, handler: nil)
+		alert.addAction(action)
+		return alert
 	}
 }
 

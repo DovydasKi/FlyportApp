@@ -10,12 +10,10 @@ import Foundation
 
 public struct FlightSearchRequestModel: Codable {
 	public var flightNumber: String
-	public var flightDate: Date
+	public var flightDate: String
 	
 	public init(flightNumber: String, flightDate: String) {
 		self.flightNumber = flightNumber
-		let dateFormatter = DateFormatter()
-		dateFormatter.dateFormat = "yyyy-MM-dd"
-		self.flightDate = dateFormatter.date(from: flightDate)!
+		self.flightDate = flightDate
 	}
 }

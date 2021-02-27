@@ -14,7 +14,11 @@ public class FlightDateViewModel {
 	private static let enterDate: String = "Enter your flight date"
 	private static let flightDatePlaceholder: String = "Flight date"
 	private static let select: String = "Select"
+	private static let errorTitle: String = "Error"
+	private static let errorSubtitle: String = "It seems that flight which you entered does'nt exist. Try edit flight information"
+	private static let ok: String = "Ok"
 	private var inputValidation = InputValidation()
+	private let userFlightsService = UserFlightsService()
 	
 	public init(flightNumber: String) {
 		self.flightNumber = flightNumber
@@ -30,6 +34,19 @@ public class FlightDateViewModel {
 			return false
 		} else { return true }
 	}
+	
+	public func searchFlight(date: String, completion: @escaping (FlightInfoModel?) -> ()) {
+		let requestModel = FlightSearchRequestModel(flightNumber: self.flightNumber, flightDate: date)
+		let data = try! JSONEncoder().encode(requestModel)
+		self.userFlightsService.flightsSearch(data: data) {
+			result in
+			if let flight = result {
+				completion(flight)
+			} else {
+				completion(nil)
+			}
+		}
+	}
 }
 
 extension FlightDateViewModel {
@@ -43,5 +60,17 @@ extension FlightDateViewModel {
 	
 	public var select: String {
 		return type(of: self).select
+	}
+	
+	public var errorTitle: String {
+		return type(of: self).errorTitle
+	}
+	
+	public var errorSubtitle: String {
+		return type(of: self).errorSubtitle
+	}
+	
+	public var ok: String {
+		return type(of: self).ok
 	}
 }

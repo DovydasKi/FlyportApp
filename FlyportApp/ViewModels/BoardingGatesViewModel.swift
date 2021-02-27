@@ -9,21 +9,30 @@
 import Foundation
 
 public class BoardingGatesViewModel {
-	private static let route: String = "Vilnius(VNO) - Enfidha(NBE)"
-	private static let flightNumber: String = "GW3352"
+	public var flightInfo: FlightInfoModel
+	public var airportPoint: AirportPointModel
+	private let airportPointsService = AirportPointService()
 	private static let yourBoardingGates: String = "Your boarding gates:"
-	private static let tableNumber: String = "12A"
 	private static let navigateToTable = "Navigate to boarding gates"
 	private static let finish: String = "Finish"
+	private static let errorTitle: String = "Error"
+	private static let errorSubtitle: String = "Something went wrong. Try again"
+	private static let ok: String = "Ok"
+	
+	public init(point: AirportPointModel, info: FlightInfoModel) {
+		self.flightInfo = info
+		self.airportPoint = point
+	}
 }
 
 extension BoardingGatesViewModel {
 	public var route: String {
-		return type(of: self).route
+		let fullRoute = self.flightInfo.fromCity + " - " + self.flightInfo.toCity
+		return fullRoute
 	}
 	
 	public var flightNumber: String {
-		return type(of: self).flightNumber
+		return self.flightInfo.flightNumber
 	}
 	
 	public var yourBoardingGates: String {
@@ -31,7 +40,7 @@ extension BoardingGatesViewModel {
 	}
 	
 	public var tableNumber: String {
-		return type(of: self).tableNumber
+		return self.airportPoint.pointNumber
 	}
 	
 	public var navigateToTable: String {
@@ -40,5 +49,17 @@ extension BoardingGatesViewModel {
 	
 	public var finish: String {
 		return type(of: self).finish
+	}
+	
+	public var errorTitle: String {
+		return type(of: self).errorTitle
+	}
+	
+	public var errorSubtitle: String {
+		return type(of: self).errorSubtitle
+	}
+	
+	public var ok: String {
+		return type(of: self).ok
 	}
 }

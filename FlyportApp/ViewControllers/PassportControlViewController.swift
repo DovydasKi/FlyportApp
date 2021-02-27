@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 public class PassportControlViewController: UIViewController {
-	private let viewModel = PassportControlPostViewModel()
+	private let viewModel: PassportControlPostViewModel
 	private lazy var arrowBack: UIImageView = self.initArrowBack()
 	private lazy var routeLabel: UILabel = self.initSimpleLabel(title: self.viewModel.route)
 	private lazy var flightNumberLabel: UILabel = self.initSimpleLabel(title: self.viewModel.flightNumber)
@@ -20,6 +20,16 @@ public class PassportControlViewController: UIViewController {
 	private lazy var navigationButton: UIButton = self.initNavigateButton()
 	private lazy var showCodeButton: UIButton = self.initShowCodeButton()
 	private lazy var moveToNextButton: UIButton = self.initMoveToNextButton()
+	private lazy var alert: UIAlertController = self.initAlert()
+	
+	public init(viewModel: PassportControlPostViewModel) {
+		self.viewModel = viewModel
+		super.init(nibName: nil, bundle: nil)
+	}
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 	
 	public override func viewDidLoad() {
 		super.viewDidLoad()
@@ -45,12 +55,25 @@ public class PassportControlViewController: UIViewController {
 	}
 	
 	@objc private func returnToPreviousScreen() {
-		self.navigationController?.popViewController(animated: true)
+		self.viewModel.completePassportTableVisit {
+			self.navigationController?.popViewController(animated: true)
+		}
 	}
 	
 	@objc private func moveToNextScreen() {
-		let newVC = BoardingGatesViewController()
-		self.navigationController?.pushViewController(newVC, animated: true)
+		
+		self.viewModel.getBoardingGatesInfo(completion: {
+			result in
+			if let point = result {
+				let airportPoint = AirportPointModel(airportPointId: point.airportPointId, type: point.type, pointNumber: point.pointNumber)
+				self.viewModel.completePassportTableVisit(completion: {})
+				let vm = BoardingGatesViewModel(point: airportPoint, info: self.viewModel.flightInfo)
+				let newVC = BoardingGatesViewController(viewModel: vm)
+				self.navigationController?.pushViewController(newVC, animated: true)
+			} else {
+				self.present(self.alert, animated: true, completion: nil)
+			}
+		})
 	}
 }
 
@@ -133,6 +156,13 @@ extension PassportControlViewController {
 		button.setTitleColor(UIColor(named: "ButtonColor"), for: .normal)
 		button.addTarget(self, action: #selector(self.moveToNextScreen), for: .touchUpInside)
 		return button
+	}
+	
+	private func initAlert() -> UIAlertController {
+		let alert = UIAlertController(title: self.viewModel.errorTitle, message: self.viewModel.errorSubtitle, preferredStyle: .alert)
+		let action = UIAlertAction(title: self.viewModel.ok, style: .default, handler: nil)
+		alert.addAction(action)
+		return alert
 	}
 }
 

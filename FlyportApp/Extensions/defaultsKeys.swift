@@ -16,4 +16,5 @@ enum UserDefaultKeys: String {
 	case surname
 	case personalCode
 	case documentNumber
+	case userFlightId
 }

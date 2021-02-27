@@ -10,14 +10,16 @@ import Foundation
 
 public struct FlightInfoModel: Decodable {
 	public let flightId: Int
-	public let flightDate: Date
+	public let flightNumber: String
+	public let flightDate: String
 	public let airlines: String
 	public let fromCity: String
 	public let toCity: String
 	public let passportControl: Bool
 	
-	public init(flightId: Int, flightDate: Date, airlines: String, fromCity: String, toCity: String, passportControl: Bool) {
+	public init(flightId: Int, flightNumber: String, flightDate: String, airlines: String, fromCity: String, toCity: String, passportControl: Bool) {
 		self.flightId = flightId
+		self.flightNumber = flightNumber
 		self.flightDate = flightDate
 		self.airlines = airlines
 		self.fromCity = fromCity

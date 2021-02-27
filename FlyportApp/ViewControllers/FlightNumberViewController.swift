@@ -30,7 +30,26 @@ class FlightNumberViewController: UIViewController {
 		self.activateTextFieldConstraints()
 		self.view.addSubview(self.completeButton)
 		self.activateButtonConstraints()
-	}
+		
+			NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+			NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+			
+			let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+			tap.cancelsTouchesInView = false
+			view.addGestureRecognizer(tap)
+		}
+		
+		@objc func keyboardWillShow(sender: NSNotification) {
+			self.view.frame.origin.y = -300
+		}
+		
+		@objc func keyboardWillHide(sender: NSNotification) {
+			self.view.frame.origin.y = 0
+		}
+		
+		@objc func dismissKeyboard() {
+			view.endEditing(true)
+		}
 	
 	@objc private func returnToPreviousScreen() {
 		self.tabBarController?.tabBar.isHidden = false

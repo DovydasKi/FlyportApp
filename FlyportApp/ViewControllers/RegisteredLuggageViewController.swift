@@ -10,11 +10,21 @@ import Foundation
 import UIKit
 
 public class RegisteredLuggageViewController: UIViewController {
-	private let viewModel = RegisteredLuggageViewModel()
+	private var viewModel: RegisteredLuggageViewModel
 	private lazy var screenLabel: UILabel = self.initLabel()
 	private lazy var iconView: UIImageView = self.initImageView()
 	private lazy var yesButton: UIImageView = self.initYesButton()
 	private lazy var noButton: UIImageView = self.initNoButton()
+	private lazy var alert: UIAlertController = self.initAlert()
+	
+	public init(viewModel: RegisteredLuggageViewModel) {
+		self.viewModel = viewModel
+		super.init(nibName: nil, bundle: nil)
+	}
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 	
 	public override func viewDidLoad() {
 		super.viewDidLoad()
@@ -30,13 +40,32 @@ public class RegisteredLuggageViewController: UIViewController {
 	}
 	
 	@objc private func openRegistrationTableScreen() {
-		let newVC = RegistrationTableViewController()
-		self.navigationController?.pushViewController(newVC, animated: true)
+		self.viewModel.getRegistrationPointInfo(completion: {
+			result in
+			if let point = result {
+				let airportPoint = AirportPointModel(airportPointId: point.airportPointId, type: point.type, pointNumber: point.pointNumber)
+				let vm = RegistrationTableViewModel(point: airportPoint, info: self.viewModel.flightInfo)
+				let newVC = RegistrationTableViewController(viewModel: vm)
+				self.navigationController?.pushViewController(newVC, animated: true)
+
+			} else {
+				self.present(self.alert, animated: true, completion: nil)
+			}
+		})
 	}
 	
 	@objc private func openAviationSecurityTableScreen() {
-		let newVC = AviationSecurityViewController()
-		self.navigationController?.pushViewController(newVC, animated: true)
+		self.viewModel.getSecurityPointInfo(completion: {
+			result in
+			if let point = result {
+				let airportPoint = AirportPointModel(airportPointId: point.airportPointId, type: point.type, pointNumber: point.pointNumber)
+				let vm = AviationSecurityViewModel(point: airportPoint, info: self.viewModel.flightInfo)
+				let newVC = AviationSecurityViewController(viewModel: vm)
+				self.navigationController?.pushViewController(newVC, animated: true)
+			} else {
+				self.present(self.alert, animated: true, completion: nil)
+			}
+		})
 	}
 }
 
@@ -85,6 +114,13 @@ extension RegisteredLuggageViewController {
 		imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.openAviationSecurityTableScreen)))
 		imageView.isUserInteractionEnabled = true
 		return imageView
+	}
+	
+	private func initAlert() -> UIAlertController {
+		let alert = UIAlertController(title: self.viewModel.errorTitle, message: self.viewModel.errorSubtitle, preferredStyle: .alert)
+		let action = UIAlertAction(title: self.viewModel.ok, style: .default, handler: nil)
+		alert.addAction(action)
+		return alert
 	}
 }
 

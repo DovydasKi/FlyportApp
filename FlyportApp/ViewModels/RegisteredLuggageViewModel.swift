@@ -9,11 +9,56 @@
 import Foundation
 
 public class RegisteredLuggageViewModel {
+	private let airportPointsService = AirportPointService()
+	public var flightInfo: FlightInfoModel
 	private static let luggageQuestion: String = "Do you have registered luggage?"
+	private static let errorTitle: String = "Error"
+	private static let errorSubtitle: String = "Something went wrong. Try again"
+	private static let ok: String = "Ok"
+	
+	public init(flightInfo: FlightInfoModel) {
+		self.flightInfo = flightInfo
+	}
+	
+	public func getRegistrationPointInfo(completion: @escaping (AirportPointModel?) -> ()) {
+		let userFlightId = UserDefaults.standard.getUserFlightId()
+		self.airportPointsService.getRegistrationPoint(userFlightId: userFlightId) {
+			result in
+			if let airportPoint = result {
+				completion(airportPoint)
+			} else {
+				completion(nil)
+			}
+		}
+	}
+	
+	public func getSecurityPointInfo(completion: @escaping (AirportPointModel?) -> ()) {
+		let userFlightId = UserDefaults.standard.getUserFlightId()
+		self.airportPointsService.getSecurityPoint(userFlightId: userFlightId) {
+			result in
+			if let airportPoint = result {
+				completion(airportPoint)
+			} else {
+				completion(nil)
+			}
+		}
+	}
 }
 
 extension RegisteredLuggageViewModel {
 	public var luggageQuestion: String {
 		return type(of: self).luggageQuestion
+	}
+	
+	public var errorTitle: String {
+		return type(of: self).errorTitle
+	}
+	
+	public var errorSubtitle: String {
+		return type(of: self).errorSubtitle
+	}
+	
+	public var ok: String {
+		return type(of: self).ok
 	}
 }

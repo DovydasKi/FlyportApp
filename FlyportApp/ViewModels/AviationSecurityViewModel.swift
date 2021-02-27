@@ -9,21 +9,62 @@
 import Foundation
 
 public class AviationSecurityViewModel {
-	private static let route: String = "Vilnius(VNO) - Enfidha(NBE)"
-	private static let flightNumber: String = "GW3352"
+	public var flightInfo: FlightInfoModel
+	public var airportPoint: AirportPointModel
+	private let airportPointsService = AirportPointService()
 	private static let yourAviationSecurityTable: String = "Your aviation security post:"
-	private static let tableNumber: String = "12A"
 	private static let navigateToTable = "Navigate to aviation security point"
 	private static let moveToNextProcedure: String = "Move to next procedure"
+	private static let errorTitle: String = "Error"
+	private static let errorSubtitle: String = "Something went wrong. Try again"
+	private static let ok: String = "Ok"
+	
+	public init(point: AirportPointModel, info: FlightInfoModel) {
+		self.flightInfo = info
+		self.airportPoint = point
+	}
+	
+	public func getPassportPointInfo(completion: @escaping (AirportPointModel?) -> ()) {
+		let userFlightId = UserDefaults.standard.getUserFlightId()
+		self.airportPointsService.getPassportPoint(userFlightId: userFlightId) {
+			result in
+			if let airportPoint = result {
+				completion(airportPoint)
+			} else {
+				completion(nil)
+			}
+		}
+	}
+	
+	public func getBoardingGatesInfo(completion: @escaping (AirportPointModel?) -> ()) {
+		let userFlightId = UserDefaults.standard.getUserFlightId()
+		self.airportPointsService.getBoardingGates(userFlightId: userFlightId) {
+			result in
+			if let airportPoint = result {
+				completion(airportPoint)
+			} else {
+				completion(nil)
+			}
+		}
+	}
+	
+	public func completeAviationSecurityTableVisit(completion: @escaping () -> ()) {
+		let userFlightId = UserDefaults.standard.getUserFlightId()
+		self.airportPointsService.completeSecurityPointVisit(userFlightId: userFlightId) {
+			_ in
+			completion()
+		}
+	}
 }
 
 extension AviationSecurityViewModel {
 	public var route: String {
-		return type(of: self).route
+		let fullRoute = self.flightInfo.fromCity + " - " + self.flightInfo.toCity
+		return fullRoute
 	}
 	
 	public var flightNumber: String {
-		return type(of: self).flightNumber
+		return self.flightInfo.flightNumber
 	}
 	
 	public var yourAviationSecurityTable: String {
@@ -31,7 +72,7 @@ extension AviationSecurityViewModel {
 	}
 	
 	public var tableNumber: String {
-		return type(of: self).tableNumber
+		return self.airportPoint.pointNumber
 	}
 	
 	public var navigateToTable: String {
@@ -40,5 +81,17 @@ extension AviationSecurityViewModel {
 	
 	public var moveToNextProcedure: String {
 		return type(of: self).moveToNextProcedure
+	}
+	
+	public var errorTitle: String {
+		return type(of: self).errorTitle
+	}
+	
+	public var errorSubtitle: String {
+		return type(of: self).errorSubtitle
+	}
+	
+	public var ok: String {
+		return type(of: self).ok
 	}
 }

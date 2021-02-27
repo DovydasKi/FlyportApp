@@ -24,7 +24,7 @@ class FlightCardView: UIView {
 		let route = fromCity + " - " + toCity
 		self.route = route
 		if isCompleted {
-			self.flightStatus = "Comleted flight"
+			self.flightStatus = "Completed flight"
 		} else {
 			self.flightStatus = "Incompleted flight"
 		}
@@ -42,10 +42,12 @@ class FlightCardView: UIView {
 	@objc private func openDetails() {
 		let viewModel = FlightAirportPointsViewModel(flightId: self.flightId, image: self.airlinesImage, route: self.route, flightNumber: self.flightNumber)
 		let viewController = FlightAirportPointsViewController(viewModel: viewModel)
-		var vc = UIApplication.shared.keyWindow?.rootViewController
-		while((vc?.presentedViewController) != nil) {
-			vc = vc?.presentedViewController
-		}
+		var vc = UIApplication.shared.keyWindow?.rootViewController?.presentedViewController
+		vc?.present(viewController, animated: true, completion: nil)
+//		while((vc?.presentedViewController) != nil) {
+//			vc = vc?.presentedViewController
+//			vc?.present(viewController, animated: true, completion: {})
+//		}
 	}
 	
 	private func configure() {

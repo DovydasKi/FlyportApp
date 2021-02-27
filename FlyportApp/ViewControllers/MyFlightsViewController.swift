@@ -49,7 +49,7 @@ class MyFlightsViewController: UIViewController {
 			flights in
 			if let userFlights = flights {
 				for flight in userFlights.flights {
-					let view = FlightCardView(id: flight.flightId, airlines: flight.airlines, flightNumber: flight.flightNumber, fromCity: flight.fromCity, toCity: flight.toCity, isCompleted: flight.completed)
+					let view = FlightCardView(id: flight.userFlightId, airlines: flight.airlines, flightNumber: flight.flightNumber, fromCity: flight.fromCity, toCity: flight.toCity, isCompleted: flight.completed)
 					view.translatesAutoresizingMaskIntoConstraints = false
 					view.layer.cornerRadius = 20.0
 					self.stackView.addArrangedSubview(view)
