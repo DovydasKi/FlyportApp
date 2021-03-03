@@ -60,6 +60,12 @@ public class RegistrationTableViewController: UIViewController {
 		}
 	}
 	
+	@objc private func openMap() {
+		let vm = MapViewModel(number: self.viewModel.flightNumber, mapType: .registration)
+		let newVC = MapViewController(viewModel: vm)
+		self.navigationController?.pushViewController(newVC, animated: true)
+	}
+	
 	@objc private func moveToNextScreen() {
 		self.viewModel.getSecurityPointInfo(completion: {
 			result in
@@ -135,6 +141,7 @@ extension RegistrationTableViewController {
 		button.titleLabel?.numberOfLines = 0
 		button.titleLabel?.adjustsFontSizeToFitWidth = true
 		button.setTitleColor(UIColor(named: "ButtonColor"), for: .normal)
+		button.addTarget(self, action: #selector(self.openMap), for: .touchUpInside)
 		return button
 	}
 	

@@ -57,6 +57,12 @@ public class AviationSecurityViewController: UIViewController {
 		})
 	}
 	
+	@objc private func openMap() {
+		let vm = MapViewModel(number: self.viewModel.flightNumber, mapType: .aviationSecurity)
+		let newVC = MapViewController(viewModel: vm)
+		self.navigationController?.pushViewController(newVC, animated: true)
+	}
+	
 	@objc private func moveToNextScreen() {
 		if self.viewModel.flightInfo.passportControl {
 			self.viewModel.getPassportPointInfo(completion: {
@@ -141,6 +147,7 @@ extension AviationSecurityViewController {
 		button.titleLabel?.numberOfLines = 0
 		button.titleLabel?.adjustsFontSizeToFitWidth = true
 		button.setTitleColor(UIColor(named: "ButtonColor"), for: .normal)
+		button.addTarget(self, action: #selector(self.openMap), for: .touchUpInside)
 		return button
 	}
 	

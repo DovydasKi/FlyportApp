@@ -87,6 +87,9 @@
 		A6DBD0D425CB1A3D0076CC96 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DBD0D325CB1A3D0076CC96 /* LoginResponse.swift */; };
 		A6DBD0D625CB1A8C0076CC96 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DBD0D525CB1A8C0076CC96 /* LoginRequest.swift */; };
 		A6DBD0D825CB1CA30076CC96 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DBD0D725CB1CA30076CC96 /* LoginService.swift */; };
+		A6E7D44225F01E0C00A733F5 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E7D44125F01E0C00A733F5 /* MapViewModel.swift */; };
+		A6E7D44425F01E1F00A733F5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E7D44325F01E1F00A733F5 /* MapViewController.swift */; };
+		A6E7D44625F0204300A733F5 /* MapTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E7D44525F0204300A733F5 /* MapTypeEnum.swift */; };
 		A6F517BF25DAE95A00D76AD4 /* StartNewFlightCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F517BE25DAE95A00D76AD4 /* StartNewFlightCardView.swift */; };
 		C93BB5BE9EB8C817DB54DD7A /* Pods_FlyportApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63515D7DA5375FD2C2C2BE91 /* Pods_FlyportApp.framework */; };
 /* End PBXBuildFile section */
@@ -190,6 +193,9 @@
 		A6DBD0D325CB1A3D0076CC96 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		A6DBD0D525CB1A8C0076CC96 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		A6DBD0D725CB1CA30076CC96 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		A6E7D44125F01E0C00A733F5 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		A6E7D44325F01E1F00A733F5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A6E7D44525F0204300A733F5 /* MapTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTypeEnum.swift; sourceTree = "<group>"; };
 		A6F517BE25DAE95A00D76AD4 /* StartNewFlightCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNewFlightCardView.swift; sourceTree = "<group>"; };
 		B33808837DF25450B0493444 /* Pods-FlyportAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyportAppTests.debug.xcconfig"; path = "Target Support Files/Pods-FlyportAppTests/Pods-FlyportAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -332,6 +338,7 @@
 				A619B62825E576F500CA1ACA /* OnboardingCompletedViewController.swift */,
 				A6A7AB8325E7F95A0092371A /* SelectedFlightViewController.swift */,
 				A68EA08A25EABA3D00D9442A /* QRCodeViewController.swift */,
+				A6E7D44325F01E1F00A733F5 /* MapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -357,6 +364,7 @@
 				A619B61C25E5684500CA1ACA /* OnboardingCompletedViewModel.swift */,
 				A619B61E25E568BD00CA1ACA /* QRCodeViewModel.swift */,
 				A6A7AB8525E7F97A0092371A /* SelectedFlightViewModel.swift */,
+				A6E7D44125F01E0C00A733F5 /* MapViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -402,6 +410,7 @@
 				A68FE04325CC5EBC003767DB /* defaultsKeys.swift */,
 				A68FE04525CC5F12003767DB /* UserDefaults.swift */,
 				A6D5167825D4480C00BDAC40 /* AirlinesEnum.swift */,
+				A6E7D44525F0204300A733F5 /* MapTypeEnum.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -418,6 +427,7 @@
 				A6D139A223BC19F600B79903 /* Frameworks */,
 				A6D139A323BC19F600B79903 /* Resources */,
 				4DA07A27D6820DB3423AE950 /* [CP] Embed Pods Frameworks */,
+				122E32DE784A447448A9DFE9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -508,6 +518,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		122E32DE784A447448A9DFE9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlyportApp/Pods-FlyportApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlyportApp/Pods-FlyportApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlyportApp/Pods-FlyportApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4DA07A27D6820DB3423AE950 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -583,6 +610,7 @@
 				A619B61925E5679900CA1ACA /* PassportControlPostViewModel.swift in Sources */,
 				A6DBD0D625CB1A8C0076CC96 /* LoginRequest.swift in Sources */,
 				A67A73B025C87D3C00F6B7EA /* MainScreenViewController.swift in Sources */,
+				A6E7D44425F01E1F00A733F5 /* MapViewController.swift in Sources */,
 				A69F8C9E25D2EB6F008884CC /* UserProfileModel.swift in Sources */,
 				A61AAF8D25D1B3E4003A107B /* MyFlightsViewController.swift in Sources */,
 				A634387B25E4299B00070784 /* FlightDateViewController.swift in Sources */,
@@ -622,6 +650,7 @@
 				A678C1AE25DD76F40079AC05 /* FlightAirportPointModel.swift in Sources */,
 				A619B61125E55F5700CA1ACA /* RegisteredLuggageViewModel.swift in Sources */,
 				A69F8CA625D3018D008884CC /* UserFlightModel.swift in Sources */,
+				A6E7D44625F0204300A733F5 /* MapTypeEnum.swift in Sources */,
 				A68FE04425CC5EBC003767DB /* defaultsKeys.swift in Sources */,
 				A619B61F25E568BD00CA1ACA /* QRCodeViewModel.swift in Sources */,
 				A6DBD0D225CB0AAA0076CC96 /* RegistrationViewController.swift in Sources */,
@@ -632,6 +661,7 @@
 				A69F8CA225D2EB9C008884CC /* UserPersonalInfoModel.swift in Sources */,
 				A619B62525E5752200CA1ACA /* PassportControlViewController.swift in Sources */,
 				A6D5167725D4478100BDAC40 /* FlightCardView.swift in Sources */,
+				A6E7D44225F01E0C00A733F5 /* MapViewModel.swift in Sources */,
 				A61AAF8725D1B251003A107B /* TabBarViewModel.swift in Sources */,
 				A6DA1DCC25C9C40600D1FFDE /* LoginViewModel.swift in Sources */,
 				A68FE04025CC557B003767DB /* InputValidation.swift in Sources */,

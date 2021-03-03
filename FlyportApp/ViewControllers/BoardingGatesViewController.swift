@@ -59,6 +59,12 @@ public class BoardingGatesViewController: UIViewController {
 		let newVC = OnboardingCompletedViewController()
 		self.navigationController?.pushViewController(newVC, animated: true)
 	}
+	
+	@objc private func openMap() {
+		let vm = MapViewModel(number: self.viewModel.flightNumber, mapType: .boarding)
+		let newVC = MapViewController(viewModel: vm)
+		self.navigationController?.pushViewController(newVC, animated: true)
+	}
 }
 
 extension BoardingGatesViewController {
@@ -114,6 +120,7 @@ extension BoardingGatesViewController {
 		button.titleLabel?.numberOfLines = 0
 		button.titleLabel?.adjustsFontSizeToFitWidth = true
 		button.setTitleColor(UIColor(named: "ButtonColor"), for: .normal)
+		button.addTarget(self, action: #selector(self.openMap), for: .touchUpInside)
 		return button
 	}
 	

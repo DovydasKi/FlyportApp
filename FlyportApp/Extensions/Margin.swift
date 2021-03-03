@@ -14,7 +14,7 @@ extension UIView {
 		case 320:
 			return size * 0.5
 		default:
-			return sizel
+			return size
 		}
 	}
 

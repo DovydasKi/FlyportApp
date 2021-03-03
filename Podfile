@@ -7,6 +7,8 @@ target 'FlyportApp' do
 
   # Pods for FlyportApp
   pod 'NVActivityIndicatorView'
+  pod 'GoogleMaps', '4.1.0'
+  pod 'GooglePlaces', '4.1.0'
 
 
   target 'FlyportAppTests' do
