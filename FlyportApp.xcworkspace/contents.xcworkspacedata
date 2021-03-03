@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:FlyportApp.xcodeproj">
+      location = "group:FlyportApp/Location.gpx">
    </FileRef>
    <FileRef
-      location = "group:Pods/Pods.xcodeproj">
+      location = "group:FlyportApp.xcodeproj">
    </FileRef>
 </Workspace>
