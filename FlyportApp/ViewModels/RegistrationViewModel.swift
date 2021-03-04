@@ -39,12 +39,10 @@ class RegistrationViewModel {
         }
         else { emailIsValid = true }
         if !self.inputValidation.checkForValidStringLenght(input: passwordField, lenght: 5) {
-            passwordField.text = ""
             self.inputValidation.shakeIfInvalid(textField: passwordField)
         }
         else { passwordIsValid = true }
 		if passwordField.text != repeatPasswordField.text {
-			repeatPasswordField.text = ""
 			self.inputValidation.shakeIfInvalid(textField: repeatPasswordField)
 		}
 		else { repeatPasswordIsValid = true }

@@ -13,11 +13,13 @@ public class MapViewModel {
 	public let title: String
 	public let number: String
 	public let coordinates: [CLLocationCoordinate2D]
+	public let destinationTitle: String
 	
 	public init(number: String, mapType: MapTypeEnum) {
 		self.number = number
 		self.title = mapType.titleText
 		self.coordinates = mapType.routeCoordinates
+		self.destinationTitle = mapType.destinationTitle + number
 	}
 }
 

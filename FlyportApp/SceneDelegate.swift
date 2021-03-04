@@ -19,8 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		window?.windowScene = windowScene
 		window?.makeKeyAndVisible()
 
-		let vm = MapViewModel(number: "22", mapType: .boarding)
-		let viewController = MapViewController(viewModel: vm)
+		let viewController = ViewController()
 		let navViewController = UINavigationController(rootViewController: viewController)
 		window?.rootViewController = navViewController
 	}

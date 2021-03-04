@@ -42,7 +42,7 @@ class FlightCardView: UIView {
 	@objc private func openDetails() {
 		let viewModel = FlightAirportPointsViewModel(flightId: self.flightId, image: self.airlinesImage, route: self.route, flightNumber: self.flightNumber)
 		let viewController = FlightAirportPointsViewController(viewModel: viewModel)
-		var vc = UIApplication.shared.keyWindow?.rootViewController?.presentedViewController
+		let vc = UIApplication.shared.keyWindow?.rootViewController?.presentedViewController
 		vc?.present(viewController, animated: true, completion: nil)
 //		while((vc?.presentedViewController) != nil) {
 //			vc = vc?.presentedViewController

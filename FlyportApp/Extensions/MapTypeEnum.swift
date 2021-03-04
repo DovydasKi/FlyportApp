@@ -67,4 +67,17 @@ public enum MapTypeEnum {
 			]
 		}
 	}
+	
+	public var destinationTitle: String {
+		switch self {
+		case .aviationSecurity:
+			return "Your aviation security point: "
+		case .boarding:
+			return "Your boarding gates: "
+		case .passport:
+			return "Your passport check point: "
+		case .registration:
+			return "Your registration table: "
+		}
+	}
 }

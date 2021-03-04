@@ -183,5 +183,23 @@ extension MapViewController {
 		pathLine.strokeWidth = 5.0
 		pathLine.strokeColor = UIColor(named: "ButtonColor")!
 		pathLine.map = self.mapview
+		if let lastCoordinate = self.viewModel.coordinates.last {
+			let mapMarker = GMSMarker(position: lastCoordinate)
+			let markerImage = UIImage(named: "airportPin")!
+			mapMarker.icon = self.image(markerImage, scaledToSize: CGSize(width: 50, height: 50))
+			mapMarker.title = self.viewModel.destinationTitle
+			mapMarker.map = self.mapview
+		}
 	}
+	
+		fileprivate func image(_ originalImage:UIImage, scaledToSize:CGSize) -> UIImage {
+			if originalImage.size.equalTo(scaledToSize) {
+				return originalImage
+			}
+			UIGraphicsBeginImageContextWithOptions(scaledToSize, false, 0.0)
+			originalImage.draw(in: CGRect(x: 0, y: 0, width: scaledToSize.width, height: scaledToSize.height))
+			let image = UIGraphicsGetImageFromCurrentImageContext()
+			UIGraphicsEndImageContext()
+			return image!
+		}
 }
