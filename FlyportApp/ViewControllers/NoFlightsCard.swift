@@ -78,7 +78,7 @@ extension NoFlightsCard {
 	private func activateImageConstraints() {
 		NSLayoutConstraint.activate([
 			self.icon.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: UIView.margin(of: [20, 27, 34])),
-			self.icon.topAnchor.constraint(equalTo: self.topAnchor, constant: UIView.margin(of: [36,49,62])),
+			self.icon.centerYAnchor.constraint(equalTo: self.centerYAnchor),
 			self.icon.heightAnchor.constraint(equalToConstant: UIView.margin(of: [71,95,118])),
 			self.icon.widthAnchor.constraint(equalToConstant: UIView.margin(of: [71,95,118]))
 		])

@@ -104,7 +104,7 @@ extension AirportPointCardView {
 		NSLayoutConstraint.activate([
 			self.subtitleLabel.leadingAnchor.constraint(equalTo: self.icon.trailingAnchor, constant: UIView.margin(of: [12, 16, 20])),
 			self.subtitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -UIView.margin(of: [12,16,20])),
-			self.subtitleLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: UIView.margin(of: [12, 16, 20])),
+			self.subtitleLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor),
 			self.subtitleLabel.heightAnchor.constraint(equalToConstant: UIView.margin(of: [45,60,75]))
 		])
 	}

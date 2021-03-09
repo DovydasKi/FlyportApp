@@ -91,7 +91,7 @@ extension ViewController {
 	
 	private func activateFlyportLogoConstraints() {
 		NSLayoutConstraint.activate([
-			self.flyportLogo.topAnchor.constraint(equalTo: self.flyportSubtitleLabel.bottomAnchor, constant: UIView.margin(of: [94.0, 125.0, 156.0])),
+			self.flyportLogo.topAnchor.constraint(equalTo: self.flyportSubtitleLabel.bottomAnchor, constant: UIView.margin(of: [24, 32, 40])),
 			self.flyportLogo.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [78.0, 104.5, 131.0])),
 			self.flyportLogo.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [78.0, 104.5, 131.0]))
 		])

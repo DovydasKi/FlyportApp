@@ -81,9 +81,6 @@ class RegistrationViewModel {
     }
 	
 	public func registerToService(emailText: String?, passwordText: String?, nameText: String?, surnameText: String?, personalCodeText: String?, documentNumberText: String?, completion: @escaping (Bool) -> ()) {
-		let domain = Bundle.main.bundleIdentifier!
-		UserDefaults.standard.removePersistentDomain(forName: domain)
-		UserDefaults.standard.synchronize()
 		if let email = emailText, let password = passwordText, let name = nameText, let surname = surnameText, let personalCode = personalCodeText, let documentNumber = documentNumberText {
 			let registrationRequest = RegistrationRequestModel(email: email, password: password, name: name, surname: surname, personalCode: personalCode, documentNumber: documentNumber)
 			let data = try! JSONEncoder().encode(registrationRequest)

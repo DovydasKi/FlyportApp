@@ -61,7 +61,7 @@ public class RegistrationTableViewController: UIViewController {
 	}
 	
 	@objc private func openMap() {
-		let vm = MapViewModel(number: self.viewModel.flightNumber, mapType: .registration)
+		let vm = MapViewModel(number: self.viewModel.tableNumber, mapType: .registration)
 		let newVC = MapViewController(viewModel: vm)
 		self.navigationController?.pushViewController(newVC, animated: true)
 	}
