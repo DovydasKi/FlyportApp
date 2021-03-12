@@ -9,9 +9,9 @@
 import Foundation
 
 class TabBarViewModel {
-    private static let profileTitle = "Profile"
-    private static let myFlightsTitle = "My flights"
-    private static let settingsTitle = "Settings"
+	private static let profileTitle = LocalizationKeys.profile.localized()
+    private static let myFlightsTitle = LocalizationKeys.myFlights.localized()
+    private static let settingsTitle = LocalizationKeys.settings.localized()
 }
 
 extension TabBarViewModel {

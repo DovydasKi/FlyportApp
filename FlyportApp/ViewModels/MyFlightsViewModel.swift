@@ -9,8 +9,8 @@
 import Foundation
 
 class MyFlightsViewModel {
-	private static let myFlights = "My flights"
-	private static let newFlight = "New flight"
+	private static let myFlights = LocalizationKeys.myFlights.localized()
+	private static let newFlight = LocalizationKeys.newFlight.localized()
 	private let userFlightsService = UserFlightsService()
 	public var isFlightsEmpty: Bool = true
 	

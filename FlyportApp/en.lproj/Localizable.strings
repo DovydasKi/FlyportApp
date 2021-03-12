@@ -1,0 +1,43 @@
+/* 
+  Localizable.strings
+  FlyportApp
+
+  Created by Dovydas Kiriliauskas on 2021-03-12.
+  Copyright © 2021 Dovydas Kiriliauskas. All rights reserved.
+*/
+
+"FLYPORT_TITLE" = "FlyPort";
+"FLYPORT_SUBTITLE" = "Now airplanes are slower than airPorts...";
+"LOGIN" = "LOGIN";
+"REGISTER" = "REGISTER";
+"EMAIL" = "Email";
+"PASSWORD" = "Password";
+"REGISTER_TITLE" = "Are you new here? Register here";
+"UNSUCCESSFUL_LOGIN_TITLE" = "Unsuccessfull login";
+"UNSUCCESSFUL_LOGIN_MESSAGE" = "It seems that you login data is incorrect. Try again";
+"TRY_AGAIN" = "Try again";
+"USERNAME" = "Username";
+"REPEAT_PASSWORD" = "Repeat password";
+"LOGIN_TITLE" = "Do you already have an account?\nLogin here";
+"NAME" = "Name";
+"SURNAME" = "Surname";
+"PERSONAL_CODE" = "Personal code";
+"DOCUMENT_NUMBER" = "Document number";
+"SUCCESSFUL_REGISTRATION_TITLE" = "Registration successful";
+"SUCCESSFUL_REGISTRATION_SUBTITLE" = "Now you can login";
+"LOGIN_SMALL" = "Login";
+"UNSUCCESSFUL_REGISTRATION_TITLE" = "Unsuccessfull registration";
+"UNSUCCESSFUL_REGISTRATION_SUBTITLE" = "Something went wrong. Try again";
+"PROFILE" = "Profile";
+"MY_FLIGHTS" = "My flights";
+"SETTINGS" = "Settings";
+"NEW_FLIGHT" = "New flight";
+"REGISTRATION_TABLE" = "Registration Table";
+"AVIATION_SECURITY_POST" = "Aviation security post";
+"PASSPORT_CONTROL_POST" = "Passport control post";
+"BOARDING_GATES" = "Boarding gates";
+"SUCCESSFUL_UPDATE_TITLE" = "Update successful";
+"SUCCESSFUL_UPDATE_SUBTITLE" = "All important data is saved";
+"OK" = "Ok";
+"UNSUCCESSFUL_UPDATE_TITLE" = "Unsuccessfull update";
+"UNSUCCESSFUL_UPDATE_SUBTITLE" = "Something went wrong. Try again";

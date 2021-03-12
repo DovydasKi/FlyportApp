@@ -64,6 +64,9 @@
 		A69F8CA825D302AA008884CC /* UserFlightsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69F8CA725D302AA008884CC /* UserFlightsModel.swift */; };
 		A6A7AB8425E7F95A0092371A /* SelectedFlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A7AB8325E7F95A0092371A /* SelectedFlightViewController.swift */; };
 		A6A7AB8625E7F97A0092371A /* SelectedFlightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A7AB8525E7F97A0092371A /* SelectedFlightViewModel.swift */; };
+		A6C2E46225FBD1110062314C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6C2E46425FBD1110062314C /* Localizable.strings */; };
+		A6C2E46825FBD1C20062314C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6C2E46A25FBD1C20062314C /* Localizable.strings */; };
+		A6C2E46E25FBD4690062314C /* LocalizationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C2E46D25FBD4690062314C /* LocalizationKeys.swift */; };
 		A6D139A923BC19F600B79903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D139A823BC19F600B79903 /* AppDelegate.swift */; };
 		A6D139AB23BC19F600B79903 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D139AA23BC19F600B79903 /* SceneDelegate.swift */; };
 		A6D139AD23BC19F600B79903 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D139AC23BC19F600B79903 /* ViewController.swift */; };
@@ -166,6 +169,9 @@
 		A69F8CA725D302AA008884CC /* UserFlightsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFlightsModel.swift; sourceTree = "<group>"; };
 		A6A7AB8325E7F95A0092371A /* SelectedFlightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedFlightViewController.swift; sourceTree = "<group>"; };
 		A6A7AB8525E7F97A0092371A /* SelectedFlightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedFlightViewModel.swift; sourceTree = "<group>"; };
+		A6C2E46525FBD11E0062314C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A6C2E46925FBD1C20062314C /* lt-LT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "lt-LT"; path = "lt-LT.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A6C2E46D25FBD4690062314C /* LocalizationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationKeys.swift; sourceTree = "<group>"; };
 		A6D139A523BC19F600B79903 /* FlyportApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyportApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D139A823BC19F600B79903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6D139AA23BC19F600B79903 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -297,6 +303,9 @@
 				A6D139B123BC19F800B79903 /* Assets.xcassets */,
 				A6D139B323BC19F800B79903 /* LaunchScreen.storyboard */,
 				A6D139B623BC19F800B79903 /* Info.plist */,
+				A6C2E46425FBD1110062314C /* Localizable.strings */,
+				A6C2E46A25FBD1C20062314C /* Localizable.strings */,
+				A6C2E46D25FBD4690062314C /* LocalizationKeys.swift */,
 			);
 			path = FlyportApp;
 			sourceTree = "<group>";
@@ -483,6 +492,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"lt-LT",
 			);
 			mainGroup = A6D1399C23BC19F600B79903;
 			productRefGroup = A6D139A623BC19F600B79903 /* Products */;
@@ -501,7 +511,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6D139B523BC19F800B79903 /* LaunchScreen.storyboard in Resources */,
+				A6C2E46225FBD1110062314C /* Localizable.strings in Resources */,
 				A6D5167525D443B900BDAC40 /* Sora-Medium.ttf in Resources */,
+				A6C2E46825FBD1C20062314C /* Localizable.strings in Resources */,
 				A6D139B223BC19F800B79903 /* Assets.xcassets in Resources */,
 				A6D139D125C86FD500B79903 /* seguisym.ttf in Resources */,
 				A6D139B023BC19F600B79903 /* Main.storyboard in Resources */,
@@ -651,6 +663,7 @@
 				A619B61125E55F5700CA1ACA /* RegisteredLuggageViewModel.swift in Sources */,
 				A69F8CA625D3018D008884CC /* UserFlightModel.swift in Sources */,
 				A6E7D44625F0204300A733F5 /* MapTypeEnum.swift in Sources */,
+				A6C2E46E25FBD4690062314C /* LocalizationKeys.swift in Sources */,
 				A68FE04425CC5EBC003767DB /* defaultsKeys.swift in Sources */,
 				A619B61F25E568BD00CA1ACA /* QRCodeViewModel.swift in Sources */,
 				A6DBD0D225CB0AAA0076CC96 /* RegistrationViewController.swift in Sources */,
@@ -702,6 +715,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		A6C2E46425FBD1110062314C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6C2E46525FBD11E0062314C /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		A6C2E46A25FBD1C20062314C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6C2E46925FBD1C20062314C /* lt-LT */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		A6D139AE23BC19F600B79903 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -725,6 +754,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -785,6 +815,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

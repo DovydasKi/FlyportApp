@@ -60,11 +60,13 @@ extension ViewController {
 	private func initFlyportSubtitleLabel() -> UILabel {
 		let label = UILabel()
 		label.text = self.splashScreenViewModel.flyportSubtitleText
-		label.font = UIFont(name: "seguisym", size: UIView.margin(of: [15.0, 20.0, 25.0]))
-		label.font = label.font.withSize(UIView.margin(of: [15.0, 20.0, 25.0]))
+		label.font = UIFont(name: "seguisym", size: UIView.margin(of: [15.0, 20.0, 20.0]))
+		label.font = label.font.withSize(UIView.margin(of: [15.0, 20.0, 20.0]))
 		label.textColor = UIColor(named: "titleColor")
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.textAlignment = .center
+		label.setNeedsLayout()
+		label.numberOfLines = 0
 		return label
 	}
 }
@@ -85,7 +87,7 @@ extension ViewController {
 			self.flyportSubtitleLabel.topAnchor.constraint(equalTo: self.flyportLabel.bottomAnchor, constant: UIView.margin(of: [24, 32, 40])),
 			self.flyportSubtitleLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [14, 16, 18])),
 			self.flyportSubtitleLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [14, 16, 18])),
-			self.flyportSubtitleLabel.heightAnchor.constraint(equalToConstant: UIView.margin(of: [18, 24, 30]))
+			self.flyportSubtitleLabel.heightAnchor.constraint(equalToConstant: UIView.margin(of: [22, 30, 35]))
 		])
 	}
 	

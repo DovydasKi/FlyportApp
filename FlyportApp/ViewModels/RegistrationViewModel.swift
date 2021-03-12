@@ -10,22 +10,22 @@ import Foundation
 import UIKit
 
 class RegistrationViewModel {
-	private static let title: String = "FlyPort"
-	private static let username: String = "Username"
-	private static let email: String = "Email"
-	private static let password: String = "Password"
-	private static let repeatPassword: String = "Repeat password"
-	private static let loginHereTitle: String = "Do you already have an account?\nLogin here"
-	private static let name: String = "Name"
-	private static let surname: String = "Surname"
-	private static let personalCode: String = "Personal code"
-	private static let documentNumber: String = "Document number"
-	private static let successfulRegistration: String = "Registration successful"
-	private static let successfulRegistrationSubtitle: String = "Now you can login"
-	private static let login: String = "Login"
-	private static let unsuccessfulRegistration = "Unsuccessfull registration"
-	private static let unsuccessfulRegistrationMessage = "Something went wrong. Try again"
-	private static let tryAgain = "Try again"
+	private static let title: String = LocalizationKeys.flyPortTitle.localized()
+	private static let username: String = LocalizationKeys.username.localized()
+	private static let email: String = LocalizationKeys.email.localized()
+	private static let password: String = LocalizationKeys.password.localized()
+	private static let repeatPassword: String = LocalizationKeys.repeatPassword.localized()
+	private static let loginHereTitle: String = LocalizationKeys.loginTitle.localized()
+	private static let name: String = LocalizationKeys.name.localized()
+	private static let surname: String = LocalizationKeys.surname.localized()
+	private static let personalCode: String = LocalizationKeys.personalCode.localized()
+	private static let documentNumber: String = LocalizationKeys.documentNumber.localized()
+	private static let successfulRegistration: String = LocalizationKeys.successfulRegistrationTitle.localized()
+	private static let successfulRegistrationSubtitle: String = LocalizationKeys.successfulRegistrationSubtitle.localized()
+	private static let login: String = LocalizationKeys.loginSmall.localized()
+	private static let unsuccessfulRegistration = LocalizationKeys.unsuccessfulRegistrationTitle.localized()
+	private static let unsuccessfulRegistrationMessage = LocalizationKeys.unsuccessfulRegistrationSubtitle.localized()
+	private static let tryAgain = LocalizationKeys.tryAgain.localized()
     private var inputValidation = InputValidation()
 	private let loginService = LoginService()
 	

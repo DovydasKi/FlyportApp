@@ -9,8 +9,8 @@
 import Foundation
 
 class SplashScreenViewModel {
-    private static let flyportLabelTitle = "FlyPort"
-	private static let flyportSubtitleText = "Now airplanes are slower than airPorts..."
+	private static let flyportLabelTitle = LocalizationKeys.flyPortTitle.localized()
+	private static let flyportSubtitleText = LocalizationKeys.flyPortSubtitle.localized()
 }
 
 extension SplashScreenViewModel {

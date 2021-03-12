@@ -1,0 +1,43 @@
+/* 
+  Localizable.strings
+  FlyportApp
+
+  Created by Dovydas Kiriliauskas on 2021-03-12.
+  Copyright © 2021 Dovydas Kiriliauskas. All rights reserved.
+*/
+
+"FLYPORT_TITLE" = "FlyPort";
+"FLYPORT_SUBTITLE" = "Dabar lėktuvai yra lėtesni už oro uostą...";
+"LOGIN" = "PRISIJUNGTI";
+"REGISTER" = "REGISTRUOTIS";
+"EMAIL" = "El.paštas";
+"PASSWORD" = "Slaptažodis";
+"REGISTER_TITLE" = "Nesi užsiregistravęs? Registruokis čia";
+"UNSUCCESSFUL_LOGIN_TITLE" = "Nesėkmingas prisijungimas";
+"UNSUCCESSFUL_LOGIN_MESSAGE" = "Atrodo, jog jūsų prisijungimo duomenys yra neteisingi. Bandykite dar kartą";
+"TRY_AGAIN" = "Bandyti dar kartą";
+"USERNAME" = "Naudotojo vardas";
+"REPEAT_PASSWORD" = "Pakartokite slaptažodį";
+"LOGIN_TITLE" = "Turite paskyrą?\nPrisijunkite čia";
+"NAME" = "Vardas";
+"SURNAME" = "Pavardė";
+"PERSONAL_CODE" = "Asmens kodas";
+"DOCUMENT_NUMBER" = "Dokumento numeris";
+"SUCCESSFUL_REGISTRATION_TITLE" = "Registracija sėkminga";
+"SUCCESSFUL_REGISTRATION_SUBTITLE" = "Sveikiname! Galite prisijungti prie programėlės";
+"LOGIN_SMALL" = "Prisijungti";
+"UNSUCCESSFUL_REGISTRATION_TITLE" = "Nesėkminga registracija";
+"UNSUCCESSFUL_REGISTRATION_SUBTITLE" = "Kažkur įsivėlusi klaida registracijos formoje. Bandykite dar kartą";
+"PROFILE" = "Paskyra";
+"MY_FLIGHTS" = "Mano skrydžiai";
+"SETTINGS" = "Nustatymai";
+"NEW_FLIGHT" = "Naujas skrydis";
+"REGISTRATION_TABLE" = "Registracijos stalelis";
+"AVIATION_SECURITY_POST" = "Aviacinės saugos punktas";
+"PASSPORT_CONTROL_POST" = "Pasų kotrolės punktas";
+"BOARDING_GATES" = "Įlaipinimo vartai";
+"SUCCESSFUL_UPDATE_TITLE" = "Duomenys atnaujinti sėkmingai";
+"SUCCESSFUL_UPDATE_SUBTITLE" = "Visi reikalingi duomenys sėkmingai išsaugoti";
+"OK" = "Ok";
+"UNSUCCESSFUL_UPDATE_TITLE" = "Duomenys neatnaujinti";
+"UNSUCCESSFUL_UPDATE_SUBTITLE" = "Kažkur įsivėlusi klaida. Pataisykite duomenis ir bandykite dar kartą";

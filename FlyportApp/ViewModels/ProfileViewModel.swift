@@ -12,15 +12,15 @@ import UIKit
 class ProfileViewModel {
 	public lazy var userPersonalInfo: UserPersonalInfoModel = UserDefaults.standard.getPersonalInfo()
 	public lazy var userLoginInfo: UserLoginInfoModel = UserDefaults.standard.getLoginInfo()
-	private static let profile: String = "Profile"
-	private static let password: String = "Password"
-	private static let repeatPassword: String = "Repeat password"
-	private static let successfulUpdate: String = "Update successful"
-	private static let successfulUpdateSubtitle: String = "All important data is saved"
-	private static let ok: String = "Ok"
-	private static let unsuccessfulUpdate = "Unsuccessfull update"
-	private static let unsuccessfulUpdateMessage = "Something went wrong. Try again"
-	private static let tryAgain = "Try again"
+	private static let profile: String = LocalizationKeys.profile.localized()
+	private static let password: String = LocalizationKeys.password.localized()
+	private static let repeatPassword: String = LocalizationKeys.repeatPassword.localized()
+	private static let successfulUpdate: String = LocalizationKeys.successfulUpdateTitle.localized()
+	private static let successfulUpdateSubtitle: String = LocalizationKeys.successfulUpdateSubtitle.localized()
+	private static let ok: String = LocalizationKeys.ok.localized()
+	private static let unsuccessfulUpdate = LocalizationKeys.unsuccessfulUpdateTitle.localized()
+	private static let unsuccessfulUpdateMessage = LocalizationKeys.unsuccessfulUpdateSubtitle.localized()
+	private static let tryAgain = LocalizationKeys.tryAgain.localized()
 	private let inputValidation = InputValidation()
 	private let loginService = LoginService()
 	

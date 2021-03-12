@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 class LoginViewModel {
-	private static var appTitle = "FlyPort"
-	private static var email = "Email"
-	private static var password = "Password"
-	private static var registerTitle = "Are you new here? Register here"
-	private static let unsuccessfulLogin = "Unsuccessfull login"
-	private static let unsuccessfulLoginMessage = "It seems that you login data is incorrect. Try again"
-	private static let tryAgain = "Try again"
+	private static var appTitle = LocalizationKeys.flyPortTitle.localized()
+	private static var email = LocalizationKeys.email.localized()
+	private static var password = LocalizationKeys.password.localized()
+	private static var registerTitle = LocalizationKeys.registerTitle.localized()
+	private static let unsuccessfulLogin = LocalizationKeys.unsuccessfulLoginTitle.localized()
+	private static let unsuccessfulLoginMessage = LocalizationKeys.unsuccessfulLoginMessage.localized()
+	private static let tryAgain = LocalizationKeys.tryAgain.localized()
 	private var inputValidation = InputValidation()
 	private var loginService = LoginService()
 	

@@ -9,10 +9,10 @@
 import Foundation
 
 class MainScreenViewModel {
-	private static let flyportLabelTitle = "FlyPort"
-	private static let flyportSubtitleText = "Now airplanes are slower than airPorts..."
-	private static let loginTitle = "LOGIN"
-	private static let registerTitle = "REGISTER"
+	private static let flyportLabelTitle = LocalizationKeys.flyPortTitle.localized()
+	private static let flyportSubtitleText = LocalizationKeys.flyPortSubtitle.localized()
+	private static let loginTitle = LocalizationKeys.login.localized()
+	private static let registerTitle = LocalizationKeys.register.localized()
 }
 
 extension MainScreenViewModel {

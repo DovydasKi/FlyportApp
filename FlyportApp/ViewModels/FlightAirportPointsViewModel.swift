@@ -14,10 +14,10 @@ public class FlightAirportPointsViewModel {
 	public let route: String
 	public let flightNumber: String
 	public let flightId: Int
-	private static let registrationTableTitle: String = "Registration Table"
-	private static let aviationSecurityPostTitle: String = "Aviation security post"
-	private static let passportControlPostTitle: String = "Passport control post"
-	private static let boardingGatesTitle: String = "Boarding gates"
+	private static let registrationTableTitle: String = LocalizationKeys.registrationTable.localized()
+	private static let aviationSecurityPostTitle: String = LocalizationKeys.aviationSecurityPost.localized()
+	private static let passportControlPostTitle: String = LocalizationKeys.passportControlPost.localized()
+	private static let boardingGatesTitle: String = LocalizationKeys.boardingGates.localized()
 	private static let registrationTableImage: String = "Registration"
 	private static let aviationSecurityPostImage: String = "SecurityPoint"
 	private static let passportControlPostImage: String = "PassportControl"
