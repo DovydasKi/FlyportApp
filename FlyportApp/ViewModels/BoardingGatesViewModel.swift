@@ -12,12 +12,12 @@ public class BoardingGatesViewModel {
 	public var flightInfo: FlightInfoModel
 	public var airportPoint: AirportPointModel
 	private let airportPointsService = AirportPointService()
-	private static let yourBoardingGates: String = "Your boarding gates:"
-	private static let navigateToTable = "Navigate to boarding gates"
-	private static let finish: String = "Finish"
-	private static let errorTitle: String = "Error"
-	private static let errorSubtitle: String = "Something went wrong. Try again"
-	private static let ok: String = "Ok"
+	private static let yourBoardingGates: String = LocalizationKeys.yourBoardingGates.localized()
+	private static let navigateToTable = LocalizationKeys.navigateToBoarding.localized()
+	private static let finish: String = LocalizationKeys.finish.localized()
+	private static let errorTitle: String = LocalizationKeys.error.localized()
+	private static let errorSubtitle: String = LocalizationKeys.unsuccessfulUpdateSubtitle.localized()
+	private static let ok: String = LocalizationKeys.ok.localized()
 	
 	public init(point: AirportPointModel, info: FlightInfoModel) {
 		self.flightInfo = info

@@ -24,9 +24,9 @@ class FlightCardView: UIView {
 		let route = fromCity + " - " + toCity
 		self.route = route
 		if isCompleted {
-			self.flightStatus = "Completed flight"
+			self.flightStatus = LocalizationKeys.completedFlight.localized()
 		} else {
-			self.flightStatus = "Incompleted flight"
+			self.flightStatus = LocalizationKeys.incompletedFlight.localized()
 		}
 		super.init(frame: CGRect.zero)
 		self.configure()

@@ -10,11 +10,11 @@ import Foundation
 
 public class OnboardingCompletedViewModel {
 	private let userFlightsService = UserFlightsService()
-	private static let congratsTitle: String = "COOONGRATS!"
-	private static let congratsSubtitle: String = "YOU'RE READY FOR YOUR FLIGHT!"
-	private static let errorTitle: String = "Error"
-	private static let errorSubtitle: String = "Something went wrong. Try again"
-	private static let ok: String = "Ok"
+	private static let congratsTitle: String = LocalizationKeys.congrats.localized()
+	private static let congratsSubtitle: String = LocalizationKeys.readyForFlight.localized()
+	private static let errorTitle: String = LocalizationKeys.error.localized()
+	private static let errorSubtitle: String = LocalizationKeys.unsuccessfulUpdateSubtitle.localized()
+	private static let ok: String = LocalizationKeys.ok.localized()
 	
 	public func completeFlight(completion: @escaping (Bool) -> ()) {
 		let userFlightId = UserDefaults.standard.getUserFlightId()

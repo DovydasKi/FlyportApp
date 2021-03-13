@@ -18,13 +18,13 @@ public enum MapTypeEnum {
 	public var titleText: String {
 		switch self {
 		case .registration:
-			return "Your registration table"
+			return LocalizationKeys.yourRegistrationTable.localized()
 		case .aviationSecurity:
-			return "Your aviation security post"
+			return LocalizationKeys.yourAviationSecurityPost.localized()
 		case .passport:
-			return "Your passport control post"
+			return LocalizationKeys.yourPassportControlPost.localized()
 		case .boarding:
-			return "Your boarding gate"
+			return LocalizationKeys.yourBoardingGates.localized()
 		}
 	}
 	
@@ -71,13 +71,13 @@ public enum MapTypeEnum {
 	public var destinationTitle: String {
 		switch self {
 		case .aviationSecurity:
-			return "Your aviation security point: "
+			return LocalizationKeys.yourAviationSecurityPost.localized()
 		case .boarding:
-			return "Your boarding gates: "
+			return LocalizationKeys.yourBoardingGates.localized()
 		case .passport:
-			return "Your passport check point: "
+			return LocalizationKeys.yourPassportControlPost.localized()
 		case .registration:
-			return "Your registration table: "
+			return LocalizationKeys.yourRegistrationTable.localized()
 		}
 	}
 }

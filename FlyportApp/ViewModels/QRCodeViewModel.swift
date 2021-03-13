@@ -9,8 +9,8 @@
 import Foundation
 
 public class QRCodeViewModel {
-	private static let yourCodeTitle: String = "Your QR code"
-	private static let hideCodeTitle: String = "Hide QR code"
+	private static let yourCodeTitle: String = LocalizationKeys.yourQR.localized()
+	private static let hideCodeTitle: String = LocalizationKeys.hideQR.localized()
 	private let flightNumber: String
 	private let routeFrom: String
 	private let routeTo: String

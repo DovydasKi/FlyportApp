@@ -11,12 +11,12 @@ import UIKit
 
 public class FlightDateViewModel {
 	private var flightNumber: String
-	private static let enterDate: String = "Enter your flight date"
-	private static let flightDatePlaceholder: String = "Flight date"
-	private static let select: String = "Select"
-	private static let errorTitle: String = "Error"
-	private static let errorSubtitle: String = "It seems that flight which you entered does'nt exist. Try edit flight information"
-	private static let ok: String = "Ok"
+	private static let enterDate: String = LocalizationKeys.enterFlightDate.localized()
+	private static let flightDatePlaceholder: String = LocalizationKeys.flightDate.localized()
+	private static let select: String = LocalizationKeys.select.localized()
+	private static let errorTitle: String = LocalizationKeys.error.localized()
+	private static let errorSubtitle: String = LocalizationKeys.flightInfoErrorSubtitle.localized()
+	private static let ok: String = LocalizationKeys.ok.localized()
 	private var inputValidation = InputValidation()
 	private let userFlightsService = UserFlightsService()
 	

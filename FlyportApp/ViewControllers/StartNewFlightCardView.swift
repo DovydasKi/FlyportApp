@@ -49,7 +49,7 @@ extension StartNewFlightCardView {
 	
 	private func initquestionLabel() -> UILabel {
 		let label = UILabel()
-		label.text = "Ready for the new trip?"
+		label.text = LocalizationKeys.readyForTheTrip.localized()
 		label.font = UIFont(name: "Sora-Medium", size: UIView.margin(of: [15.0, 20.0, 25.0]))
 		label.font = label.font.withSize(UIView.margin(of: [15.0, 20.0, 25.0]))
 		label.textColor = UIColor(named: "titleColor")
@@ -63,7 +63,7 @@ extension StartNewFlightCardView {
 	private func initButton() -> UIButton {
 		let button = UIButton()
 		button.translatesAutoresizingMaskIntoConstraints = false
-		button.setTitle("Add new trip", for: .normal)
+		button.setTitle(LocalizationKeys.addTrip.localized(), for: .normal)
 		button.setTitleColor(UIColor(named: "CardYellow"), for: .normal)
 		button.backgroundColor = UIColor(named: "ButtonColor")
 		button.layer.cornerRadius = 30.0

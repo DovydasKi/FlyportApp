@@ -11,12 +11,12 @@ import Foundation
 public class SelectedFlightViewModel {
 	private let userFlightsService = UserFlightsService()
 	private var flightInfo: FlightInfoModel
-	private static let yourFlightTitle: String = "Your selected flight"
+	private static let yourFlightTitle: String = LocalizationKeys.yourSelectedFlight.localized()
 	private var route: String
 	private var flightDate: String
-	private static let errorTitle: String = "Error"
-	private static let errorSubtitle: String = "Something went wrong. Try again"
-	private static let ok: String = "Ok"
+	private static let errorTitle: String = LocalizationKeys.error.localized()
+	private static let errorSubtitle: String = LocalizationKeys.unsuccessfulUpdateSubtitle.localized()
+	private static let ok: String = LocalizationKeys.ok.localized()
 	
 	public init(flightInfo: FlightInfoModel) {
 		self.flightInfo = flightInfo

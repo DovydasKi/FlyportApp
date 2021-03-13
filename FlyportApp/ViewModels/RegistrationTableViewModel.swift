@@ -12,13 +12,13 @@ public class RegistrationTableViewModel {
 	private let airportPoint: AirportPointModel
 	public let flightInfo: FlightInfoModel
 	private let airportPointsService = AirportPointService()
-	private static let yourRegistrationTable: String = "Your registration table:"
-	private static let navigateToTable = "Navigate to registration table"
-	private static let showQRCode: String = "Show my QR code"
-	private static let moveToNextProcedure: String = "Move to next procedure"
-	private static let errorTitle: String = "Error"
-	private static let errorSubtitle: String = "Something went wrong. Try again"
-	private static let ok: String = "Ok"
+	private static let yourRegistrationTable: String = LocalizationKeys.yourRegistrationTable.localized()
+	private static let navigateToTable = LocalizationKeys.navigateToRegistration.localized()
+	private static let showQRCode: String = LocalizationKeys.showQR.localized()
+	private static let moveToNextProcedure: String = LocalizationKeys.moveToNextProcedure.localized()
+	private static let errorTitle: String = LocalizationKeys.error.localized()
+	private static let errorSubtitle: String = LocalizationKeys.unsuccessfulUpdateSubtitle.localized()
+	private static let ok: String = LocalizationKeys.ok.localized()
 	
 	public init(point: AirportPointModel, info: FlightInfoModel) {
 		self.flightInfo = info

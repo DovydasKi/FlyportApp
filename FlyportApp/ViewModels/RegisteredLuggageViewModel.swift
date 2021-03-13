@@ -11,10 +11,10 @@ import Foundation
 public class RegisteredLuggageViewModel {
 	private let airportPointsService = AirportPointService()
 	public var flightInfo: FlightInfoModel
-	private static let luggageQuestion: String = "Do you have registered luggage?"
-	private static let errorTitle: String = "Error"
-	private static let errorSubtitle: String = "Something went wrong. Try again"
-	private static let ok: String = "Ok"
+	private static let luggageQuestion: String = LocalizationKeys.luggageQuestion.localized()
+	private static let errorTitle: String = LocalizationKeys.error.localized()
+	private static let errorSubtitle: String = LocalizationKeys.unsuccessfulUpdateSubtitle.localized()
+	private static let ok: String = LocalizationKeys.ok.localized()
 	
 	public init(flightInfo: FlightInfoModel) {
 		self.flightInfo = flightInfo

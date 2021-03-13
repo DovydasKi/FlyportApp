@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 public class FlightNumberViewModel {
-	private static let enterNumber: String = "Enter your flight number"
-	private static let flightNumberPlaceholder: String = "Flight number"
+	private static let enterNumber: String = LocalizationKeys.enterFlightNumber.localized()
+	private static let flightNumberPlaceholder: String = LocalizationKeys.flightNumber.localized()
 	private let inputValidation = InputValidation()
 	
 	public func checkValidNumber(flightNumber: UITextField) -> Bool {
