@@ -18,7 +18,11 @@ class LoginViewModel {
 	private static let unsuccessfulLoginMessage = LocalizationKeys.unsuccessfulLoginMessage.localized()
 	private static let tryAgain = LocalizationKeys.tryAgain.localized()
 	private var inputValidation = InputValidation()
-	private var loginService = LoginService()
+	private var loginService: LoginService
+	
+	public init(service: LoginService = LoginService()) {
+		self.loginService = service
+	}
 	
 	public func checkForAllValidFields(emailField: UITextField, passwordField: UITextField) -> Bool {
 		var emailIsValid = false

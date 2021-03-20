@@ -27,7 +27,11 @@ class RegistrationViewModel {
 	private static let unsuccessfulRegistrationMessage = LocalizationKeys.unsuccessfulRegistrationSubtitle.localized()
 	private static let tryAgain = LocalizationKeys.tryAgain.localized()
     private var inputValidation = InputValidation()
-	private let loginService = LoginService()
+	private let loginService: LoginService
+	
+	public init(service: LoginService = LoginService()) {
+		self.loginService = service
+	}
 	
     public func checkForAllValidFields(emailField: UITextField, passwordField: UITextField, repeatPasswordField: UITextField) -> Bool {
         var emailIsValid = false

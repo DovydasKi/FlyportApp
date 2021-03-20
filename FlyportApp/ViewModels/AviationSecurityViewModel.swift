@@ -11,7 +11,7 @@ import Foundation
 public class AviationSecurityViewModel {
 	public var flightInfo: FlightInfoModel
 	public var airportPoint: AirportPointModel
-	private let airportPointsService = AirportPointService()
+	private let airportPointsService: AirportPointService
 	private static let yourAviationSecurityTable: String = LocalizationKeys.yourAviationSecurityPost.localized()
 	private static let navigateToTable = LocalizationKeys.navigateToSecurity.localized()
 	private static let moveToNextProcedure: String = LocalizationKeys.moveToNextProcedure.localized()
@@ -19,9 +19,10 @@ public class AviationSecurityViewModel {
 	private static let errorSubtitle: String = LocalizationKeys.unsuccessfulUpdateSubtitle.localized()
 	private static let ok: String = LocalizationKeys.ok.localized()
 	
-	public init(point: AirportPointModel, info: FlightInfoModel) {
+	public init(point: AirportPointModel, info: FlightInfoModel, service: AirportPointService = AirportPointService()) {
 		self.flightInfo = info
 		self.airportPoint = point
+		self.airportPointsService = service
 	}
 	
 	public func getPassportPointInfo(completion: @escaping (AirportPointModel?) -> ()) {

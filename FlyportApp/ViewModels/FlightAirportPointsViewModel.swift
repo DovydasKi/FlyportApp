@@ -22,13 +22,14 @@ public class FlightAirportPointsViewModel {
 	private static let aviationSecurityPostImage: String = "SecurityPoint"
 	private static let passportControlPostImage: String = "PassportControl"
 	private static let boardingGatesImage: String = "BoardingGates"
-	private let userFlightsService = UserFlightsService()
+	private let userFlightsService: UserFlightsService
 	
-	public init(flightId: Int, image: UIImage, route: String, flightNumber: String) {
+	public init(flightId: Int, image: UIImage, route: String, flightNumber: String, service: UserFlightsService = UserFlightsService()) {
 		self.flightId = flightId
 		self.airlinesImage = image
 		self.route = route
 		self.flightNumber = flightNumber
+		self.userFlightsService = service
 	}
 	
 	public func getFlightsData(completion: @escaping (FlightAirportPointsModel?) -> ()) {

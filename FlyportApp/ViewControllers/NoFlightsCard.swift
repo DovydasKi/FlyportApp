@@ -49,7 +49,7 @@ extension NoFlightsCard {
 	
 	private func initquestionLabel() -> UILabel {
 		let label = UILabel()
-		label.text = "Oooops"
+		label.text = LocalizationKeys.ops.localized()
 		label.font = UIFont(name: "Sora-Medium", size: UIView.margin(of: [15.0, 20.0, 25.0]))
 		label.font = label.font.withSize(UIView.margin(of: [15.0, 20.0, 25.0]))
 		label.textColor = .white
@@ -62,7 +62,7 @@ extension NoFlightsCard {
 	
 	private func initSubtitleLabel() -> UILabel {
 		let label = UILabel()
-		label.text = "It seems you haven't flied with us before!"
+		label.text = LocalizationKeys.haventFliedBefore.localized()
 		label.font = UIFont(name: "Sora-Medium", size: UIView.margin(of: [10.0, 14.0, 18.0]))
 		label.font = label.font.withSize(UIView.margin(of: [10.0, 14.0, 18.0]))
 		label.textColor = .white

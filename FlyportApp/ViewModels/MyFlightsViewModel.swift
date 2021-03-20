@@ -11,8 +11,12 @@ import Foundation
 class MyFlightsViewModel {
 	private static let myFlights = LocalizationKeys.myFlights.localized()
 	private static let newFlight = LocalizationKeys.newFlight.localized()
-	private let userFlightsService = UserFlightsService()
+	private let userFlightsService: UserFlightsService
 	public var isFlightsEmpty: Bool = true
+	
+	public init(service: UserFlightsService = UserFlightsService()) {
+		self.userFlightsService = service
+	}
 	
 	public func getFlightsData(completion: @escaping (UserFlightsModel?) -> ()) {
 		self.userFlightsService.getUserFlightsData() {
