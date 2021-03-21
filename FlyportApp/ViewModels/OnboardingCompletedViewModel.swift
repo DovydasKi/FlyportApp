@@ -9,12 +9,16 @@
 import Foundation
 
 public class OnboardingCompletedViewModel {
-	private let userFlightsService = UserFlightsService()
+	private let userFlightsService: UserFlightsService
 	private static let congratsTitle: String = LocalizationKeys.congrats.localized()
 	private static let congratsSubtitle: String = LocalizationKeys.readyForFlight.localized()
 	private static let errorTitle: String = LocalizationKeys.error.localized()
 	private static let errorSubtitle: String = LocalizationKeys.unsuccessfulUpdateSubtitle.localized()
 	private static let ok: String = LocalizationKeys.ok.localized()
+	
+	public init(service: UserFlightsService = UserFlightsService()) {
+		self.userFlightsService = service
+	}
 	
 	public func completeFlight(completion: @escaping (Bool) -> ()) {
 		let userFlightId = UserDefaults.standard.getUserFlightId()

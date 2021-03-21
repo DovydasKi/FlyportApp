@@ -22,7 +22,11 @@ class ProfileViewModel {
 	private static let unsuccessfulUpdateMessage = LocalizationKeys.unsuccessfulUpdateSubtitle.localized()
 	private static let tryAgain = LocalizationKeys.tryAgain.localized()
 	private let inputValidation = InputValidation()
-	private let loginService = LoginService()
+	private let loginService: LoginService
+	
+	public init(service: LoginService = LoginService()) {
+		self.loginService = service
+	}
 	
 	public var fullName: String {
 		return self.userPersonalInfo.name + " " + self.userPersonalInfo.surname

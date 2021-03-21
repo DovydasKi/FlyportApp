@@ -18,10 +18,11 @@ public class FlightDateViewModel {
 	private static let errorSubtitle: String = LocalizationKeys.flightInfoErrorSubtitle.localized()
 	private static let ok: String = LocalizationKeys.ok.localized()
 	private var inputValidation = InputValidation()
-	private let userFlightsService = UserFlightsService()
+	private let userFlightsService: UserFlightsService
 	
-	public init(flightNumber: String) {
+	public init(flightNumber: String, service: UserFlightsService = UserFlightsService()) {
 		self.flightNumber = flightNumber
+		self.userFlightsService = service
 	}
 	
 	public func getFlightNumber() -> String {

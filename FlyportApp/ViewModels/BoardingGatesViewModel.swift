@@ -11,7 +11,7 @@ import Foundation
 public class BoardingGatesViewModel {
 	public var flightInfo: FlightInfoModel
 	public var airportPoint: AirportPointModel
-	private let airportPointsService = AirportPointService()
+	private let airportPointsService: AirportPointService
 	private static let yourBoardingGates: String = LocalizationKeys.yourBoardingGates.localized()
 	private static let navigateToTable = LocalizationKeys.navigateToBoarding.localized()
 	private static let finish: String = LocalizationKeys.finish.localized()
@@ -19,9 +19,10 @@ public class BoardingGatesViewModel {
 	private static let errorSubtitle: String = LocalizationKeys.unsuccessfulUpdateSubtitle.localized()
 	private static let ok: String = LocalizationKeys.ok.localized()
 	
-	public init(point: AirportPointModel, info: FlightInfoModel) {
+	public init(point: AirportPointModel, info: FlightInfoModel, service: AirportPointService = AirportPointService()) {
 		self.flightInfo = info
 		self.airportPoint = point
+		self.airportPointsService = service
 	}
 }
 

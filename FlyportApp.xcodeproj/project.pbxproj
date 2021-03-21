@@ -44,6 +44,19 @@
 		A65EFD4C25E6B7A20032C0CC /* UserFlightCreationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65EFD4B25E6B7A20032C0CC /* UserFlightCreationResponseModel.swift */; };
 		A65EFD5025E6B8730032C0CC /* AirportPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65EFD4F25E6B8730032C0CC /* AirportPointModel.swift */; };
 		A65EFD5225E6C0020032C0CC /* AirportPointService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65EFD5125E6C0020032C0CC /* AirportPointService.swift */; };
+		A65F4E70260773060039006C /* ProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4E6F260773060039006C /* ProfileViewModelTests.swift */; };
+		A65F4E7226077D1E0039006C /* FlightNumberViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4E7126077D1E0039006C /* FlightNumberViewModelTests.swift */; };
+		A65F4E7426077E450039006C /* FlightDateViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4E7326077E450039006C /* FlightDateViewModelTests.swift */; };
+		A65F4E76260782050039006C /* RegisteredLuggageViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4E75260782050039006C /* RegisteredLuggageViewModelTests.swift */; };
+		A65F4E782607850F0039006C /* RegistrationTableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4E772607850F0039006C /* RegistrationTableViewModelTests.swift */; };
+		A65F4E7A26078CBE0039006C /* PassportControlPostViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4E7926078CBE0039006C /* PassportControlPostViewModelTests.swift */; };
+		A65F4E7C26078E5A0039006C /* BoardingGatesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4E7B26078E5A0039006C /* BoardingGatesViewModelTests.swift */; };
+		A65F4E7E26078F710039006C /* OnboardingCompletedViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4E7D26078F710039006C /* OnboardingCompletedViewModelTests.swift */; };
+		A65F4E80260791580039006C /* QRCodeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4E7F260791580039006C /* QRCodeViewModelTests.swift */; };
+		A65F4E82260792C20039006C /* SelectedFlightViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4E81260792C20039006C /* SelectedFlightViewModelTests.swift */; };
+		A65F4E84260795B70039006C /* MapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4E83260795B70039006C /* MapViewModelTests.swift */; };
+		A65F4E86260796EF0039006C /* AirlinesEnumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4E85260796EF0039006C /* AirlinesEnumTests.swift */; };
+		A65F4E88260798300039006C /* RequestURLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F4E87260798300039006C /* RequestURLTests.swift */; };
 		A67839F125FE3D8F005ADFA3 /* AviationSecurityViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67839F025FE3D8F005ADFA3 /* AviationSecurityViewModelTests.swift */; };
 		A678C1AE25DD76F40079AC05 /* FlightAirportPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A678C1AD25DD76F40079AC05 /* FlightAirportPointModel.swift */; };
 		A678C1B025DD77600079AC05 /* FlightAirportPointsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A678C1AF25DD77600079AC05 /* FlightAirportPointsModel.swift */; };
@@ -154,6 +167,19 @@
 		A65EFD4B25E6B7A20032C0CC /* UserFlightCreationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFlightCreationResponseModel.swift; sourceTree = "<group>"; };
 		A65EFD4F25E6B8730032C0CC /* AirportPointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportPointModel.swift; sourceTree = "<group>"; };
 		A65EFD5125E6C0020032C0CC /* AirportPointService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportPointService.swift; sourceTree = "<group>"; };
+		A65F4E6F260773060039006C /* ProfileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelTests.swift; sourceTree = "<group>"; };
+		A65F4E7126077D1E0039006C /* FlightNumberViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightNumberViewModelTests.swift; sourceTree = "<group>"; };
+		A65F4E7326077E450039006C /* FlightDateViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDateViewModelTests.swift; sourceTree = "<group>"; };
+		A65F4E75260782050039006C /* RegisteredLuggageViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredLuggageViewModelTests.swift; sourceTree = "<group>"; };
+		A65F4E772607850F0039006C /* RegistrationTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTableViewModelTests.swift; sourceTree = "<group>"; };
+		A65F4E7926078CBE0039006C /* PassportControlPostViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassportControlPostViewModelTests.swift; sourceTree = "<group>"; };
+		A65F4E7B26078E5A0039006C /* BoardingGatesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingGatesViewModelTests.swift; sourceTree = "<group>"; };
+		A65F4E7D26078F710039006C /* OnboardingCompletedViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCompletedViewModelTests.swift; sourceTree = "<group>"; };
+		A65F4E7F260791580039006C /* QRCodeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewModelTests.swift; sourceTree = "<group>"; };
+		A65F4E81260792C20039006C /* SelectedFlightViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedFlightViewModelTests.swift; sourceTree = "<group>"; };
+		A65F4E83260795B70039006C /* MapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelTests.swift; sourceTree = "<group>"; };
+		A65F4E85260796EF0039006C /* AirlinesEnumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesEnumTests.swift; sourceTree = "<group>"; };
+		A65F4E87260798300039006C /* RequestURLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestURLTests.swift; sourceTree = "<group>"; };
 		A67839F025FE3D8F005ADFA3 /* AviationSecurityViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AviationSecurityViewModelTests.swift; sourceTree = "<group>"; };
 		A678C1AD25DD76F40079AC05 /* FlightAirportPointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightAirportPointModel.swift; sourceTree = "<group>"; };
 		A678C1AF25DD77600079AC05 /* FlightAirportPointsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightAirportPointsModel.swift; sourceTree = "<group>"; };
@@ -331,6 +357,19 @@
 				A62DE18C26051AE800DC7A0D /* LoginViewModelTests.swift */,
 				A6F11CB026066AB600D7CA95 /* RegistrationViewModelTests.swift */,
 				A6F11CB2260679A000D7CA95 /* FlightAirportPointsViewModelTests.swift */,
+				A65F4E6F260773060039006C /* ProfileViewModelTests.swift */,
+				A65F4E7126077D1E0039006C /* FlightNumberViewModelTests.swift */,
+				A65F4E7326077E450039006C /* FlightDateViewModelTests.swift */,
+				A65F4E75260782050039006C /* RegisteredLuggageViewModelTests.swift */,
+				A65F4E772607850F0039006C /* RegistrationTableViewModelTests.swift */,
+				A65F4E7926078CBE0039006C /* PassportControlPostViewModelTests.swift */,
+				A65F4E7B26078E5A0039006C /* BoardingGatesViewModelTests.swift */,
+				A65F4E7D26078F710039006C /* OnboardingCompletedViewModelTests.swift */,
+				A65F4E7F260791580039006C /* QRCodeViewModelTests.swift */,
+				A65F4E81260792C20039006C /* SelectedFlightViewModelTests.swift */,
+				A65F4E83260795B70039006C /* MapViewModelTests.swift */,
+				A65F4E85260796EF0039006C /* AirlinesEnumTests.swift */,
+				A65F4E87260798300039006C /* RequestURLTests.swift */,
 			);
 			path = FlyportAppTests;
 			sourceTree = "<group>";
@@ -716,15 +755,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A65F4E86260796EF0039006C /* AirlinesEnumTests.swift in Sources */,
+				A65F4E70260773060039006C /* ProfileViewModelTests.swift in Sources */,
 				A6F11CB3260679A000D7CA95 /* FlightAirportPointsViewModelTests.swift in Sources */,
+				A65F4E80260791580039006C /* QRCodeViewModelTests.swift in Sources */,
+				A65F4E84260795B70039006C /* MapViewModelTests.swift in Sources */,
+				A65F4E76260782050039006C /* RegisteredLuggageViewModelTests.swift in Sources */,
 				A62DE189260518F200DC7A0D /* SplashScreenViewModelTests.swift in Sources */,
 				A62DE1872605181300DC7A0D /* TabBarViewModelTests.swift in Sources */,
+				A65F4E7226077D1E0039006C /* FlightNumberViewModelTests.swift in Sources */,
 				A6F11CB126066AB600D7CA95 /* RegistrationViewModelTests.swift in Sources */,
 				A6D139C023BC19F800B79903 /* FlyportAppTests.swift in Sources */,
+				A65F4E782607850F0039006C /* RegistrationTableViewModelTests.swift in Sources */,
+				A65F4E7E26078F710039006C /* OnboardingCompletedViewModelTests.swift in Sources */,
 				A62DE18B260519A000DC7A0D /* MainScreenViewModelTests.swift in Sources */,
+				A65F4E7426077E450039006C /* FlightDateViewModelTests.swift in Sources */,
+				A65F4E88260798300039006C /* RequestURLTests.swift in Sources */,
 				A67839F125FE3D8F005ADFA3 /* AviationSecurityViewModelTests.swift in Sources */,
 				A62DE18D26051AE800DC7A0D /* LoginViewModelTests.swift in Sources */,
 				A62DE1852605115A00DC7A0D /* MyFlightsViewModelTests.swift in Sources */,
+				A65F4E82260792C20039006C /* SelectedFlightViewModelTests.swift in Sources */,
+				A65F4E7A26078CBE0039006C /* PassportControlPostViewModelTests.swift in Sources */,
+				A65F4E7C26078E5A0039006C /* BoardingGatesViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

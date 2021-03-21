@@ -9,7 +9,7 @@
 import Foundation
 
 public class SelectedFlightViewModel {
-	private let userFlightsService = UserFlightsService()
+	private let userFlightsService: UserFlightsService
 	private var flightInfo: FlightInfoModel
 	private static let yourFlightTitle: String = LocalizationKeys.yourSelectedFlight.localized()
 	private var route: String
@@ -18,12 +18,13 @@ public class SelectedFlightViewModel {
 	private static let errorSubtitle: String = LocalizationKeys.unsuccessfulUpdateSubtitle.localized()
 	private static let ok: String = LocalizationKeys.ok.localized()
 	
-	public init(flightInfo: FlightInfoModel) {
+	public init(flightInfo: FlightInfoModel, service: UserFlightsService = UserFlightsService()) {
 		self.flightInfo = flightInfo
 		self.route = flightInfo.fromCity + " - " + flightInfo.toCity
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "yyyy-MM-dd"
 		self.flightDate = flightInfo.flightDate
+		self.userFlightsService = service
 	}
 	
 	public func getFlightInfo() -> FlightInfoModel {

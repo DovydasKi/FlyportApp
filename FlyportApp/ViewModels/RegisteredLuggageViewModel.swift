@@ -9,15 +9,16 @@
 import Foundation
 
 public class RegisteredLuggageViewModel {
-	private let airportPointsService = AirportPointService()
+	private let airportPointsService: AirportPointService
 	public var flightInfo: FlightInfoModel
 	private static let luggageQuestion: String = LocalizationKeys.luggageQuestion.localized()
 	private static let errorTitle: String = LocalizationKeys.error.localized()
 	private static let errorSubtitle: String = LocalizationKeys.unsuccessfulUpdateSubtitle.localized()
 	private static let ok: String = LocalizationKeys.ok.localized()
 	
-	public init(flightInfo: FlightInfoModel) {
+	public init(flightInfo: FlightInfoModel, service: AirportPointService = AirportPointService()) {
 		self.flightInfo = flightInfo
+		self.airportPointsService = service
 	}
 	
 	public func getRegistrationPointInfo(completion: @escaping (AirportPointModel?) -> ()) {

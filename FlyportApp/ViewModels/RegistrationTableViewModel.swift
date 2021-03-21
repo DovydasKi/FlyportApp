@@ -11,7 +11,7 @@ import Foundation
 public class RegistrationTableViewModel {
 	private let airportPoint: AirportPointModel
 	public let flightInfo: FlightInfoModel
-	private let airportPointsService = AirportPointService()
+	private let airportPointsService: AirportPointService
 	private static let yourRegistrationTable: String = LocalizationKeys.yourRegistrationTable.localized()
 	private static let navigateToTable = LocalizationKeys.navigateToRegistration.localized()
 	private static let showQRCode: String = LocalizationKeys.showQR.localized()
@@ -20,9 +20,10 @@ public class RegistrationTableViewModel {
 	private static let errorSubtitle: String = LocalizationKeys.unsuccessfulUpdateSubtitle.localized()
 	private static let ok: String = LocalizationKeys.ok.localized()
 	
-	public init(point: AirportPointModel, info: FlightInfoModel) {
+	public init(point: AirportPointModel, info: FlightInfoModel, service: AirportPointService = AirportPointService()) {
 		self.flightInfo = info
 		self.airportPoint = point
+		self.airportPointsService = service
 	}
 	
 	public func getSecurityPointInfo(completion: @escaping (AirportPointModel?) -> ()) {
