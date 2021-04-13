@@ -152,7 +152,8 @@ extension FlightAirportPointsViewController {
 		NSLayoutConstraint.activate([
 			self.airlinesLogo.topAnchor.constraint(equalTo: self.view.topAnchor, constant: UIView.margin(of: [30, 40, 50])),
 			self.airlinesLogo.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [50, 67, 84])),
-			self.airlinesLogo.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [50, 67, 84]))
+			self.airlinesLogo.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [50, 67, 84])),
+			self.airlinesLogo.heightAnchor.constraint(equalToConstant: UIView.margin(of: [60,80,80]))
 		])
 	}
 	

@@ -97,9 +97,9 @@ extension RegistrationViewController {
 		let textField = UITextField()
 		textField.placeholder = placeholder
 		textField.translatesAutoresizingMaskIntoConstraints = false
-		let imageView = UIImageView(frame: CGRect(x: 5, y: 5, width: 55, height: 55))
+		let imageView = UIImageView(frame: CGRect(x: 5, y: 5, width: 40, height: 40))
 		imageView.image = image
-		let view: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 65, height: 65))
+		let view: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
 		view.addSubview(imageView)
 		textField.leftView = view
 		textField.leftViewMode = .always
@@ -164,7 +164,7 @@ extension RegistrationViewController {
 			self.emailTextField.topAnchor.constraint(equalTo: self.logo.bottomAnchor, constant: UIView.margin(of: [13.5, 18.0, 22.5])),
 			self.emailTextField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [16, 20, 24])),
 			self.emailTextField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [16, 20, 24])),
-			self.emailTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [37.5,50,62.5]))
+			self.emailTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [37.5,50, 50]))
 		])
 	}
 	
@@ -173,7 +173,7 @@ extension RegistrationViewController {
 			self.passwordTextField.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor, constant: UIView.margin(of: [5.5, 6.5, 7.5])),
 			self.passwordTextField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [16, 20, 24])),
 			self.passwordTextField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [16, 20, 24])),
-			self.passwordTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [37.5,50,62.5]))
+			self.passwordTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [37.5,50,50]))
 		])
 	}
 	
@@ -182,7 +182,7 @@ extension RegistrationViewController {
 			self.repeatPasswordTextField.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor, constant: UIView.margin(of: [5.5, 6.5, 7.5])),
 			self.repeatPasswordTextField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [16, 20, 24])),
 			self.repeatPasswordTextField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [16, 20, 24])),
-			self.repeatPasswordTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [37.5,50,62.5]))
+			self.repeatPasswordTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [37.5,50,50]))
 		])
 	}
 	
@@ -191,7 +191,7 @@ extension RegistrationViewController {
 			self.loginButton.topAnchor.constraint(equalTo: self.repeatPasswordTextField.bottomAnchor, constant: UIView.margin(of: [22.5, 30.0, 37.5])),
 			self.loginButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [50, 67, 75])),
 			self.loginButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [50, 67, 75])),
-			self.loginButton.heightAnchor.constraint(equalToConstant: UIView.margin(of:[37.5, 50, 62.5]))
+			self.loginButton.heightAnchor.constraint(equalToConstant: UIView.margin(of:[45, 60, 75]))
 		])
 	}
 	

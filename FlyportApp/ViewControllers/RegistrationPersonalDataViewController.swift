@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import NVActivityIndicatorView
 
 class RegistrationPersonalDataViewController: UIViewController {
 	private var viewModel: RegistrationViewModel = RegistrationViewModel()
@@ -20,6 +21,8 @@ class RegistrationPersonalDataViewController: UIViewController {
 	private lazy var returnArrowImage: UIImageView = self.initArrowImage()
 	private lazy var loginButton: UIButton = self.initLoginButton()
 	private lazy var loginLink: UILabel = self.initLoginLinkLabel()
+	private lazy var loadingView: UIView = UIView(frame: CGRect.zero).loadingView
+	private lazy var activityIndicator: NVActivityIndicatorView = NVActivityIndicatorView(frame: CGRect.zero).loadingIndicator
 	private var email: String?
 	private var password: String?
 	
@@ -85,13 +88,20 @@ class RegistrationPersonalDataViewController: UIViewController {
 	
 	@objc private func loadLoginScreenAfterValidation() {
 		if self.viewModel.checkPersonalDataValidFields(name: self.nameTextField, surname: self.surnameTextField, personalCode: self.personalCodeTextField, documentNumber: self.documentNumberTextField) == true {
+			self.view.addSubview(self.loadingView)
+			self.view.addSubview(self.activityIndicator)
+			self.activateLoadingViewConstraints()
+			self.activateActivityIndicatorConstraints()
+			self.activityIndicator.startAnimating()
 			self.viewModel.registerToService(emailText: self.email, passwordText: self.password, nameText: self.nameTextField.text, surnameText: self.surnameTextField.text, personalCodeText: self.personalCodeTextField.text, documentNumberText: self.documentNumberTextField.text, completion: {
 				result in
 				if result {
 					let alert = self.initSuccessAlert()
+					self.stopAnimating()
 					self.present(alert, animated: true, completion: nil)
 				} else {
 					let alert = self.initUnsuccessAlert()
+					self.stopAnimating()
 					self.present(alert, animated: true, completion: nil)
 				}
 			})
@@ -100,6 +110,12 @@ class RegistrationPersonalDataViewController: UIViewController {
 	
 	@objc private func returnToPreviousScreen() {
 		self.navigationController?.popViewController(animated: true)
+	}
+	
+	private func stopAnimating() {
+		self.activityIndicator.stopAnimating()
+		self.loadingView.removeFromSuperview()
+		self.activityIndicator.removeFromSuperview()
 	}
 }
 
@@ -128,9 +144,9 @@ extension RegistrationPersonalDataViewController {
 		let textField = UITextField()
 		textField.placeholder = placeholder
 		textField.translatesAutoresizingMaskIntoConstraints = false
-		let imageView = UIImageView(frame: CGRect(x: 5, y: 5, width: 55, height: 55))
+		let imageView = UIImageView(frame: CGRect(x: 5, y: 5, width: 40, height: 40))
 		imageView.image = image
-		let view: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 65, height: 65))
+		let view: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
 		view.addSubview(imageView)
 		textField.leftView = view
 		textField.leftViewMode = .always
@@ -233,7 +249,7 @@ extension RegistrationPersonalDataViewController {
 			self.nameTextField.topAnchor.constraint(equalTo: self.logo.bottomAnchor, constant: UIView.margin(of: [13.5, 18.0, 22.5])),
 			self.nameTextField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [16, 20, 24])),
 			self.nameTextField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [16, 20, 24])),
-			self.nameTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [37.5,50,62.5]))
+			self.nameTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [37.5,50,50]))
 		])
 	}
 	
@@ -242,7 +258,7 @@ extension RegistrationPersonalDataViewController {
 			self.surnameTextField.topAnchor.constraint(equalTo: self.nameTextField.bottomAnchor, constant: UIView.margin(of: [5.5, 6.5, 7.5])),
 			self.surnameTextField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [16, 20, 24])),
 			self.surnameTextField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [16, 20, 24])),
-			self.surnameTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [37.5,50,62.5]))
+			self.surnameTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [37.5,50,50]))
 		])
 	}
 	
@@ -251,7 +267,7 @@ extension RegistrationPersonalDataViewController {
 			self.personalCodeTextField.topAnchor.constraint(equalTo: self.surnameTextField.bottomAnchor, constant: UIView.margin(of: [5.5, 6.5, 7.5])),
 			self.personalCodeTextField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [16, 20, 24])),
 			self.personalCodeTextField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [16, 20, 24])),
-			self.personalCodeTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [37.5,50,62.5]))
+			self.personalCodeTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [37.5,50,50]))
 		])
 	}
 	
@@ -260,7 +276,7 @@ extension RegistrationPersonalDataViewController {
 			self.documentNumberTextField.topAnchor.constraint(equalTo: self.personalCodeTextField.bottomAnchor, constant: UIView.margin(of: [5.5, 6.5, 7.5])),
 			self.documentNumberTextField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [16, 20, 24])),
 			self.documentNumberTextField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [16, 20, 24])),
-			self.documentNumberTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [37.5,50,62.5]))
+			self.documentNumberTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [37.5,50,50]))
 		])
 	}
 	
@@ -269,7 +285,7 @@ extension RegistrationPersonalDataViewController {
 			self.loginButton.topAnchor.constraint(equalTo: self.documentNumberTextField.bottomAnchor, constant: UIView.margin(of: [22.5, 30.0, 37.5])),
 			self.loginButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [50, 67, 75])),
 			self.loginButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [50, 67, 75])),
-			self.loginButton.heightAnchor.constraint(equalToConstant: UIView.margin(of:[37.5, 50, 62.5]))
+			self.loginButton.heightAnchor.constraint(equalToConstant: UIView.margin(of:[45, 60, 75]))
 		])
 	}
 	
@@ -279,6 +295,22 @@ extension RegistrationPersonalDataViewController {
 			self.loginLink.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [14, 16, 18])),
 			self.loginLink.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [14, 16, 18])),
 			self.loginLink.heightAnchor.constraint(equalToConstant: 55.0)
+		])
+	}
+	
+    private func activateActivityIndicatorConstraints() {
+        NSLayoutConstraint.activate([
+            self.activityIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+        ])
+    }
+	
+	private func activateLoadingViewConstraints() {
+		NSLayoutConstraint.activate([
+			self.loadingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+			self.loadingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+			self.loadingView.topAnchor.constraint(equalTo: self.view.topAnchor),
+			self.loadingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
 		])
 	}
 }

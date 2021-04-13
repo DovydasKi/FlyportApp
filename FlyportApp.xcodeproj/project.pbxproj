@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -67,6 +67,7 @@
 		A67A73B625C87F9C00F6B7EA /* ServiceKeywords.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A73B225C87F9B00F6B7EA /* ServiceKeywords.swift */; };
 		A67A73B725C87F9C00F6B7EA /* RequestURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A73B325C87F9C00F6B7EA /* RequestURL.swift */; };
 		A67A73B925C87F9C00F6B7EA /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A73B525C87F9C00F6B7EA /* Requests.swift */; };
+		A682313C2624A6E300B3B0DB /* LoadingContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A682313B2624A6E300B3B0DB /* LoadingContent.swift */; };
 		A68EA08B25EABA3D00D9442A /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68EA08A25EABA3D00D9442A /* QRCodeViewController.swift */; };
 		A68EA08D25EABAC900D9442A /* RegistrationPointQRCodeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68EA08C25EABAC900D9442A /* RegistrationPointQRCodeData.swift */; };
 		A68FE04025CC557B003767DB /* InputValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68FE03F25CC557B003767DB /* InputValidation.swift */; };
@@ -82,6 +83,8 @@
 		A69F8CA825D302AA008884CC /* UserFlightsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69F8CA725D302AA008884CC /* UserFlightsModel.swift */; };
 		A6A7AB8425E7F95A0092371A /* SelectedFlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A7AB8325E7F95A0092371A /* SelectedFlightViewController.swift */; };
 		A6A7AB8625E7F97A0092371A /* SelectedFlightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A7AB8525E7F97A0092371A /* SelectedFlightViewModel.swift */; };
+		A6B4782A261CAE2800FD1165 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = A6B47829261CAE2800FD1165 /* NVActivityIndicatorView */; };
+		A6B4782C261CAE2800FD1165 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = A6B4782B261CAE2800FD1165 /* NVActivityIndicatorViewExtended */; };
 		A6C2E46225FBD1110062314C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6C2E46425FBD1110062314C /* Localizable.strings */; };
 		A6C2E46825FBD1C20062314C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6C2E46A25FBD1C20062314C /* Localizable.strings */; };
 		A6C2E46E25FBD4690062314C /* LocalizationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C2E46D25FBD4690062314C /* LocalizationKeys.swift */; };
@@ -190,6 +193,7 @@
 		A67A73B225C87F9B00F6B7EA /* ServiceKeywords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceKeywords.swift; path = ../../../Servers/Services/ServiceKeywords.swift; sourceTree = "<group>"; };
 		A67A73B325C87F9C00F6B7EA /* RequestURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestURL.swift; path = ../../../Servers/Services/RequestURL.swift; sourceTree = "<group>"; };
 		A67A73B525C87F9C00F6B7EA /* Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Requests.swift; path = ../../../Servers/Services/Requests.swift; sourceTree = "<group>"; };
+		A682313B2624A6E300B3B0DB /* LoadingContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingContent.swift; sourceTree = "<group>"; };
 		A68EA08A25EABA3D00D9442A /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		A68EA08C25EABAC900D9442A /* RegistrationPointQRCodeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPointQRCodeData.swift; sourceTree = "<group>"; };
 		A68FE03F25CC557B003767DB /* InputValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidation.swift; sourceTree = "<group>"; };
@@ -249,6 +253,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6B4782A261CAE2800FD1165 /* NVActivityIndicatorView in Frameworks */,
+				A6B4782C261CAE2800FD1165 /* NVActivityIndicatorViewExtended in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +481,7 @@
 				A68FE04525CC5F12003767DB /* UserDefaults.swift */,
 				A6D5167825D4480C00BDAC40 /* AirlinesEnum.swift */,
 				A6E7D44525F0204300A733F5 /* MapTypeEnum.swift */,
+				A682313B2624A6E300B3B0DB /* LoadingContent.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -498,6 +505,10 @@
 			dependencies = (
 			);
 			name = FlyportApp;
+			packageProductDependencies = (
+				A6B47829261CAE2800FD1165 /* NVActivityIndicatorView */,
+				A6B4782B261CAE2800FD1165 /* NVActivityIndicatorViewExtended */,
+			);
 			productName = FlyportApp;
 			productReference = A6D139A523BC19F600B79903 /* FlyportApp.app */;
 			productType = "com.apple.product-type.application";
@@ -550,6 +561,9 @@
 				"lt-LT",
 			);
 			mainGroup = A6D1399C23BC19F600B79903;
+			packageReferences = (
+				A6B47828261CAE2800FD1165 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+			);
 			productRefGroup = A6D139A623BC19F600B79903 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -701,6 +715,7 @@
 				A634387925E428AD00070784 /* FlightDateViewModel.swift in Sources */,
 				A68EA08B25EABA3D00D9442A /* QRCodeViewController.swift in Sources */,
 				A61AAF8B25D1B319003A107B /* ProfileViewController.swift in Sources */,
+				A682313C2624A6E300B3B0DB /* LoadingContent.swift in Sources */,
 				A678C1B625DD7E4F0079AC05 /* AirportPointCardView.swift in Sources */,
 				A67A73B925C87F9C00F6B7EA /* Requests.swift in Sources */,
 				A65EFD5025E6B8730032C0CC /* AirportPointModel.swift in Sources */,
@@ -1059,6 +1074,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A6B47828261CAE2800FD1165 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A6B47829261CAE2800FD1165 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A6B47828261CAE2800FD1165 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		A6B4782B261CAE2800FD1165 /* NVActivityIndicatorViewExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A6B47828261CAE2800FD1165 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorViewExtended;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A6D1399D23BC19F600B79903 /* Project object */;
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import NVActivityIndicatorView
 
 class LoginViewController: UIViewController {
 	private var viewModel: LoginViewModel = LoginViewModel()
@@ -18,6 +19,8 @@ class LoginViewController: UIViewController {
 	private lazy var loginButton: UIButton = self.initLoginButton()
 	private lazy var registerTitle: UILabel = self.initRegisterTitle()
 	private lazy var loginAlert: UIAlertController = self.initAlert()
+	private lazy var loadingView: UIView = UIView(frame: CGRect.zero).loadingView
+	private lazy var activityIndicator: NVActivityIndicatorView = NVActivityIndicatorView(frame: CGRect.zero).loadingIndicator
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -59,6 +62,11 @@ class LoginViewController: UIViewController {
 	
 	@objc private func loadProfileScreen() {
 		if self.viewModel.checkForAllValidFields(emailField: self.emailTextField, passwordField: self.passwordTextField) == true {
+			self.view.addSubview(self.loadingView)
+			self.view.addSubview(self.activityIndicator)
+			self.activateLoadingViewConstraints()
+			self.activateActivityIndicatorConstraints()
+			self.activityIndicator.startAnimating()
 			self.viewModel.loginToService(emailText: self.emailTextField.text, passwordText: self.passwordTextField.text, completion: {
 				result in
 				if result {
@@ -67,12 +75,15 @@ class LoginViewController: UIViewController {
 						if profileResult {
 							let vc  = HomeScreenViewController()
 							vc.modalPresentationStyle = .fullScreen
+							self.stopAnimating()
 							self.present(vc, animated: true, completion: nil)
 						} else {
+							self.stopAnimating()
 							self.present(self.loginAlert, animated: true, completion: nil)
 						}
 					})
 				} else {
+					self.stopAnimating()
 					self.present(self.loginAlert, animated: true, completion: nil)
 				}
 			})
@@ -82,6 +93,12 @@ class LoginViewController: UIViewController {
 	@objc private func loadRegisterScreen() {
 		let newVC = RegistrationViewController()
 		self.navigationController?.setViewControllers([newVC], animated: true)
+	}
+	
+	private func stopAnimating() {
+		self.activityIndicator.stopAnimating()
+		self.loadingView.removeFromSuperview()
+		self.activityIndicator.removeFromSuperview()
 	}
 }
 
@@ -110,9 +127,9 @@ extension LoginViewController {
 		let textField = UITextField()
 		textField.placeholder = self.viewModel.email
 		textField.translatesAutoresizingMaskIntoConstraints = false
-		let imageView = UIImageView(frame: CGRect(x: 5, y: 5, width: 55, height: 55))
+		let imageView = UIImageView(frame: CGRect(x: 5, y: 5, width: 45, height: 45))
 		imageView.image = #imageLiteral(resourceName: "email")
-		let view: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 65, height: 65))
+		let view: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 55, height: 55))
 		view.addSubview(imageView)
 		textField.leftView = view
 		textField.leftViewMode = .always
@@ -129,16 +146,16 @@ extension LoginViewController {
 		let textField = UITextField()
 		textField.placeholder = self.viewModel.password
 		textField.translatesAutoresizingMaskIntoConstraints = false
-		let imageView = UIImageView(frame: CGRect(x: 5, y: 5, width: 55, height: 55))
+		let imageView = UIImageView(frame: CGRect(x: 5, y: 5, width: 45, height: 45))
 		imageView.image = #imageLiteral(resourceName: "password")
-		let view: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 65, height: 65))
+		let view: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 55, height: 55))
 		view.addSubview(imageView)
 		textField.leftView = view
 		textField.leftViewMode = .always
 		textField.textColor = UIColor(named: "ButtonColor")
 		textField.borderStyle = .roundedRect
 		textField.layer.borderColor = UIColor(named: "ButtonColor")?.cgColor
-		textField.font = UIFont.init(name: "seguisym", size: UIView.margin(of: [21, 28, 35]))
+		textField.font = UIFont.init(name: "seguisym", size: UIView.margin(of: [21, 28, 28]))
 		textField.layer.cornerRadius = 8.0
 		textField.layer.borderWidth = 2
 		textField.isSecureTextEntry = true
@@ -201,7 +218,7 @@ extension LoginViewController {
 			self.emailTextField.topAnchor.constraint(equalTo: self.icon.bottomAnchor, constant: UIView.margin(of: [22.5, 30.0, 37.5])),
 			self.emailTextField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [16, 20, 24])),
 			self.emailTextField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [16, 20, 24])),
-			self.emailTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [41,55,68.5]))
+			self.emailTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [41,55,55]))
 		])
 	}
 	
@@ -210,7 +227,7 @@ extension LoginViewController {
 			self.passwordTextField.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor, constant: UIView.margin(of: [22.5, 30.0, 37.5])),
 			self.passwordTextField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [16, 20, 24])),
 			self.passwordTextField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [16, 20, 24])),
-			self.passwordTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [41,55,68.5]))
+			self.passwordTextField.heightAnchor.constraint(equalToConstant: UIView.margin(of: [41,55,55]))
 		])
 	}
 	
@@ -219,7 +236,7 @@ extension LoginViewController {
 			self.loginButton.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor, constant: UIView.margin(of: [27, 39.0, 48])),
 			self.loginButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [50, 67, 75])),
 			self.loginButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [50, 67, 75])),
-			self.loginButton.heightAnchor.constraint(equalToConstant: UIView.margin(of:[7.5, 50, 62.5]))
+			self.loginButton.heightAnchor.constraint(equalToConstant: UIView.margin(of:[45, 60, 75]))
 		])
 	}
 	
@@ -228,6 +245,22 @@ extension LoginViewController {
 			self.registerTitle.topAnchor.constraint(equalTo: self.loginButton.bottomAnchor, constant: UIView.margin(of: [22.5, 30.0, 37.5])),
 			self.registerTitle.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [14, 16, 18])),
 			self.registerTitle.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [14, 16, 18]))
+		])
+	}
+	
+    private func activateActivityIndicatorConstraints() {
+        NSLayoutConstraint.activate([
+            self.activityIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+        ])
+    }
+	
+	private func activateLoadingViewConstraints() {
+		NSLayoutConstraint.activate([
+			self.loadingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+			self.loadingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+			self.loadingView.topAnchor.constraint(equalTo: self.view.topAnchor),
+			self.loadingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
 		])
 	}
 }

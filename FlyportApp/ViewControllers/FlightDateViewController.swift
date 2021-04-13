@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import NVActivityIndicatorView
 
 class FlightDateViewController: UIViewController {
 	private var viewModel: FlightDateViewModel
@@ -18,6 +19,8 @@ class FlightDateViewController: UIViewController {
 	private lazy var completeButton: UIButton = self.initButton()
 	private lazy var datePicker: UIDatePicker = self.initDatePicker()
 	private lazy var errorAler: UIAlertController = self.initAlert()
+	private lazy var loadingView: UIView = UIView(frame: CGRect.zero).loadingView
+	private lazy var activityIndicator: NVActivityIndicatorView = NVActivityIndicatorView(frame: CGRect.zero).loadingIndicator
 	
 	public init(viewModel: FlightDateViewModel) {
 		self.viewModel = viewModel
@@ -49,6 +52,12 @@ class FlightDateViewController: UIViewController {
 	
 	@objc private func openNextScreen() {
 		if self.viewModel.checkValidDate(dateTextField: self.flightDateInputField) {
+			self.view.addSubview(self.loadingView)
+			self.view.addSubview(self.activityIndicator)
+			self.activateLoadingViewConstraints()
+			self.activateActivityIndicatorConstraints()
+			self.activityIndicator.startAnimating()
+			
 			self.viewModel.searchFlight(date: self.flightDateInputField.text!, completion: {
 				flight in
 				if let foundFlight = flight {
@@ -62,8 +71,10 @@ class FlightDateViewController: UIViewController {
 						passportControl: foundFlight.passportControl)
 					let viewModel = SelectedFlightViewModel(flightInfo: searchedFlightInfo)
 					let newVC = SelectedFlightViewController(viewModel: viewModel)
+					self.stopAnimating()
 					self.navigationController?.pushViewController(newVC, animated: true)
 				} else {
+					self.stopAnimating()
 					self.present(self.errorAler, animated: true, completion: nil)
 				}
 			})
@@ -79,6 +90,12 @@ class FlightDateViewController: UIViewController {
 	
 	@objc func action() {
 		view.endEditing(true)
+	}
+	
+	private func stopAnimating() {
+		self.activityIndicator.stopAnimating()
+		self.loadingView.removeFromSuperview()
+		self.activityIndicator.removeFromSuperview()
 	}
 }
 
@@ -210,6 +227,22 @@ extension FlightDateViewController {
 			self.completeButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIView.margin(of: [50, 67, 75])),
 			self.completeButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -UIView.margin(of: [50, 67, 75])),
 			self.completeButton.heightAnchor.constraint(equalToConstant: UIView.margin(of:[45, 60, 75]))
+		])
+	}
+	
+    private func activateActivityIndicatorConstraints() {
+        NSLayoutConstraint.activate([
+            self.activityIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+        ])
+    }
+	
+	private func activateLoadingViewConstraints() {
+		NSLayoutConstraint.activate([
+			self.loadingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+			self.loadingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+			self.loadingView.topAnchor.constraint(equalTo: self.view.topAnchor),
+			self.loadingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
 		])
 	}
 }

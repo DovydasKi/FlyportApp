@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import NVActivityIndicatorView
 
 public class OnboardingCompletedViewController: UIViewController {
 	private let viewModel = OnboardingCompletedViewModel()
@@ -16,6 +17,8 @@ public class OnboardingCompletedViewController: UIViewController {
 	private lazy var icon: UIImageView = self.initIcon()
 	private lazy var completeButton: UIImageView = self.initCompleteButton()
 	private lazy var alert: UIAlertController = self.initAlert()
+	private lazy var loadingView: UIView = UIView(frame: CGRect.zero).loadingView
+	private lazy var activityIndicator: NVActivityIndicatorView = NVActivityIndicatorView(frame: CGRect.zero).loadingIndicator
 	
 	public override func viewDidLoad() {
 		super.viewDidLoad()
@@ -31,15 +34,29 @@ public class OnboardingCompletedViewController: UIViewController {
 	}
 	
 	@objc private func loadProfile() {
+		self.view.addSubview(self.loadingView)
+		self.view.addSubview(self.activityIndicator)
+		self.activateLoadingViewConstraints()
+		self.activateActivityIndicatorConstraints()
+		self.activityIndicator.startAnimating()
+		
 		self.viewModel.completeFlight(completion: {
 			completed in
 			if completed {
 				let newVC = TabBarViewController()
+				self.stopAnimating()
 				self.navigationController?.pushViewController(newVC, animated: true)
 			} else {
+				self.stopAnimating()
 				self.present(self.alert, animated: true, completion: nil)
 			}
 		})
+	}
+	
+	private func stopAnimating() {
+		self.activityIndicator.stopAnimating()
+		self.loadingView.removeFromSuperview()
+		self.activityIndicator.removeFromSuperview()
 	}
 }
 
@@ -119,6 +136,22 @@ extension OnboardingCompletedViewController {
 			self.completeButton.widthAnchor.constraint(equalToConstant: UIView.margin(of: [90, 120, 130])),
 			self.completeButton.heightAnchor.constraint(equalToConstant: UIView.margin(of: [90, 120, 130])),
 			self.completeButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+		])
+	}
+	
+    private func activateActivityIndicatorConstraints() {
+        NSLayoutConstraint.activate([
+            self.activityIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+        ])
+    }
+	
+	private func activateLoadingViewConstraints() {
+		NSLayoutConstraint.activate([
+			self.loadingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+			self.loadingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+			self.loadingView.topAnchor.constraint(equalTo: self.view.topAnchor),
+			self.loadingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
 		])
 	}
 }

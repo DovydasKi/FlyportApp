@@ -93,8 +93,8 @@ extension StartNewFlightCardView {
 	
 	private func activateButtonConstraints() {
 		NSLayoutConstraint.activate([
-			self.button.leadingAnchor.constraint(equalTo: self.icon.trailingAnchor, constant: UIView.margin(of: [15, 20, 25])),
-			self.button.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -UIView.margin(of: [19,25,31])),
+			self.button.leadingAnchor.constraint(equalTo: self.icon.trailingAnchor, constant: UIView.margin(of: [15, 20, 20])),
+			self.button.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -UIView.margin(of: [17,20,20])),
 			self.button.topAnchor.constraint(equalTo: self.questionLabel.bottomAnchor, constant: UIView.margin(of: [27,36,45])),
 			self.button.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -UIView.margin(of: [23,31,39]))
 		])
