@@ -61,7 +61,7 @@ public class PassportControlViewController: UIViewController {
 	}
 	
 	@objc private func openMap() {
-		let vm = MapViewModel(number: self.viewModel.flightNumber, mapType: .passport)
+		let vm = MapViewModel(number: self.viewModel.tableNumber, mapType: .passport)
 		let newVC = MapViewController(viewModel: vm)
 		self.navigationController?.pushViewController(newVC, animated: true)
 	}
@@ -80,6 +80,12 @@ public class PassportControlViewController: UIViewController {
 				self.present(self.alert, animated: true, completion: nil)
 			}
 		})
+	}
+	
+	@objc private func openQR() {
+		let vm = QRCodeViewModel(flightNumber: self.viewModel.flightInfo.flightNumber, route: self.viewModel.route)
+		let vc = QRCodeViewController(viewModel: vm)
+		self.navigationController?.pushViewController(vc, animated: true)
 	}
 }
 
@@ -149,6 +155,7 @@ extension PassportControlViewController {
 		button.titleLabel?.numberOfLines = 0
 		button.titleLabel?.adjustsFontSizeToFitWidth = true
 		button.setTitleColor(UIColor(named: "ButtonColor"), for: .normal)
+		button.addTarget(self, action: #selector(self.openQR), for: .touchUpInside)
 		return button
 	}
 	

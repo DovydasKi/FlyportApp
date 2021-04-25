@@ -58,7 +58,7 @@ public class AviationSecurityViewController: UIViewController {
 	}
 	
 	@objc private func openMap() {
-		let vm = MapViewModel(number: self.viewModel.flightNumber, mapType: .aviationSecurity)
+		let vm = MapViewModel(number: self.viewModel.tableNumber, mapType: .aviationSecurity)
 		let newVC = MapViewController(viewModel: vm)
 		self.navigationController?.pushViewController(newVC, animated: true)
 	}

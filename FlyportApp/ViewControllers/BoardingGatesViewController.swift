@@ -61,7 +61,7 @@ public class BoardingGatesViewController: UIViewController {
 	}
 	
 	@objc private func openMap() {
-		let vm = MapViewModel(number: self.viewModel.flightNumber, mapType: .boarding)
+		let vm = MapViewModel(number: self.viewModel.tableNumber, mapType: .boarding)
 		let newVC = MapViewController(viewModel: vm)
 		self.navigationController?.pushViewController(newVC, animated: true)
 	}

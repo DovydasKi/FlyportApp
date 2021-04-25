@@ -19,7 +19,7 @@ public class MapViewModel {
 		self.number = number
 		self.title = mapType.titleText
 		self.coordinates = mapType.routeCoordinates
-		self.destinationTitle = mapType.destinationTitle + number
+		self.destinationTitle = mapType.destinationTitle + " " + number
 	}
 }
 
