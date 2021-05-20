@@ -60,4 +60,58 @@ public struct RequestURL {
 		guard let requestUrl = url else { fatalError() }
 		return requestUrl
 	}
+    
+    public func searchFlightURL() -> URL {
+        let url = URL(string: self.keywords.searchFlights)
+        
+        guard let requestUrl = url else { fatalError() }
+        return requestUrl
+    }
+    
+    public func registerUserFlightURL() -> URL {
+        let url = URL(string: self.keywords.registerUserFlight)
+        
+        guard let requestUrl = url else { fatalError() }
+        return requestUrl
+    }
+    
+    public func completeFlightURL(userFlightId: Int) -> URL {
+        let updatedUrl = self.keywords.flightPoints + String(userFlightId) + self.keywords.completeUserFlightEnding
+        let url = URL(string: updatedUrl)
+        
+        guard let requestUrl = url else { fatalError() }
+        return requestUrl
+    }
+    
+    public func boardingGatesURL(userFlightId: Int) -> URL {
+        let updatedUrl = self.keywords.completeUserFlight + String(userFlightId) + self.keywords.boardingGates
+        let url = URL(string: updatedUrl)
+        
+        guard let requestUrl = url else { fatalError() }
+        return requestUrl
+    }
+    
+    public func passportPointURL(userFlightId: Int) -> URL {
+        let updatedUrl = self.keywords.completeUserFlight + String(userFlightId) + self.keywords.passportPoint
+        let url = URL(string: updatedUrl)
+        
+        guard let requestUrl = url else { fatalError() }
+        return requestUrl
+    }
+    
+    public func registrationPointURL(userFlightId: Int) -> URL {
+        let updatedUrl = self.keywords.completeUserFlight + String(userFlightId) + self.keywords.registrationPoint
+        let url = URL(string: updatedUrl)
+        
+        guard let requestUrl = url else { fatalError() }
+        return requestUrl
+    }
+    
+    public func securityPointURL(userFlightId: Int) -> URL {
+        let updatedUrl = self.keywords.completeUserFlight + String(userFlightId) + self.keywords.securityPoint
+        let url = URL(string: updatedUrl)
+        
+        guard let requestUrl = url else { fatalError() }
+        return requestUrl
+    }
 }
